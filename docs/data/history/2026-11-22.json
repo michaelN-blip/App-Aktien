@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-22T07:59+00:00",
+ "generated_at": "2026-11-22T08:52+00:00",
  "innovation": {
   "picks": [
    {
@@ -83,6 +83,24 @@
      "Sehr volatil (Beta 3.9)",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
+    "fair_value": 841.8312,
+    "fair_low": 102.1816,
+    "fair_high": 1411.476,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 3.6678,
+    "potential_low": -0.4334,
+    "potential_high": 6.8263,
+    "risk": {
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 6,
+     "factors": [
+      "sehr volatil (Beta 3.9)",
+      "über 50 % unter dem Jahreshoch",
+      "sehr hohe Bewertung",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
     "theme": "KI-Konnektivität",
     "upside": 0.9082,
     "metrics": {
@@ -175,6 +193,23 @@
      "Sehr volatil (Beta 3.3)",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
+    "fair_value": 409.4421,
+    "fair_low": 58.3393,
+    "fair_high": 1200.088,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 3.1002,
+    "potential_low": -0.4158,
+    "potential_high": 11.0177,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 5,
+     "factors": [
+      "sehr volatil (Beta 3.3)",
+      "über 50 % unter dem Jahreshoch",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
     "theme": "KI-Konnektivität",
     "upside": 1.7469,
     "metrics": {
@@ -267,6 +302,26 @@
      "Sehr volatil (Beta 2.8)",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
+    "fair_value": 5.7273,
+    "fair_low": 1.3467,
+    "fair_high": 9.9079,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 0.5909,
+    "potential_low": -0.6259,
+    "potential_high": 1.7522,
+    "risk": {
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 8,
+     "factors": [
+      "sehr volatil (Beta 2.8)",
+      "über 50 % unter dem Jahreshoch",
+      "geringe Gewinnmarge",
+      "sehr hohe Bewertung",
+      "mittelgroßes Unternehmen",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
     "theme": "Flugtaxis",
     "upside": 1.4562,
     "metrics": {
@@ -356,6 +411,24 @@
     "risks": [
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
+    "fair_value": 52.6981,
+    "fair_low": 14.871,
+    "fair_high": 112.7642,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 0.4057,
+    "potential_low": -0.6033,
+    "potential_high": 2.0078,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 4,
+     "factors": [
+      "schwankungsfreudig (Beta 1.3)",
+      "geringe Gewinnmarge",
+      "sehr hohe Bewertung",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
     "theme": "Industrie-IoT",
     "upside": 0.381,
     "metrics": {
@@ -447,6 +520,23 @@
      "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
+    "fair_value": 787.4987,
+    "fair_low": 320.2902,
+    "fair_high": 1335.2604,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 8.6851,
+    "potential_low": 2.9391,
+    "potential_high": 15.4218,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 4,
+     "factors": [
+      "schwankungsfreudig (Beta 1.5)",
+      "über 50 % unter dem Jahreshoch",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
     "theme": "KI-Infrastruktur",
     "upside": 1.8484,
     "metrics": {
@@ -537,6 +627,23 @@
     "risks": [
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
+    "fair_value": 360.3838,
+    "fair_low": 103.0409,
+    "fair_high": 783.3388,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 1.4851,
+    "potential_low": -0.2895,
+    "potential_high": 4.4016,
+    "risk": {
+     "level": 2,
+     "name": "Mittel",
+     "points": 3,
+     "factors": [
+      "über 30 % unter dem Jahreshoch",
+      "mittelgroßes Unternehmen",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
     "theme": "KI-Bildung",
     "upside": 0.0691,
     "metrics": {
@@ -557,7 +664,11 @@
     "score": 87,
     "price": 99.86,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 409.4421,
+    "potential": 3.1002,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "ALAB",
@@ -565,7 +676,11 @@
     "score": 87,
     "price": 180.35,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 841.8312,
+    "potential": 3.6678,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "JOBY",
@@ -573,7 +688,11 @@
     "score": 84,
     "price": 3.6,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 5.7273,
+    "potential": 0.5909,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "TEM",
@@ -581,7 +700,11 @@
     "score": 82,
     "price": 54.04,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 111.9632,
+    "potential": 1.0719,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "RDDT",
@@ -589,7 +712,11 @@
     "score": 82,
     "price": 85.33,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 348.5857,
+    "potential": 3.0851,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "PL",
@@ -597,7 +724,11 @@
     "score": 81,
     "price": 10.53,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 13.2707,
+    "potential": 0.2603,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "QBTS",
@@ -605,7 +736,11 @@
     "score": 81,
     "price": 6.52,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 1.0552,
+    "potential": -0.8382,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "IOT",
@@ -613,7 +748,11 @@
     "score": 80,
     "price": 37.49,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 52.6981,
+    "potential": 0.4057,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "PATH",
@@ -621,7 +760,11 @@
     "score": 77,
     "price": 10.96,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 25.3017,
+    "potential": 1.3085,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "SOUN",
@@ -629,7 +772,11 @@
     "score": 76,
     "price": 2.61,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 6.0751,
+    "potential": 1.3276,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "SERV",
@@ -637,7 +784,11 @@
     "score": 75,
     "price": 2.04,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 5.4982,
+    "potential": 1.6952,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "MDB",
@@ -645,7 +796,11 @@
     "score": 72,
     "price": 285.9,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 331.4849,
+    "potential": 0.1594,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "DUOL",
@@ -653,7 +808,11 @@
     "score": 72,
     "price": 145.02,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 360.3838,
+    "potential": 1.4851,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "NBIS",
@@ -661,7 +820,11 @@
     "score": 72,
     "price": 81.31,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 787.4987,
+    "potential": 8.6851,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "LSCC",
@@ -669,7 +832,11 @@
     "score": 72,
     "price": 98.31,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 298.5424,
+    "potential": 2.0367,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "ZS",
@@ -677,7 +844,11 @@
     "score": 72,
     "price": 194.82,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 159.5886,
+    "potential": -0.1808,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "RXRX",
@@ -685,7 +856,11 @@
     "score": 72,
     "price": 2.45,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 4.597,
+    "potential": 0.8763,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "HIMS",
@@ -693,7 +868,11 @@
     "score": 72,
     "price": 14.6,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 193.9577,
+    "potential": 12.2848,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "SYM",
@@ -701,7 +880,11 @@
     "score": 72,
     "price": 31.1,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 106.0362,
+    "potential": 2.4095,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "IONQ",
@@ -709,7 +892,11 @@
     "score": 71,
     "price": 20.72,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 27.5331,
+    "potential": 0.3288,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "PLTR",
@@ -717,7 +904,11 @@
     "score": 70,
     "price": 143.49,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 123.8605,
+    "potential": -0.1368,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "DDOG",
@@ -725,7 +916,11 @@
     "score": 70,
     "price": 157.37,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 140.4894,
+    "potential": -0.1073,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "S",
@@ -733,7 +928,11 @@
     "score": 70,
     "price": 22.91,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 28.0187,
+    "potential": 0.223,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "ASTS",
@@ -741,7 +940,11 @@
     "score": 70,
     "price": 23.27,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 19.3599,
+    "potential": -0.168,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "HOOD",
@@ -749,7 +952,11 @@
     "score": 70,
     "price": 62.17,
     "currency": "USD",
-    "label": "Hohes Potenzial"
+    "label": "Hohes Potenzial",
+    "fair_value": 95.0518,
+    "potential": 0.5289,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "APP",
@@ -757,7 +964,11 @@
     "score": 69,
     "price": 348.29,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 428.1715,
+    "potential": 0.2294,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "SNOW",
@@ -765,7 +976,11 @@
     "score": 67,
     "price": 254.82,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 124.9799,
+    "potential": -0.5095,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "CRWV",
@@ -773,7 +988,11 @@
     "score": 67,
     "price": 39.51,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 1496.0233,
+    "potential": 36.8644,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "NET",
@@ -781,7 +1000,11 @@
     "score": 66,
     "price": 274.96,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 81.7811,
+    "potential": -0.7026,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "RKLB",
@@ -789,7 +1012,11 @@
     "score": 66,
     "price": 45.42,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 17.5539,
+    "potential": -0.6135,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "SE",
@@ -797,7 +1024,11 @@
     "score": 66,
     "price": 62.63,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 417.409,
+    "potential": 5.6647,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "CRSP",
@@ -805,7 +1036,11 @@
     "score": 65,
     "price": 39.1,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 18.2206,
+    "potential": -0.534,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "BEAM",
@@ -813,7 +1048,11 @@
     "score": 65,
     "price": 20.9,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 5.1957,
+    "potential": -0.7514,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "SMR",
@@ -821,7 +1060,11 @@
     "score": 65,
     "price": 3.36,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 1.2289,
+    "potential": -0.6342,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "AMBA",
@@ -829,7 +1072,11 @@
     "score": 63,
     "price": 53.07,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 41.5366,
+    "potential": -0.2173,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "EOSE",
@@ -837,7 +1084,11 @@
     "score": 62,
     "price": 1.19,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 8.6485,
+    "potential": 6.2677,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "TWST",
@@ -845,7 +1096,11 @@
     "score": 61,
     "price": 103.32,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 39.0806,
+    "potential": -0.6218,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "SOFI",
@@ -853,7 +1108,11 @@
     "score": 61,
     "price": 12.48,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 46.6007,
+    "potential": 2.734,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "TOST",
@@ -861,7 +1120,11 @@
     "score": 61,
     "price": 31.42,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 49.4653,
+    "potential": 0.5743,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "LUNR",
@@ -869,7 +1132,11 @@
     "score": 59,
     "price": 8.775,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 88.8984,
+    "potential": 9.1309,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "ARM",
@@ -877,7 +1144,11 @@
     "score": 58,
     "price": 152.2,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 45.6659,
+    "potential": -0.7,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "CRWD",
@@ -885,7 +1156,11 @@
     "score": 55,
     "price": 229.44,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 49.9849,
+    "potential": -0.7821,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "ACHR",
@@ -893,7 +1168,11 @@
     "score": 55,
     "price": 2.91,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 0.8208,
+    "potential": -0.7179,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "SHOP",
@@ -901,7 +1180,11 @@
     "score": 55,
     "price": 123.72,
     "currency": "USD",
-    "label": "Spannend"
+    "label": "Spannend",
+    "fair_value": 73.8694,
+    "potential": -0.4029,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "NTLA",
@@ -909,7 +1192,11 @@
     "score": 54,
     "price": 10.0,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 1.7854,
+    "potential": -0.8215,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "NU",
@@ -917,7 +1204,11 @@
     "score": 54,
     "price": 11.27,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 16.617,
+    "potential": 0.4744,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "AFRM",
@@ -925,7 +1216,11 @@
     "score": 54,
     "price": 54.0,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 101.3705,
+    "potential": 0.8772,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "OKLO",
@@ -933,7 +1228,11 @@
     "score": 54,
     "price": 19.85,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 6.9533,
+    "potential": -0.6497,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "RGTI",
@@ -941,7 +1240,11 @@
     "score": 51,
     "price": 7.145,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 0.6993,
+    "potential": -0.9021,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "MELI",
@@ -949,7 +1252,11 @@
     "score": 51,
     "price": 1355.0,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 6244.2336,
+    "potential": 3.6083,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "FLNC",
@@ -957,7 +1264,11 @@
     "score": 51,
     "price": 3.46,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 16.4517,
+    "potential": 3.7548,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "RDW",
@@ -965,7 +1276,11 @@
     "score": 49,
     "price": 5.65,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 4.9571,
+    "potential": -0.1226,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "NNE",
@@ -973,7 +1288,11 @@
     "score": 49,
     "price": 9.1,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 5.8281,
+    "potential": -0.3595,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "ISRG",
@@ -981,7 +1300,11 @@
     "score": 48,
     "price": 399.05,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 228.8715,
+    "potential": -0.4265,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "AI",
@@ -989,7 +1312,11 @@
     "score": 44,
     "price": 9.13,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 4.4371,
+    "potential": -0.514,
+    "risk": "Sehr hoch",
+    "risk_level": 4
    },
    {
     "symbol": "CPNG",
@@ -997,7 +1324,11 @@
     "score": 41,
     "price": 14.27,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 49.0264,
+    "potential": 2.4356,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "TSLA",
@@ -1005,7 +1336,11 @@
     "score": 31,
     "price": 345.82,
     "currency": "USD",
-    "label": "Noch zu früh/zu teuer"
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 40.4709,
+    "potential": -0.883,
+    "risk": "Hoch",
+    "risk_level": 3
    }
   ]
  },
@@ -1077,6 +1412,22 @@
     "risks": [
      "Aktuell deutlich über dem geschätzten inneren Wert (87 USD)"
     ],
+    "fair_value": 86.5353,
+    "fair_low": 59.8216,
+    "fair_high": 124.5016,
+    "valuation_method": "DCF auf Free Cashflow, 10 % Wachstum p. a., 10 % Mindestrendite",
+    "potential": -0.5278,
+    "potential_low": -0.6736,
+    "potential_high": -0.3207,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 4,
+     "factors": [
+      "sehr volatil (Beta 2.0)",
+      "über 50 % unter dem Jahreshoch"
+     ]
+    },
     "intrinsic_value": 86.5353,
     "margin_of_safety": -1.1179,
     "growth_assumption": 0.1006,
@@ -1155,6 +1506,21 @@
     "risks": [
      "Aktuell deutlich über dem geschätzten inneren Wert (167 USD)"
     ],
+    "fair_value": 166.9075,
+    "fair_low": 107.3651,
+    "fair_high": 208.1074,
+    "valuation_method": "DCF auf Free Cashflow, 12 % Wachstum p. a., 10 % Mindestrendite",
+    "potential": -0.4763,
+    "potential_low": -0.6631,
+    "potential_high": -0.347,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 1,
+     "factors": [
+      "über 30 % unter dem Jahreshoch"
+     ]
+    },
     "intrinsic_value": 166.9075,
     "margin_of_safety": -0.9095,
     "growth_assumption": 0.12,
@@ -1235,6 +1601,19 @@
      "Aktuell deutlich über dem geschätzten inneren Wert (14 USD)",
      "Hohes KGV von 41.1 – wenig Spielraum für Enttäuschungen"
     ],
+    "fair_value": 13.5986,
+    "fair_low": 11.1225,
+    "fair_high": 19.2884,
+    "valuation_method": "DCF auf Free Cashflow, 6 % Wachstum p. a., 10 % Mindestrendite",
+    "potential": -0.7313,
+    "potential_low": -0.7802,
+    "potential_high": -0.6189,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
     "intrinsic_value": 13.5986,
     "margin_of_safety": -2.7217,
     "growth_assumption": 0.0552,
@@ -1311,6 +1690,19 @@
      "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum"
     ],
     "risks": [],
+    "fair_value": 189.6145,
+    "fair_low": 143.4421,
+    "fair_high": 290.8398,
+    "valuation_method": "DCF auf Free Cashflow, 8 % Wachstum p. a., 10 % Mindestrendite",
+    "potential": -0.0468,
+    "potential_low": -0.2789,
+    "potential_high": 0.462,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
     "intrinsic_value": 189.6145,
     "margin_of_safety": -0.0491,
     "growth_assumption": 0.0763,
@@ -1387,6 +1779,19 @@
      "Zahlt 2.5 % Dividende"
     ],
     "risks": [],
+    "fair_value": 306.4455,
+    "fair_low": 238.9479,
+    "fair_high": 456.0598,
+    "valuation_method": "DCF auf Free Cashflow, 7 % Wachstum p. a., 10 % Mindestrendite",
+    "potential": 0.0157,
+    "potential_low": -0.208,
+    "potential_high": 0.5116,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
     "intrinsic_value": 306.4455,
     "margin_of_safety": 0.0155,
     "growth_assumption": 0.0681,
@@ -1462,6 +1867,19 @@
      "Günstiges KGV von 13.0"
     ],
     "risks": [],
+    "fair_value": 353.772,
+    "fair_low": 265.329,
+    "fair_high": 442.215,
+    "valuation_method": "Faires KGV 12 (8 + Wachstum in %) × Gewinn je Aktie",
+    "potential": -0.0481,
+    "potential_low": -0.286,
+    "potential_high": 0.1899,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
     "intrinsic_value": null,
     "margin_of_safety": null,
     "growth_assumption": null,
@@ -1483,7 +1901,11 @@
     "score": 86,
     "price": 221.17,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 296.1776,
+    "potential": 0.3391,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "TRV",
@@ -1491,7 +1913,11 @@
     "score": 83,
     "price": 393.24,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 608.48,
+    "potential": 0.5474,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "QCOM",
@@ -1499,7 +1925,11 @@
     "score": 78,
     "price": 149.94,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 154.3486,
+    "potential": 0.0294,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "GOOGL",
@@ -1507,7 +1937,11 @@
     "score": 75,
     "price": 265.29,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 153.2,
+    "potential": -0.4225,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "LRCX",
@@ -1515,7 +1949,11 @@
     "score": 75,
     "price": 183.27,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 86.5353,
+    "potential": -0.5278,
+    "risk": "Hoch",
+    "risk_level": 3
    },
    {
     "symbol": "TSM",
@@ -1523,7 +1961,11 @@
     "score": 75,
     "price": 318.71,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 166.9075,
+    "potential": -0.4763,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ASML",
@@ -1531,7 +1973,11 @@
     "score": 75,
     "price": 1266.22,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 809.6697,
+    "potential": -0.3606,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "FAST",
@@ -1539,7 +1985,11 @@
     "score": 75,
     "price": 50.61,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat"
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 13.5986,
+    "potential": -0.7313,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "SAP",
@@ -1547,7 +1997,11 @@
     "score": 74,
     "price": 198.93,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 189.6145,
+    "potential": -0.0468,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "DVA",
@@ -1555,7 +2009,11 @@
     "score": 73,
     "price": 161.03,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 245.1654,
+    "potential": 0.5225,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "AON",
@@ -1563,7 +2021,11 @@
     "score": 73,
     "price": 333.07,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 250.299,
+    "potential": -0.2485,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ADP",
@@ -1571,7 +2033,11 @@
     "score": 73,
     "price": 301.71,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 306.4455,
+    "potential": 0.0157,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "BAC",
@@ -1579,7 +2045,11 @@
     "score": 70,
     "price": 47.04,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 33.52,
+    "potential": -0.2874,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "CB",
@@ -1587,7 +2057,11 @@
     "score": 70,
     "price": 371.63,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 353.772,
+    "potential": -0.0481,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MSFT",
@@ -1595,7 +2069,11 @@
     "score": 70,
     "price": 484.52,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 11.056,
+    "potential": -0.9772,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "META",
@@ -1603,7 +2081,11 @@
     "score": 70,
     "price": 560.84,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 208.6332,
+    "potential": -0.628,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "AAPL",
@@ -1611,7 +2093,11 @@
     "score": 68,
     "price": 342.56,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 145.3014,
+    "potential": -0.5758,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MCO",
@@ -1619,7 +2105,11 @@
     "score": 68,
     "price": 466.83,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 262.24,
+    "potential": -0.4383,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "V",
@@ -1627,7 +2117,11 @@
     "score": 68,
     "price": 401.87,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 197.12,
+    "potential": -0.5095,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MA",
@@ -1635,7 +2129,11 @@
     "score": 68,
     "price": 625.59,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 305.76,
+    "potential": -0.5112,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "KLAC",
@@ -1643,7 +2141,11 @@
     "score": 68,
     "price": 126.87,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 47.4102,
+    "potential": -0.6263,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "CSCO",
@@ -1651,7 +2153,11 @@
     "score": 68,
     "price": 90.64,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 39.0066,
+    "potential": -0.5697,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "PG",
@@ -1659,7 +2165,11 @@
     "score": 68,
     "price": 169.37,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 65.9899,
+    "potential": -0.6104,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "JNJ",
@@ -1667,7 +2177,11 @@
     "score": 68,
     "price": 270.47,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 87.722,
+    "potential": -0.6757,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "CTAS",
@@ -1675,7 +2189,11 @@
     "score": 68,
     "price": 220.01,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 93.1806,
+    "potential": -0.5765,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "OXY",
@@ -1683,7 +2201,11 @@
     "score": 67,
     "price": 53.9,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 56.0398,
+    "potential": 0.0397,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "SPGI",
@@ -1691,7 +2213,11 @@
     "score": 63,
     "price": 439.57,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 267.84,
+    "potential": -0.3907,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "CME",
@@ -1699,7 +2225,11 @@
     "score": 63,
     "price": 307.56,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 195.2,
+    "potential": -0.3653,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "TXN",
@@ -1707,7 +2237,11 @@
     "score": 63,
     "price": 263.75,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 59.6885,
+    "potential": -0.7737,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "UL",
@@ -1715,7 +2249,11 @@
     "score": 63,
     "price": 63.82,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 39.146,
+    "potential": -0.3866,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "UNH",
@@ -1723,7 +2261,11 @@
     "score": 63,
     "price": 339.85,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 773.258,
+    "potential": 1.2753,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "NVO",
@@ -1731,7 +2273,11 @@
     "score": 63,
     "price": 37.82,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 16.4603,
+    "potential": -0.5648,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "UNP",
@@ -1739,7 +2285,11 @@
     "score": 63,
     "price": 287.29,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 97.3714,
+    "potential": -0.6611,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "HSY",
@@ -1747,7 +2297,11 @@
     "score": 62,
     "price": 175.48,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 172.9853,
+    "potential": -0.0142,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ROL",
@@ -1755,7 +2309,11 @@
     "score": 61,
     "price": 37.82,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 13.2544,
+    "potential": -0.6495,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "BRK-B",
@@ -1763,7 +2321,11 @@
     "score": 60,
     "price": 570.0,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 285.84,
+    "potential": -0.4985,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "CL",
@@ -1771,7 +2333,11 @@
     "score": 60,
     "price": 98.71,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 61.4664,
+    "potential": -0.3773,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ZTS",
@@ -1779,7 +2345,11 @@
     "score": 60,
     "price": 79.11,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 57.6735,
+    "potential": -0.271,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "ITW",
@@ -1787,7 +2357,11 @@
     "score": 60,
     "price": 273.57,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 94.2004,
+    "potential": -0.6557,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "RELX",
@@ -1795,7 +2369,11 @@
     "score": 60,
     "price": 38.54,
     "currency": "USD",
-    "label": "Interessant"
+    "label": "Interessant",
+    "fair_value": 25.4598,
+    "potential": -0.3394,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "KO",
@@ -1803,7 +2381,11 @@
     "score": 58,
     "price": 96.99,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 15.0626,
+    "potential": -0.8447,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MSCI",
@@ -1811,7 +2393,11 @@
     "score": 58,
     "price": 610.48,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 302.56,
+    "potential": -0.5044,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "CSX",
@@ -1819,7 +2405,11 @@
     "score": 58,
     "price": 49.1,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 14.9931,
+    "potential": -0.6946,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "RSG",
@@ -1827,7 +2417,11 @@
     "score": 58,
     "price": 246.59,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 120.9431,
+    "potential": -0.5095,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "NVR",
@@ -1835,7 +2429,11 @@
     "score": 58,
     "price": 5468.04,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 3047.7111,
+    "potential": -0.4426,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "AXP",
@@ -1843,7 +2441,11 @@
     "score": 56,
     "price": 301.7,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 284.0,
+    "potential": -0.0587,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ROST",
@@ -1851,7 +2453,11 @@
     "score": 56,
     "price": 213.46,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 109.1843,
+    "potential": -0.4885,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "GWW",
@@ -1859,7 +2465,11 @@
     "score": 56,
     "price": 1357.35,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 487.9926,
+    "potential": -0.6405,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "COST",
@@ -1867,7 +2477,11 @@
     "score": 55,
     "price": 1102.15,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 305.7741,
+    "potential": -0.7226,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "TJX",
@@ -1875,7 +2489,11 @@
     "score": 51,
     "price": 139.62,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 74.7192,
+    "potential": -0.4648,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "CVX",
@@ -1883,7 +2501,11 @@
     "score": 50,
     "price": 208.37,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 152.3673,
+    "potential": -0.2688,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ICE",
@@ -1891,7 +2513,11 @@
     "score": 50,
     "price": 170.0,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 117.44,
+    "potential": -0.3092,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "KMB",
@@ -1899,7 +2525,11 @@
     "score": 48,
     "price": 106.38,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 29.7977,
+    "potential": -0.7199,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "WM",
@@ -1907,7 +2537,11 @@
     "score": 48,
     "price": 239.63,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 132.7478,
+    "potential": -0.446,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "NKE",
@@ -1915,7 +2549,11 @@
     "score": 46,
     "price": 32.92,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 16.7507,
+    "potential": -0.4912,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "DEO",
@@ -1923,7 +2561,11 @@
     "score": 45,
     "price": 97.07,
     "currency": "USD",
-    "label": "Beobachten"
+    "label": "Beobachten",
+    "fair_value": 52.6416,
+    "potential": -0.4577,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "PEP",
@@ -1931,7 +2573,11 @@
     "score": 43,
     "price": 140.54,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 92.8723,
+    "potential": -0.3392,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "HD",
@@ -1939,7 +2585,11 @@
     "score": 43,
     "price": 339.04,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 153.6157,
+    "potential": -0.5469,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MRK",
@@ -1947,7 +2597,11 @@
     "score": 43,
     "price": 133.72,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 64.9298,
+    "potential": -0.5144,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "DHR",
@@ -1955,7 +2609,11 @@
     "score": 43,
     "price": 220.36,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 77.0003,
+    "potential": -0.6506,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "POOL",
@@ -1963,7 +2621,11 @@
     "score": 41,
     "price": 208.23,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 115.3022,
+    "potential": -0.4463,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "VRSN",
@@ -1971,7 +2633,11 @@
     "score": 40,
     "price": 306.87,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 131.135,
+    "potential": -0.5727,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MCD",
@@ -1979,7 +2645,11 @@
     "score": 40,
     "price": 273.24,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 132.3174,
+    "potential": -0.5157,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "YUM",
@@ -1987,7 +2657,11 @@
     "score": 40,
     "price": 160.7,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 89.0994,
+    "potential": -0.4456,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "MO",
@@ -1995,7 +2669,11 @@
     "score": 40,
     "price": 74.87,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 48.4233,
+    "potential": -0.3532,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "PM",
@@ -2003,7 +2681,11 @@
     "score": 40,
     "price": 184.09,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 84.3957,
+    "potential": -0.5416,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ABBV",
@@ -2011,7 +2693,11 @@
     "score": 35,
     "price": 286.2,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 129.5954,
+    "potential": -0.5472,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "VRSK",
@@ -2019,7 +2705,11 @@
     "score": 35,
     "price": 202.09,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 123.2487,
+    "potential": -0.3901,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "DPZ",
@@ -2027,7 +2717,11 @@
     "score": 33,
     "price": 348.61,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 241.6554,
+    "potential": -0.3068,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "ORLY",
@@ -2035,7 +2729,11 @@
     "score": 28,
     "price": 92.65,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 38.2048,
+    "potential": -0.5876,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "AZO",
@@ -2043,7 +2741,11 @@
     "score": 28,
     "price": 3255.43,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 1238.5902,
+    "potential": -0.6195,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "LOW",
@@ -2051,7 +2753,11 @@
     "score": 23,
     "price": 220.84,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 137.3525,
+    "potential": -0.378,
+    "risk": "Niedrig",
+    "risk_level": 1
    },
    {
     "symbol": "KR",
@@ -2059,7 +2765,11 @@
     "score": 22,
     "price": 68.44,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 49.0008,
+    "potential": -0.284,
+    "risk": "Mittel",
+    "risk_level": 2
    },
    {
     "symbol": "SBUX",
@@ -2067,7 +2777,11 @@
     "score": 18,
     "price": 103.13,
     "currency": "USD",
-    "label": "Eher nicht"
+    "label": "Eher nicht",
+    "fair_value": 36.2938,
+    "potential": -0.6481,
+    "risk": "Niedrig",
+    "risk_level": 1
    }
   ]
  }
