@@ -153,7 +153,9 @@ def build(stocks_innov: list[dict], stocks_value: list[dict], day: str, previous
         picks = daily_pick(ranked, day, salt)
         for p in picks:
             p["new_today"] = p["symbol"] not in prev_syms
-        ranking = [{k: r[k] for k in ("symbol", "name", "score", "price", "currency", "label")} for r in ranked]
+        ranking = [{**{k: r[k] for k in ("symbol", "name", "score", "price", "currency", "label",
+                                         "fair_value", "potential")},
+                    "risk": r["risk"]["name"], "risk_level": r["risk"]["level"]} for r in ranked]
         return {"picks": picks, "ranking": ranking}
 
     return clean({

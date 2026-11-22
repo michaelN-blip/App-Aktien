@@ -45,21 +45,144 @@ def cagr(hist):
     return (vals[0] / vals[-1]) ** (1 / (len(vals) - 1)) - 1
 
 
-def intrinsic_value(s):
-    """Vereinfachte DCF auf Basis des Free Cashflows ("Owner Earnings")."""
-    fcf, shares = s.get("free_cashflow"), s.get("shares")
-    if not fcf or fcf <= 0 or not shares:
-        return None, None
-    candidates = [g for g in (s.get("earnings_growth"), cagr(s.get("revenue_hist", []))) if g is not None]
-    g = min(candidates) if candidates else 0.03
-    g = max(0.0, min(g, MAX_GROWTH))
+def _dcf(fcf, shares, g):
     total, cf = 0.0, fcf
     for year in range(1, 11):
         cf *= 1 + g
         total += cf / (1 + DISCOUNT_RATE) ** year
     terminal = cf * (1 + TERMINAL_GROWTH) / (DISCOUNT_RATE - TERMINAL_GROWTH)
     total += terminal / (1 + DISCOUNT_RATE) ** 10
-    return total / shares, g
+    return total / shares
+
+
+def _value_growth(s):
+    candidates = [g for g in (s.get("earnings_growth"), cagr(s.get("revenue_hist", []))) if g is not None]
+    g = min(candidates) if candidates else 0.03
+    return max(0.0, min(g, MAX_GROWTH))
+
+
+def intrinsic_value(s):
+    """Vereinfachte DCF auf Basis des Free Cashflows ("Owner Earnings")."""
+    fcf, shares = s.get("free_cashflow"), s.get("shares")
+    if not fcf or fcf <= 0 or not shares:
+        return None, None
+    g = _value_growth(s)
+    return _dcf(fcf, shares, g), g
+
+
+def valuation_buffett(s):
+    """Fairer Wert (pessimistisch / Basis / optimistisch) für Qualitätsaktien.
+
+    1. Free Cashflow vorhanden -> DCF mit 10 % Abzinsung, Wachstum halbiert / normal / erhöht.
+    2. Banken & Firmen ohne FCF -> faires KGV (8 + Gewinnwachstum in %, max. 16).
+    """
+    fcf, shares = s.get("free_cashflow"), s.get("shares")
+    g = _value_growth(s)
+    if (s.get("sector") or "") != "Financial Services" and fcf and fcf > 0 and shares:
+        low = _dcf(fcf, shares, g * 0.5)
+        base = _dcf(fcf, shares, g)
+        high = _dcf(fcf, shares, min(g * 1.5 + 0.02, 0.15))
+        method = f"DCF auf Free Cashflow, {pct(g)} Wachstum p. a., 10 % Mindestrendite"
+        return low, base, high, method
+    pe = s.get("pe")
+    if pe and pe > 0:
+        eps = s["price"] / pe
+        g_pct = min(max(s.get("earnings_growth") or 0.03, 0), 0.10) * 100
+        fair_pe = min(8 + g_pct, 16)
+        method = f"Faires KGV {fair_pe:.0f} (8 + Wachstum in %) × Gewinn je Aktie"
+        return eps * fair_pe * 0.75, eps * fair_pe, eps * fair_pe * 1.25, method
+    return None, None, None, None
+
+
+def _growth_case(s, growth_mult, margin_mult, exit_pe):
+    """5-Jahres-Szenario: Umsatz wächst (abflachend), reife Marge, Bewertung per KGV, abgezinst mit 12 %."""
+    rev, shares = s.get("revenue_ttm"), s.get("shares")
+    if not rev or not shares:
+        return None
+    rg = s.get("revenue_growth")
+    hist = cagr(s.get("revenue_hist", []))
+    g0 = max([x for x in (rg, hist) if x is not None], default=0.10)
+    g0 = max(0.0, min(g0 * growth_mult, 1.5))
+    for year in range(5):
+        rev *= 1 + max(0.06, g0 * 0.75 ** year)
+    gm = s.get("gross_margin") or 0.3
+    margin = max(0.04, min(gm * 0.4, 0.30)) * margin_mult
+    future_equity = rev * margin * exit_pe + (s.get("total_cash") or 0) - (s.get("total_debt") or 0)
+    if future_equity <= 0:
+        return 0.0
+    pm = s.get("profit_margin")
+    future_shares = shares * (1.04 ** 5 if pm is not None and pm < 0 else 1.01 ** 5)  # Verwässerung
+    return future_equity / future_shares / (1 + GROWTH_DISCOUNT) ** 5
+
+
+GROWTH_DISCOUNT = 0.12
+
+
+def valuation_innovation(s):
+    low = _growth_case(s, 0.5, 0.7, 15)
+    base = _growth_case(s, 1.0, 1.0, 25)
+    high = _growth_case(s, 1.3, 1.2, 35)
+    method = "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite"
+    if (s.get("revenue_ttm") or 0) < 100e6:
+        method += " – bei so wenig Umsatz kaum aussagekräftig (Wert hängt an künftigen Durchbrüchen)"
+    return low, base, high, method
+
+
+def risk_assessment(s, low=None, high=None):
+    """Risikostufe 1-4 aus Schwankung, Verlusten, Schulden, Bewertung, Größe und Unsicherheit."""
+    pts, why = 0, []
+    beta = s.get("beta")
+    if beta and beta > 2:
+        pts += 2; why.append(f"sehr volatil (Beta {beta:.1f})")
+    elif beta and beta > 1.3:
+        pts += 1; why.append(f"schwankungsfreudig (Beta {beta:.1f})")
+    hi, price = s.get("fifty_two_high"), s["price"]
+    if hi and price < hi * 0.5:
+        pts += 2; why.append("über 50 % unter dem Jahreshoch")
+    elif hi and price < hi * 0.7:
+        pts += 1; why.append("über 30 % unter dem Jahreshoch")
+    pm = s.get("profit_margin")
+    if pm is not None and pm < 0:
+        pts += 2; why.append("macht Verluste")
+    elif pm is not None and pm < 0.05:
+        pts += 1; why.append("geringe Gewinnmarge")
+    de = s.get("debt_to_equity")
+    if (s.get("sector") or "") != "Financial Services" and de is not None and (de > 2 or de < 0):
+        pts += 1; why.append("hohe Verschuldung")
+    if (s.get("total_cash") or 0) < (s.get("total_debt") or 0) and pm is not None and pm < 0:
+        pts += 1; why.append("mehr Schulden als Cash bei Verlusten")
+    ps, pe = s.get("ps"), s.get("pe")
+    if (ps and ps > 20) or (pe and pe > 50):
+        pts += 1; why.append("sehr hohe Bewertung")
+    if (s.get("revenue_ttm") or 0) < 100e6:
+        pts += 2; why.append("kaum Umsatz – Geschäftsmodell noch unbewiesen")
+    mc = s.get("market_cap") or 0
+    if mc < 2e9:
+        pts += 2; why.append("kleines Unternehmen")
+    elif mc < 10e9:
+        pts += 1; why.append("mittelgroßes Unternehmen")
+    if low is not None and high and low > 0 and high / low > 4:
+        pts += 1; why.append("Wert schwer zu schätzen (große Spanne)")
+    elif low is not None and high and low <= 0:
+        pts += 1; why.append("Wert schwer zu schätzen (große Spanne)")
+    level = 1 if pts <= 1 else 2 if pts <= 3 else 3 if pts <= 5 else 4
+    name = {1: "Niedrig", 2: "Mittel", 3: "Hoch", 4: "Sehr hoch"}[level]
+    return {"level": level, "name": name, "points": pts, "factors": why}
+
+
+def _valuation_fields(s, low, base, high, method):
+    price = s["price"]
+    if base is None:
+        return {"fair_value": None, "fair_low": None, "fair_high": None, "potential": None,
+                "potential_low": None, "potential_high": None, "valuation_method": None,
+                "risk": risk_assessment(s)}
+    return {
+        "fair_value": base, "fair_low": low, "fair_high": high, "valuation_method": method,
+        "potential": base / price - 1,
+        "potential_low": low / price - 1 if low is not None else None,
+        "potential_high": high / price - 1 if high is not None else None,
+        "risk": risk_assessment(s, low, high),
+    }
 
 
 def _result(s, score, criteria, reasons, risks, label, extra):
@@ -161,6 +284,7 @@ def score_buffett(s):
     label = ("Starker Buffett-Kandidat" if score >= 75 else "Interessant" if score >= 60
              else "Beobachten" if score >= 45 else "Eher nicht")
     extra = {
+        **_valuation_fields(s, *valuation_buffett(s)),
         "intrinsic_value": iv, "margin_of_safety": mos, "growth_assumption": g,
         "metrics": {"KGV": num(pe), "Forward-KGV": num(s.get("forward_pe")), "ROE": pct(roe),
                     "Op. Marge": pct(om), "Debt/Equity": num(de, 2), "Marktkap.": big(s.get("market_cap"))},
@@ -246,6 +370,7 @@ def score_innovation(s, theme=None):
     label = ("Hohes Potenzial" if score >= 70 else "Spannend" if score >= 55
              else "Beobachten" if score >= 40 else "Noch zu früh/zu teuer")
     extra = {
+        **_valuation_fields(s, *valuation_innovation(s)),
         "theme": theme, "upside": up,
         "metrics": {"Umsatzwachstum": pct(growth), "Bruttomarge": pct(gm), "KUV": num(ps),
                     "Marktkap.": big(mc), "Insider": pct(ins, 1), "Kursziel": num(tp, 2)},
