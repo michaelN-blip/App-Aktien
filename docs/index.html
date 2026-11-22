@@ -63,6 +63,25 @@ td.r, th.r { text-align: right; }
 .links a { color: var(--accent); font-size: 13px; text-decoration: none; margin-right: 12px; }
 .summary { font-size: 13px; color: var(--muted); }
 .table-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 8px 14px; overflow-x: auto; }
+.val { border: 1px solid var(--line); border-radius: 10px; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.val-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.val-row small { display: block; color: var(--muted); font-size: 11px; }
+.val-row b { font-size: 16px; font-variant-numeric: tabular-nums; }
+.up { color: var(--good); } .down { color: var(--bad); }
+.risk { display: inline-block; border-radius: 6px; padding: 0 8px; font-size: 13px !important; font-weight: 700; margin-top: 2px; }
+.risk1 { background: color-mix(in srgb, var(--good) 18%, transparent); color: var(--good); }
+.risk2 { background: color-mix(in srgb, #e8a400 22%, transparent); color: #b07d00; }
+.risk3 { background: color-mix(in srgb, var(--rocket) 20%, transparent); color: var(--rocket); }
+.risk4 { background: color-mix(in srgb, var(--bad) 20%, transparent); color: var(--bad); }
+@media (prefers-color-scheme: dark) { .risk2 { color: #ffc940; } }
+.range { position: relative; height: 34px; margin: 4px 6px 0; }
+.range .track { position: absolute; top: 8px; left: 0; right: 0; height: 6px; border-radius: 3px; background: var(--chip); }
+.range .span { position: absolute; top: 8px; height: 6px; border-radius: 3px; background: var(--c); opacity: .35; }
+.range .dot { position: absolute; top: 4px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; border: 2px solid var(--card); }
+.range .dot.base { background: var(--c); }
+.range .dot.now { background: var(--text); }
+.range .lbl { position: absolute; top: 20px; font-size: 10.5px; color: var(--muted); transform: translateX(-50%); white-space: nowrap; }
+.method { font-size: 11.5px; color: var(--muted); }
 .empty { text-align: center; padding: 60px 20px; color: var(--muted); }
 footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
 </style>
@@ -101,19 +120,57 @@ const INTRO = {
     wenig Schulden, starke Margen (Preissetzungsmacht), beständige Gewinne, echter Free Cashflow – und eine
     <b>Sicherheitsmarge</b>: Der Kurs sollte unter dem per Discounted-Cashflow geschätzten inneren Wert liegen.`,
   ranking: `<b>Alle bewerteten Aktien</b> nach Punktzahl. Die Tagesauswahl wird aus den besten 15 jeder Kategorie gezogen
-    (gewichtet nach Score) – deshalb wechselt sie täglich, gute Aktien tauchen aber immer wieder auf.`,
+    (gewichtet nach Score) – deshalb wechselt sie täglich, gute Aktien tauchen aber immer wieder auf.
+    <br><br><b>Fairer Wert & Potenzial</b> sind grobe Modell-Schätzungen (Buffett: Discounted Cashflow bzw. faires KGV;
+    Innovation: 5-Jahres-Umsatzmodell). Sie hängen stark von den Annahmen ab – die Spanne pessimistisch/optimistisch zeigt, wie unsicher sie sind.`,
 };
 let data = null, tab = "innovation";
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmtPrice = (p, cur) => p == null ? "–" : new Intl.NumberFormat("de-DE", {style: "currency", currency: cur || "USD"}).format(p);
 const color = t => t === "buffett" ? "var(--value)" : "var(--rocket)";
+const fmtPct = x => x == null ? "–" : `${x >= 0 ? "+" : "−"}${Math.abs(x * 100).toFixed(0)} %`;
+const pctClass = x => x == null ? "" : x >= 0 ? "up" : "down";
+
+function valuation(p) {
+  if (p.fair_value == null) {
+    return p.risk ? `<div class="val"><div class="val-row"><div><small>Fairer Wert</small><b>–</b></div><div><small>Potenzial</small><b>–</b></div>
+      <div><small>Risiko</small><span class="risk risk${p.risk.level}">${esc(p.risk.name)}</span></div></div>
+      <div class="method">Für diese Aktie fehlen Daten für eine Wertschätzung.</div></div>` : "";
+  }
+  const pts = [p.fair_low, p.fair_value, p.fair_high, p.price].filter(v => v != null && v > 0);
+  const lo = Math.min(...pts) * 0.9, hi = Math.max(...pts) * 1.05;
+  const pos = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
+  const short = v => fmtPrice(v, p.currency).replace(/,\d\d(?=\s|$)/, "");
+  const low = Math.max(p.fair_low ?? 0, lo);
+  const r = p.risk || {};
+  return `<div class="val">
+    <div class="val-row">
+      <div><small>Fairer Wert (geschätzt)</small><b>${fmtPrice(p.fair_value, p.currency)}</b></div>
+      <div><small>Kurspotenzial</small><b class="${pctClass(p.potential)}">${fmtPct(p.potential)}</b></div>
+      <div><small>Risiko</small><span class="risk risk${r.level}">${esc(r.name || "–")}</span></div>
+    </div>
+    <div class="range" aria-label="Spanne fairer Wert">
+      <div class="track"></div>
+      ${p.fair_high != null ? `<div class="span" style="left:${pos(low)}%;width:${pos(p.fair_high) - pos(low)}%"></div>` : ""}
+      <div class="dot base" style="left:${pos(p.fair_value)}%" title="Fairer Wert"></div>
+      <div class="dot now" style="left:${pos(p.price)}%" title="Aktueller Kurs"></div>
+      <span class="lbl" style="left:${Math.max(8, Math.min(92, pos(p.price)))}%">● Kurs</span>
+    </div>
+    <div class="method">
+      Pessimistisch ${short(p.fair_low)} (<span class="${pctClass(p.potential_low)}">${fmtPct(p.potential_low)}</span>) ·
+      Optimistisch ${short(p.fair_high)} (<span class="${pctClass(p.potential_high)}">${fmtPct(p.potential_high)}</span>)
+      ${r.factors?.length ? `<br>Risiko, weil: ${esc(r.factors.join(", "))}` : ""}
+      <br>Methode: ${esc(p.valuation_method)}
+    </div>
+  </div>`;
+}
 
 function card(p, kind) {
   const metrics = Object.entries(p.metrics || {}).map(([k, v]) => `<div class="metric"><small>${esc(k)}</small><b>${esc(v)}</b></div>`).join("");
   const crit = (p.criteria || []).map(c => `<tr><td>${esc(c.name)}<div class="sub" style="font-size:11px">${esc(c.hint)}</div></td>
       <td>${esc(c.value)}</td><td class="r">${c.points}/${c.max}<div class="bar"><i style="width:${c.max ? c.points / c.max * 100 : 0}%"></i></div></td></tr>`).join("");
-  const iv = kind === "buffett" && p.intrinsic_value ? `<span class="chip">Innerer Wert ≈ ${fmtPrice(p.intrinsic_value, p.currency)}</span>` : "";
+  const iv = kind === "buffett" && p.intrinsic_value && p.fair_value == null ? `<span class="chip">Innerer Wert ≈ ${fmtPrice(p.intrinsic_value, p.currency)}</span>` : "";
   return `<article class="card" style="--c:${color(kind)}">
     <div class="top">
       <div class="info">
@@ -129,6 +186,7 @@ function card(p, kind) {
       ${p.theme ? `<span class="chip">${esc(p.theme)}</span>` : p.sector ? `<span class="chip">${esc(p.sector)}</span>` : ""}
       ${iv}
     </div>
+    ${valuation(p)}
     <div class="metrics">${metrics}</div>
     ${p.reasons?.length ? `<ul>${p.reasons.map(r => `<li class="pro">${esc(r)}</li>`).join("")}</ul>` : ""}
     ${p.risks?.length ? `<ul>${p.risks.map(r => `<li class="con">${esc(r)}</li>`).join("")}</ul>` : ""}
@@ -146,9 +204,13 @@ function card(p, kind) {
 function rankingTable(list, kind, title) {
   const rows = list.map((r, i) => `<tr><td>${i + 1}</td><td><b>${esc(r.symbol)}</b><div class="sub" style="font-size:12px">${esc(r.name)}</div></td>
     <td>${esc(r.label)}</td><td class="r">${fmtPrice(r.price, r.currency)}</td>
+    <td class="r">${fmtPrice(r.fair_value, r.currency)}</td>
+    <td class="r ${pctClass(r.potential)}">${fmtPct(r.potential)}</td>
+    <td>${r.risk ? `<span class="risk risk${r.risk_level}">${esc(r.risk)}</span>` : "–"}</td>
     <td class="r" style="--c:${color(kind)}">${r.score}<div class="bar"><i style="width:${r.score}%"></i></div></td></tr>`).join("");
   return `<h3>${title}</h3><div class="table-card"><table>
-    <tr><th>#</th><th>Aktie</th><th>Einstufung</th><th class="r">Kurs</th><th class="r">Score</th></tr>${rows}</table></div>`;
+    <tr><th>#</th><th>Aktie</th><th>Einstufung</th><th class="r">Kurs</th><th class="r">Fairer Wert</th>
+    <th class="r">Potenzial</th><th>Risiko</th><th class="r">Score</th></tr>${rows}</table></div>`;
 }
 
 function render() {
