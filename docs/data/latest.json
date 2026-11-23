@@ -1,176 +1,66 @@
 {
- "date": "2026-11-22",
- "generated_at": "2026-11-22T08:52+00:00",
+ "date": "2026-11-23",
+ "generated_at": "2026-11-23T06:12+00:00",
  "innovation": {
   "picks": [
    {
-    "symbol": "ALAB",
-    "name": "Astera Labs, Inc.",
-    "sector": "Technology",
-    "industry": "Semiconductors",
+    "symbol": "TEM",
+    "name": "Tempus AI, Inc.",
+    "sector": "Healthcare",
+    "industry": "Health Information Services",
     "country": "United States",
     "currency": "USD",
-    "price": 180.35,
-    "market_cap": 31521949696,
-    "summary": "Astera Labs, Inc. designs, manufactures, and sells semiconductor-based connectivity solutions for cloud and AI infrastructure in Taiwan and the United States. It offers an intelligent connectivity platform, comprised of semiconductor-based, high-speed, mixed-signal connectivity products that integrate a matrix of microcontrollers and sensors, and COSMOS. The company provides COSMOS software suite,",
-    "score": 87,
+    "price": 54.04,
+    "market_cap": 9856984064,
+    "summary": "Tempus AI, Inc. operates as a healthcare technology company in the United States. It offers the Tempus platform, a closed-loop, full-stack, bi-directional integrations between a clinician's desktop and its laboratory diagnostic capabilities, analytics platform, and repository of multimodal data; and Hub, a clinical application for physicians and other healthcare providers for use in the diagnostic",
+    "score": 82,
     "label": "Hohes Potenzial",
     "criteria": [
      {
       "name": "Umsatzwachstum",
-      "value": "154 %",
+      "value": "58 %",
       "points": 25,
       "max": 25,
       "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
      },
      {
       "name": "Bruttomarge",
-      "value": "74 %",
+      "value": "64 %",
       "points": 15,
       "max": 15,
       "hint": "Hoch = skalierbar (Software-ähnlich)"
      },
      {
       "name": "Größe / Luft nach oben",
-      "value": "31.5 Mrd.",
-      "points": 7,
-      "max": 15,
-      "hint": "100-Bagger starten klein"
-     },
-     {
-      "name": "Insider-Anteil",
-      "value": "10.1 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Gründergeführt = Skin in the Game"
-     },
-     {
-      "name": "Cash vs. Schulden",
-      "value": "1.4 Mrd. / 45.0 Mio.",
-      "points": 10,
-      "max": 10,
-      "hint": "Genug Geld, um durchzuhalten"
-     },
-     {
-      "name": "F&E-Quote",
-      "value": "36 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Anteil des Umsatzes für Forschung"
-     },
-     {
-      "name": "Analysten-Kursziel",
-      "value": "91 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Potenzial bis zum mittleren Kursziel"
-     },
-     {
-      "name": "Trend (über 200-Tage-Linie)",
-      "value": "nein",
-      "points": 0,
-      "max": 5,
-      "hint": "Markt erkennt die Story"
-     }
-    ],
-    "reasons": [
-     "Wächst den Umsatz um 154 % pro Jahr",
-     "Skalierbares Geschäftsmodell (Bruttomarge 74 %)",
-     "Insider halten 10 % – Management zieht mit den Aktionären an einem Strang"
-    ],
-    "risks": [
-     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
-     "Sehr volatil (Beta 3.9)",
-     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
-    ],
-    "fair_value": 841.8312,
-    "fair_low": 102.1816,
-    "fair_high": 1411.476,
-    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
-    "potential": 3.6678,
-    "potential_low": -0.4334,
-    "potential_high": 6.8263,
-    "risk": {
-     "level": 4,
-     "name": "Sehr hoch",
-     "points": 6,
-     "factors": [
-      "sehr volatil (Beta 3.9)",
-      "über 50 % unter dem Jahreshoch",
-      "sehr hohe Bewertung",
-      "Wert schwer zu schätzen (große Spanne)"
-     ]
-    },
-    "theme": "KI-Konnektivität",
-    "upside": 0.9082,
-    "metrics": {
-     "Umsatzwachstum": "154 %",
-     "Bruttomarge": "74 %",
-     "KUV": "20.3",
-     "Marktkap.": "31.5 Mrd.",
-     "Insider": "10.1 %",
-     "Kursziel": "344.15"
-    },
-    "new_today": true
-   },
-   {
-    "symbol": "CRDO",
-    "name": "Credo Technology Group Holding Ltd",
-    "sector": "Technology",
-    "industry": "Semiconductors",
-    "country": "Cayman Islands",
-    "currency": "USD",
-    "price": 99.86,
-    "market_cap": 18768879616,
-    "summary": "Credo Technology Group Holding Ltd provides various high-speed connectivity solutions for optical and electrical Ethernet and PCIe applications in the United States, Taiwan, Mainland China, Hong Kong, and other international markets. The company offers ZeroFlap (ZF) active electrical cables and ZF optical transceivers, OmniConnect memory solutions, and a suite of retimers and DSPs for optical and ",
-    "score": 87,
-    "label": "Hohes Potenzial",
-    "criteria": [
-     {
-      "name": "Umsatzwachstum",
-      "value": "115 %",
-      "points": 25,
-      "max": 25,
-      "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
-     },
-     {
-      "name": "Bruttomarge",
-      "value": "67 %",
-      "points": 15,
-      "max": 15,
-      "hint": "Hoch = skalierbar (Software-ähnlich)"
-     },
-     {
-      "name": "Größe / Luft nach oben",
-      "value": "18.8 Mrd.",
+      "value": "9.9 Mrd.",
       "points": 12,
       "max": 15,
       "hint": "100-Bagger starten klein"
      },
      {
       "name": "Insider-Anteil",
-      "value": "9.2 %",
-      "points": 5,
+      "value": "36.1 %",
+      "points": 10,
       "max": 10,
       "hint": "Gründergeführt = Skin in the Game"
      },
      {
       "name": "Cash vs. Schulden",
-      "value": "764.3 Mio. / 26.2 Mio.",
-      "points": 10,
+      "value": "637.4 Mio. / 1.4 Mrd.",
+      "points": 0,
       "max": 10,
       "hint": "Genug Geld, um durchzuhalten"
      },
      {
       "name": "F&E-Quote",
-      "value": "21 %",
+      "value": "25 %",
       "points": 10,
       "max": 10,
       "hint": "Anteil des Umsatzes für Forschung"
      },
      {
       "name": "Analysten-Kursziel",
-      "value": "175 %",
+      "value": "66 %",
       "points": 10,
       "max": 10,
       "hint": "Potenzial bis zum mittleren Kursziel"
@@ -184,102 +74,108 @@
      }
     ],
     "reasons": [
-     "Wächst den Umsatz um 115 % pro Jahr",
-     "Skalierbares Geschäftsmodell (Bruttomarge 67 %)",
-     "Noch klein (Marktkap. 18.8 Mrd.) – viel Raum zum Wachsen"
+     "Wächst den Umsatz um 58 % pro Jahr",
+     "Skalierbares Geschäftsmodell (Bruttomarge 64 %)",
+     "Noch klein (Marktkap. 9.9 Mrd.) – viel Raum zum Wachsen",
+     "Insider halten 36 % – Management zieht mit den Aktionären an einem Strang"
     ],
     "risks": [
-     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
-     "Sehr volatil (Beta 3.3)",
+     "Mehr Schulden als Cash – evtl. Kapitalerhöhungen nötig (Verwässerung)",
+     "Noch nicht profitabel (Nettomarge -13 %)",
+     "Sehr volatil (Beta 3.6)",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
-    "fair_value": 409.4421,
-    "fair_low": 58.3393,
-    "fair_high": 1200.088,
+    "fair_value": 111.9632,
+    "fair_low": 22.0525,
+    "fair_high": 274.4114,
     "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
-    "potential": 3.1002,
-    "potential_low": -0.4158,
-    "potential_high": 11.0177,
+    "potential": 1.0719,
+    "potential_low": -0.5919,
+    "potential_high": 4.0779,
     "risk": {
-     "level": 3,
-     "name": "Hoch",
-     "points": 5,
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 9,
      "factors": [
-      "sehr volatil (Beta 3.3)",
-      "über 50 % unter dem Jahreshoch",
+      "sehr volatil (Beta 3.6)",
+      "über 30 % unter dem Jahreshoch",
+      "macht Verluste",
+      "hohe Verschuldung",
+      "mehr Schulden als Cash bei Verlusten",
+      "mittelgroßes Unternehmen",
       "Wert schwer zu schätzen (große Spanne)"
      ]
     },
-    "theme": "KI-Konnektivität",
-    "upside": 1.7469,
+    "theme": "KI in der Medizin",
+    "upside": 0.6572,
     "metrics": {
-     "Umsatzwachstum": "115 %",
-     "Bruttomarge": "67 %",
-     "KUV": "11.8",
-     "Marktkap.": "18.8 Mrd.",
-     "Insider": "9.2 %",
-     "Kursziel": "274.31"
+     "Umsatzwachstum": "58 %",
+     "Bruttomarge": "64 %",
+     "KUV": "6.5",
+     "Marktkap.": "9.9 Mrd.",
+     "Insider": "36.1 %",
+     "Kursziel": "89.56"
     },
     "new_today": true
    },
    {
-    "symbol": "JOBY",
-    "name": "Joby Aviation, Inc.",
+    "symbol": "PL",
+    "name": "Planet Labs PBC",
     "sector": "Industrials",
-    "industry": "Airports & Air Services",
+    "industry": "Aerospace & Defense",
     "country": "United States",
     "currency": "USD",
-    "price": 3.6,
-    "market_cap": 3659911936,
-    "summary": "Joby Aviation, Inc., an air mobility company, engages in research, develop, test, manufacture, and sale of electric vertical takeoff and landing aircraft in the United States, Japan, Europe, and internationally. The company offers facilitation of passenger transportation via helicopter or fixed wing aircraft. It is also involved in the provision of government flight services, customer demonstratio",
-    "score": 84,
+    "price": 10.53,
+    "market_cap": 3831319296,
+    "summary": "Planet Labs PBC engages in the design, construction, and launch of constellations of satellites with the intent of providing high-cadence geospatial data delivered to customers through an online platform in the United States and internationally. The company offers SuperDove satellites to create an always-online scanner for the planet, with the goal of imaging the Earth every day at a ground sampli",
+    "score": 81,
     "label": "Hohes Potenzial",
     "criteria": [
      {
       "name": "Umsatzwachstum",
-      "value": "144 %",
+      "value": "58 %",
       "points": 25,
       "max": 25,
       "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
      },
      {
       "name": "Bruttomarge",
-      "value": "29 %",
-      "points": 4,
+      "value": "55 %",
+      "points": 9,
       "max": 15,
       "hint": "Hoch = skalierbar (Software-ähnlich)"
      },
      {
       "name": "Größe / Luft nach oben",
-      "value": "3.7 Mrd.",
+      "value": "3.8 Mrd.",
       "points": 15,
       "max": 15,
       "hint": "100-Bagger starten klein"
      },
      {
       "name": "Insider-Anteil",
-      "value": "31.5 %",
-      "points": 10,
+      "value": "1.2 %",
+      "points": 2,
       "max": 10,
       "hint": "Gründergeführt = Skin in the Game"
      },
      {
       "name": "Cash vs. Schulden",
-      "value": "2.2 Mrd. / 748.6 Mio.",
+      "value": "865.4 Mio. / 498.6 Mio.",
       "points": 10,
       "max": 10,
       "hint": "Genug Geld, um durchzuhalten"
      },
      {
       "name": "F&E-Quote",
-      "value": "1088 %",
+      "value": "35 %",
       "points": 10,
       "max": 10,
       "hint": "Anteil des Umsatzes für Forschung"
      },
      {
       "name": "Analysten-Kursziel",
-      "value": "146 %",
+      "value": "178 %",
       "points": 10,
       "max": 10,
       "hint": "Potenzial bis zum mittleren Kursziel"
@@ -293,212 +189,104 @@
      }
     ],
     "reasons": [
-     "Wächst den Umsatz um 144 % pro Jahr",
-     "Noch klein (Marktkap. 3.7 Mrd.) – viel Raum zum Wachsen",
-     "Insider halten 32 % – Management zieht mit den Aktionären an einem Strang"
+     "Wächst den Umsatz um 58 % pro Jahr",
+     "Noch klein (Marktkap. 3.8 Mrd.) – viel Raum zum Wachsen"
     ],
     "risks": [
+     "Noch nicht profitabel (Nettomarge -95 %)",
      "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
-     "Sehr volatil (Beta 2.8)",
+     "Sehr volatil (Beta 2.3)",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
-    "fair_value": 5.7273,
-    "fair_low": 1.3467,
-    "fair_high": 9.9079,
+    "fair_value": 13.2707,
+    "fair_low": 3.21,
+    "fair_high": 31.4307,
     "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
-    "potential": 0.5909,
-    "potential_low": -0.6259,
-    "potential_high": 1.7522,
+    "potential": 0.2603,
+    "potential_low": -0.6952,
+    "potential_high": 1.9849,
     "risk": {
      "level": 4,
      "name": "Sehr hoch",
      "points": 8,
      "factors": [
-      "sehr volatil (Beta 2.8)",
+      "sehr volatil (Beta 2.3)",
       "über 50 % unter dem Jahreshoch",
-      "geringe Gewinnmarge",
-      "sehr hohe Bewertung",
+      "macht Verluste",
       "mittelgroßes Unternehmen",
       "Wert schwer zu schätzen (große Spanne)"
      ]
     },
-    "theme": "Flugtaxis",
-    "upside": 1.4562,
+    "theme": "Erdbeobachtung",
+    "upside": 1.7758,
     "metrics": {
-     "Umsatzwachstum": "144 %",
-     "Bruttomarge": "29 %",
-     "KUV": "24.6",
-     "Marktkap.": "3.7 Mrd.",
-     "Insider": "31.5 %",
-     "Kursziel": "8.84"
+     "Umsatzwachstum": "58 %",
+     "Bruttomarge": "55 %",
+     "KUV": "10.1",
+     "Marktkap.": "3.8 Mrd.",
+     "Insider": "1.2 %",
+     "Kursziel": "29.23"
     },
     "new_today": true
    },
    {
-    "symbol": "IOT",
-    "name": "Samsara Inc.",
+    "symbol": "QBTS",
+    "name": "D-Wave Quantum Inc.",
     "sector": "Technology",
-    "industry": "Software - Infrastructure",
+    "industry": "Computer Hardware",
     "country": "United States",
     "currency": "USD",
-    "price": 37.49,
-    "market_cap": 21954338816,
-    "summary": "Samsara Inc. provides solutions to connect physical operations data to its connected operations platform in the United States and internationally. The company's Connected Operations Platform includes Data Platform, which ingests, aggregates, and enriches data from its IoT devices and a growing ecosystem of connected assets and third-party systems, and which has embedded capabilities for AI, workfl",
-    "score": 80,
+    "price": 6.52,
+    "market_cap": 2478010880,
+    "summary": "D-Wave Quantum Inc. engages in the development and delivery of quantum computing systems, software, and services worldwide. It provides Advantage and Advantage 2 quantum computers; Ocean, a suite of open-source tools; and Leap quantum cloud service, a cloud-based service that provides real-time access to quantum computers and quantum hybrid solvers; and secure access and data protection services, ",
+    "score": 81,
     "label": "Hohes Potenzial",
     "criteria": [
      {
       "name": "Umsatzwachstum",
-      "value": "35 %",
-      "points": 18,
-      "max": 25,
-      "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
-     },
-     {
-      "name": "Bruttomarge",
-      "value": "76 %",
-      "points": 15,
-      "max": 15,
-      "hint": "Hoch = skalierbar (Software-ähnlich)"
-     },
-     {
-      "name": "Größe / Luft nach oben",
-      "value": "22.0 Mrd.",
-      "points": 7,
-      "max": 15,
-      "hint": "100-Bagger starten klein"
-     },
-     {
-      "name": "Insider-Anteil",
-      "value": "3.8 %",
-      "points": 5,
-      "max": 10,
-      "hint": "Gründergeführt = Skin in the Game"
-     },
-     {
-      "name": "Cash vs. Schulden",
-      "value": "828.9 Mio. / 69.5 Mio.",
-      "points": 10,
-      "max": 10,
-      "hint": "Genug Geld, um durchzuhalten"
-     },
-     {
-      "name": "F&E-Quote",
-      "value": "21 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Anteil des Umsatzes für Forschung"
-     },
-     {
-      "name": "Analysten-Kursziel",
-      "value": "38 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Potenzial bis zum mittleren Kursziel"
-     },
-     {
-      "name": "Trend (über 200-Tage-Linie)",
-      "value": "ja",
-      "points": 5,
-      "max": 5,
-      "hint": "Markt erkennt die Story"
-     }
-    ],
-    "reasons": [
-     "Wächst den Umsatz um 35 % pro Jahr",
-     "Skalierbares Geschäftsmodell (Bruttomarge 76 %)"
-    ],
-    "risks": [
-     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
-    ],
-    "fair_value": 52.6981,
-    "fair_low": 14.871,
-    "fair_high": 112.7642,
-    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
-    "potential": 0.4057,
-    "potential_low": -0.6033,
-    "potential_high": 2.0078,
-    "risk": {
-     "level": 3,
-     "name": "Hoch",
-     "points": 4,
-     "factors": [
-      "schwankungsfreudig (Beta 1.3)",
-      "geringe Gewinnmarge",
-      "sehr hohe Bewertung",
-      "Wert schwer zu schätzen (große Spanne)"
-     ]
-    },
-    "theme": "Industrie-IoT",
-    "upside": 0.381,
-    "metrics": {
-     "Umsatzwachstum": "35 %",
-     "Bruttomarge": "76 %",
-     "KUV": "11.9",
-     "Marktkap.": "22.0 Mrd.",
-     "Insider": "3.8 %",
-     "Kursziel": "51.77"
-    },
-    "new_today": true
-   },
-   {
-    "symbol": "NBIS",
-    "name": "Nebius Group N.V.",
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information",
-    "country": "Netherlands",
-    "currency": "USD",
-    "price": 81.31,
-    "market_cap": 23815892992,
-    "summary": "Nebius Group N.V., a technology company, engages in building full-stack infrastructure to service the global AI industry in the United States, the United Kingdom, and internationally. It offers Nebius builds full-stack infrastructure for AI, including large-scale GPU clusters, cloud platforms, and tools and services for developers. The company also provides TripleTen, an edtech platform for re-ski",
-    "score": 72,
-    "label": "Hohes Potenzial",
-    "criteria": [
-     {
-      "name": "Umsatzwachstum",
-      "value": "571 %",
+      "value": "51 %",
       "points": 25,
       "max": 25,
       "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
      },
      {
       "name": "Bruttomarge",
-      "value": "76 %",
-      "points": 15,
+      "value": "58 %",
+      "points": 9,
       "max": 15,
       "hint": "Hoch = skalierbar (Software-ähnlich)"
      },
      {
       "name": "Größe / Luft nach oben",
-      "value": "23.8 Mrd.",
-      "points": 7,
+      "value": "2.5 Mrd.",
+      "points": 15,
       "max": 15,
       "hint": "100-Bagger starten klein"
      },
      {
       "name": "Insider-Anteil",
-      "value": "3.1 %",
-      "points": 5,
+      "value": "2.2 %",
+      "points": 2,
       "max": 10,
       "hint": "Gründergeführt = Skin in the Game"
      },
      {
       "name": "Cash vs. Schulden",
-      "value": "7.4 Mrd. / 16.1 Mrd.",
-      "points": 0,
+      "value": "503.4 Mio. / 56.9 Mio.",
+      "points": 10,
       "max": 10,
       "hint": "Genug Geld, um durchzuhalten"
      },
      {
       "name": "F&E-Quote",
-      "value": "33 %",
+      "value": "206 %",
       "points": 10,
       "max": 10,
       "hint": "Anteil des Umsatzes für Forschung"
      },
      {
       "name": "Analysten-Kursziel",
-      "value": "185 %",
+      "value": "264 %",
       "points": 10,
       "max": 10,
       "hint": "Potenzial bis zum mittleren Kursziel"
@@ -512,40 +300,44 @@
      }
     ],
     "reasons": [
-     "Wächst den Umsatz um 571 % pro Jahr",
-     "Skalierbares Geschäftsmodell (Bruttomarge 76 %)"
+     "Wächst den Umsatz um 51 % pro Jahr",
+     "Noch klein (Marktkap. 2.5 Mrd.) – viel Raum zum Wachsen"
     ],
     "risks": [
-     "Mehr Schulden als Cash – evtl. Kapitalerhöhungen nötig (Verwässerung)",
+     "Sehr hoch bewertet: 188-facher Umsatz",
      "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
+     "Sehr volatil (Beta 2.3)",
      "Spekulativ: Totalverlust möglich – nur kleine Positionen"
     ],
-    "fair_value": 787.4987,
-    "fair_low": 320.2902,
-    "fair_high": 1335.2604,
-    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
-    "potential": 8.6851,
-    "potential_low": 2.9391,
-    "potential_high": 15.4218,
+    "fair_value": 1.0552,
+    "fair_low": 0.734,
+    "fair_high": 1.6133,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite – bei so wenig Umsatz kaum aussagekräftig (Wert hängt an künftigen Durchbrüchen)",
+    "potential": -0.8382,
+    "potential_low": -0.8874,
+    "potential_high": -0.7526,
     "risk": {
-     "level": 3,
-     "name": "Hoch",
-     "points": 4,
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 9,
      "factors": [
-      "schwankungsfreudig (Beta 1.5)",
+      "sehr volatil (Beta 2.3)",
       "über 50 % unter dem Jahreshoch",
-      "Wert schwer zu schätzen (große Spanne)"
+      "geringe Gewinnmarge",
+      "sehr hohe Bewertung",
+      "kaum Umsatz – Geschäftsmodell noch unbewiesen",
+      "mittelgroßes Unternehmen"
      ]
     },
-    "theme": "KI-Infrastruktur",
-    "upside": 1.8484,
+    "theme": "Quantencomputing",
+    "upside": 2.638,
     "metrics": {
-     "Umsatzwachstum": "571 %",
-     "Bruttomarge": "76 %",
-     "KUV": "10.9",
-     "Marktkap.": "23.8 Mrd.",
-     "Insider": "3.1 %",
-     "Kursziel": "231.60"
+     "Umsatzwachstum": "51 %",
+     "Bruttomarge": "58 %",
+     "KUV": "187.7",
+     "Marktkap.": "2.5 Mrd.",
+     "Insider": "2.2 %",
+     "Kursziel": "23.72"
     },
     "new_today": true
    },
@@ -653,6 +445,222 @@
      "Marktkap.": "6.8 Mrd.",
      "Insider": "1.4 %",
      "Kursziel": "155.04"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "NBIS",
+    "name": "Nebius Group N.V.",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "country": "Netherlands",
+    "currency": "USD",
+    "price": 81.31,
+    "market_cap": 23815892992,
+    "summary": "Nebius Group N.V., a technology company, engages in building full-stack infrastructure to service the global AI industry in the United States, the United Kingdom, and internationally. It offers Nebius builds full-stack infrastructure for AI, including large-scale GPU clusters, cloud platforms, and tools and services for developers. The company also provides TripleTen, an edtech platform for re-ski",
+    "score": 72,
+    "label": "Hohes Potenzial",
+    "criteria": [
+     {
+      "name": "Umsatzwachstum",
+      "value": "571 %",
+      "points": 25,
+      "max": 25,
+      "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Bruttomarge",
+      "value": "76 %",
+      "points": 15,
+      "max": 15,
+      "hint": "Hoch = skalierbar (Software-ähnlich)"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "23.8 Mrd.",
+      "points": 7,
+      "max": 15,
+      "hint": "100-Bagger starten klein"
+     },
+     {
+      "name": "Insider-Anteil",
+      "value": "3.1 %",
+      "points": 5,
+      "max": 10,
+      "hint": "Gründergeführt = Skin in the Game"
+     },
+     {
+      "name": "Cash vs. Schulden",
+      "value": "7.4 Mrd. / 16.1 Mrd.",
+      "points": 0,
+      "max": 10,
+      "hint": "Genug Geld, um durchzuhalten"
+     },
+     {
+      "name": "F&E-Quote",
+      "value": "33 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Anteil des Umsatzes für Forschung"
+     },
+     {
+      "name": "Analysten-Kursziel",
+      "value": "185 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Potenzial bis zum mittleren Kursziel"
+     },
+     {
+      "name": "Trend (über 200-Tage-Linie)",
+      "value": "nein",
+      "points": 0,
+      "max": 5,
+      "hint": "Markt erkennt die Story"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 571 % pro Jahr",
+     "Skalierbares Geschäftsmodell (Bruttomarge 76 %)"
+    ],
+    "risks": [
+     "Mehr Schulden als Cash – evtl. Kapitalerhöhungen nötig (Verwässerung)",
+     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 787.4987,
+    "fair_low": 320.2902,
+    "fair_high": 1335.2604,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 8.6851,
+    "potential_low": 2.9391,
+    "potential_high": 15.4218,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 4,
+     "factors": [
+      "schwankungsfreudig (Beta 1.5)",
+      "über 50 % unter dem Jahreshoch",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "KI-Infrastruktur",
+    "upside": 1.8484,
+    "metrics": {
+     "Umsatzwachstum": "571 %",
+     "Bruttomarge": "76 %",
+     "KUV": "10.9",
+     "Marktkap.": "23.8 Mrd.",
+     "Insider": "3.1 %",
+     "Kursziel": "231.60"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "MDB",
+    "name": "MongoDB, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "country": "United States",
+    "currency": "USD",
+    "price": 285.9,
+    "market_cap": 22995486720,
+    "summary": "MongoDB, Inc., together with its subsidiaries, provides general purpose database platform worldwide. The company offers MongoDB Atlas, a hosted multi-cloud database-as-a-service solution; MongoDB Enterprise Advanced, a commercial database server for enterprise customers to run in the cloud, on-premises, or in a hybrid environment; and Community Server, a free-to-download version of its database, w",
+    "score": 72,
+    "label": "Hohes Potenzial",
+    "criteria": [
+     {
+      "name": "Umsatzwachstum",
+      "value": "30 %",
+      "points": 18,
+      "max": 25,
+      "hint": "Ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Bruttomarge",
+      "value": "73 %",
+      "points": 15,
+      "max": 15,
+      "hint": "Hoch = skalierbar (Software-ähnlich)"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "23.0 Mrd.",
+      "points": 7,
+      "max": 15,
+      "hint": "100-Bagger starten klein"
+     },
+     {
+      "name": "Insider-Anteil",
+      "value": "2.6 %",
+      "points": 2,
+      "max": 10,
+      "hint": "Gründergeführt = Skin in the Game"
+     },
+     {
+      "name": "Cash vs. Schulden",
+      "value": "2.4 Mrd. / 55.0 Mio.",
+      "points": 10,
+      "max": 10,
+      "hint": "Genug Geld, um durchzuhalten"
+     },
+     {
+      "name": "F&E-Quote",
+      "value": "29 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Anteil des Umsatzes für Forschung"
+     },
+     {
+      "name": "Analysten-Kursziel",
+      "value": "58 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Potenzial bis zum mittleren Kursziel"
+     },
+     {
+      "name": "Trend (über 200-Tage-Linie)",
+      "value": "nein",
+      "points": 0,
+      "max": 5,
+      "hint": "Markt erkennt die Story"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 30 % pro Jahr",
+     "Skalierbares Geschäftsmodell (Bruttomarge 73 %)"
+    ],
+    "risks": [
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 331.4849,
+    "fair_low": 105.5305,
+    "fair_high": 679.8168,
+    "valuation_method": "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite",
+    "potential": 0.1594,
+    "potential_low": -0.6309,
+    "potential_high": 1.3778,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 5,
+     "factors": [
+      "schwankungsfreudig (Beta 1.7)",
+      "über 30 % unter dem Jahreshoch",
+      "geringe Gewinnmarge",
+      "sehr hohe Bewertung",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "Datenbanken",
+    "upside": 0.5797,
+    "metrics": {
+     "Umsatzwachstum": "30 %",
+     "Bruttomarge": "73 %",
+     "KUV": "8.3",
+     "Marktkap.": "23.0 Mrd.",
+     "Insider": "2.6 %",
+     "Kursziel": "451.63"
     },
     "new_today": true
    }
@@ -1439,38 +1447,38 @@
      "Debt/Equity": "0.27",
      "Marktkap.": "228.9 Mrd."
     },
-    "new_today": true
+    "new_today": false
    },
    {
-    "symbol": "TSM",
-    "name": "Taiwan Semiconductor Manufacturing Company Limited",
+    "symbol": "ASML",
+    "name": "ASML Holding N.V.",
     "sector": "Technology",
-    "industry": "Semiconductors",
-    "country": "Taiwan",
+    "industry": "Semiconductor Equipment & Materials",
+    "country": "Netherlands",
     "currency": "USD",
-    "price": 318.71,
-    "market_cap": 1652980711424,
-    "summary": "Taiwan Semiconductor Manufacturing Company Limited, together with its subsidiaries, manufactures, packages, tests, and sells integrated circuits and other semiconductor devices in Taiwan, China, Europe, the Middle East, Africa, Japan, the United States, and internationally. It provides various wafer fabrication processes, such as processes to manufacture complementary metal- oxide-semiconductor (C",
+    "price": 1266.22,
+    "market_cap": 488023621632,
+    "summary": "ASML Holding N.V. provides lithography solutions for the development, production, marketing, sales, upgrading, and servicing of advanced semiconductor equipment systems. The company offers lithography, metrology, and inspection systems. It also provides extreme ultraviolet lithography systems; and deep ultraviolet lithography systems comprising immersion and dry lithography systems solutions to ma",
     "score": 75,
     "label": "Starker Buffett-Kandidat",
     "criteria": [
      {
       "name": "Eigenkapitalrendite (ROE)",
-      "value": "42 %",
+      "value": "66 %",
       "points": 20,
       "max": 20,
       "hint": "Buffett will dauerhaft > 15 %"
      },
      {
       "name": "Verschuldung (Debt/Equity)",
-      "value": "0.15",
+      "value": "0.09",
       "points": 15,
       "max": 15,
       "hint": "Ideal < 0,5"
      },
      {
       "name": "Operative Marge",
-      "value": "58 %",
+      "value": "39 %",
       "points": 15,
       "max": 15,
       "hint": "Hohe Margen = Preissetzungsmacht"
@@ -1484,173 +1492,82 @@
      },
      {
       "name": "Free-Cashflow-Marge",
-      "value": "21 %",
+      "value": "26 %",
       "points": 10,
       "max": 10,
       "hint": "Echtes Geld, nicht nur Buchgewinn"
      },
      {
       "name": "Sicherheitsmarge (DCF)",
-      "value": "-91 %",
+      "value": "-56 %",
       "points": 0,
       "max": 25,
-      "hint": "Innerer Wert ≈ 166.91 USD bei 12 % Wachstum"
+      "hint": "Innerer Wert ≈ 811.81 USD bei 12 % Wachstum"
      }
     ],
     "reasons": [
-     "Hohe Eigenkapitalrendite von 42 % – Zeichen für einen Burggraben",
+     "Hohe Eigenkapitalrendite von 66 % – Zeichen für einen Burggraben",
      "Solide Bilanz mit wenig Schulden",
-     "Starke Preissetzungsmacht (operative Marge 58 %)",
-     "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum"
+     "Starke Preissetzungsmacht (operative Marge 39 %)",
+     "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum",
+     "Zahlt 74.0 % Dividende"
     ],
     "risks": [
-     "Aktuell deutlich über dem geschätzten inneren Wert (167 USD)"
+     "Aktuell deutlich über dem geschätzten inneren Wert (812 USD)"
     ],
-    "fair_value": 166.9075,
-    "fair_low": 107.3651,
-    "fair_high": 208.1074,
+    "fair_value": 811.807,
+    "fair_low": 522.2038,
+    "fair_high": 1012.1952,
     "valuation_method": "DCF auf Free Cashflow, 12 % Wachstum p. a., 10 % Mindestrendite",
-    "potential": -0.4763,
-    "potential_low": -0.6631,
-    "potential_high": -0.347,
+    "potential": -0.3589,
+    "potential_low": -0.5876,
+    "potential_high": -0.2006,
     "risk": {
-     "level": 1,
-     "name": "Niedrig",
-     "points": 1,
+     "level": 2,
+     "name": "Mittel",
+     "points": 2,
      "factors": [
+      "schwankungsfreudig (Beta 1.3)",
       "über 30 % unter dem Jahreshoch"
      ]
     },
-    "intrinsic_value": 166.9075,
-    "margin_of_safety": -0.9095,
+    "intrinsic_value": 811.807,
+    "margin_of_safety": -0.5598,
     "growth_assumption": 0.12,
     "metrics": {
-     "KGV": "20.7",
-     "Forward-KGV": "13.6",
-     "ROE": "42 %",
-     "Op. Marge": "58 %",
-     "Debt/Equity": "0.15",
-     "Marktkap.": "1.7 Bio."
+     "KGV": "31.2",
+     "Forward-KGV": "20.0",
+     "ROE": "66 %",
+     "Op. Marge": "39 %",
+     "Debt/Equity": "0.09",
+     "Marktkap.": "488.0 Mrd."
     },
     "new_today": true
    },
    {
-    "symbol": "FAST",
-    "name": "Fastenal Company",
-    "sector": "Industrials",
-    "industry": "Industrial Distribution",
-    "country": "United States",
+    "symbol": "AON",
+    "name": "Aon plc",
+    "sector": "Financial Services",
+    "industry": "Insurance Brokers",
+    "country": "Ireland",
     "currency": "USD",
-    "price": 50.61,
-    "market_cap": 58064928768,
-    "summary": "Fastenal Company, together with its subsidiaries, engages in the wholesale distribution of industrial and construction supplies in the United States, Canada, Mexico, and internationally. It offers fasteners, and related industrial and construction supplies under the Fastenal name. The company's fastener products include threaded fasteners, bolts, nuts, screws, studs, and related washers that are u",
-    "score": 75,
-    "label": "Starker Buffett-Kandidat",
-    "criteria": [
-     {
-      "name": "Eigenkapitalrendite (ROE)",
-      "value": "35 %",
-      "points": 20,
-      "max": 20,
-      "hint": "Buffett will dauerhaft > 15 %"
-     },
-     {
-      "name": "Verschuldung (Debt/Equity)",
-      "value": "0.11",
-      "points": 15,
-      "max": 15,
-      "hint": "Ideal < 0,5"
-     },
-     {
-      "name": "Operative Marge",
-      "value": "21 %",
-      "points": 15,
-      "max": 15,
-      "hint": "Hohe Margen = Preissetzungsmacht"
-     },
-     {
-      "name": "Gewinn-Beständigkeit",
-      "value": "4/4 Jahre Gewinn",
-      "points": 15,
-      "max": 15,
-      "hint": "Jedes Jahr profitabel und wachsend"
-     },
-     {
-      "name": "Free-Cashflow-Marge",
-      "value": "10 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Echtes Geld, nicht nur Buchgewinn"
-     },
-     {
-      "name": "Sicherheitsmarge (DCF)",
-      "value": "-272 %",
-      "points": 0,
-      "max": 25,
-      "hint": "Innerer Wert ≈ 13.60 USD bei 6 % Wachstum"
-     }
-    ],
-    "reasons": [
-     "Hohe Eigenkapitalrendite von 35 % – Zeichen für einen Burggraben",
-     "Solide Bilanz mit wenig Schulden",
-     "Starke Preissetzungsmacht (operative Marge 21 %)",
-     "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum",
-     "Zahlt 2.0 % Dividende"
-    ],
-    "risks": [
-     "Aktuell deutlich über dem geschätzten inneren Wert (14 USD)",
-     "Hohes KGV von 41.1 – wenig Spielraum für Enttäuschungen"
-    ],
-    "fair_value": 13.5986,
-    "fair_low": 11.1225,
-    "fair_high": 19.2884,
-    "valuation_method": "DCF auf Free Cashflow, 6 % Wachstum p. a., 10 % Mindestrendite",
-    "potential": -0.7313,
-    "potential_low": -0.7802,
-    "potential_high": -0.6189,
-    "risk": {
-     "level": 1,
-     "name": "Niedrig",
-     "points": 0,
-     "factors": []
-    },
-    "intrinsic_value": 13.5986,
-    "margin_of_safety": -2.7217,
-    "growth_assumption": 0.0552,
-    "metrics": {
-     "KGV": "41.1",
-     "Forward-KGV": "35.8",
-     "ROE": "35 %",
-     "Op. Marge": "21 %",
-     "Debt/Equity": "0.11",
-     "Marktkap.": "58.1 Mrd."
-    },
-    "new_today": true
-   },
-   {
-    "symbol": "SAP",
-    "name": "SAP SE",
-    "sector": "Technology",
-    "industry": "Software - Application",
-    "country": "Germany",
-    "currency": "USD",
-    "price": 198.93,
-    "market_cap": 229605851136,
-    "summary": "SAP SE, together with its subsidiaries, provides enterprise application and business solutions worldwide. It offers SAP Business AI; SAP S/4HANA that provides software capabilities for finance, risk and project management, procurement, manufacturing, supply chain and asset management, and research and development; SAP SuccessFactors solutions for human resources, including HR, time, payroll, talen",
-    "score": 74,
+    "price": 333.07,
+    "market_cap": 70663192576,
+    "summary": "Aon plc operates as a professional services company in the United States, rest of the Americas, the United Kingdom, Ireland, rest of Europe, the Middle East, Africa, and the Asia Pacific. It operates through two segments, Risk Capital and Human Capital. The company offers commercial risk solutions comprising retail and insurance brokerage, specialty solutions, global risk consulting, captives mana",
+    "score": 73,
     "label": "Interessant",
     "criteria": [
      {
       "name": "Eigenkapitalrendite (ROE)",
-      "value": "18 %",
-      "points": 15,
+      "value": "43 %",
+      "points": 20,
       "max": 20,
       "hint": "Buffett will dauerhaft > 15 %"
      },
      {
       "name": "Verschuldung (Debt/Equity)",
-      "value": "0.23",
-      "points": 15,
+      "value": "Bank/Versicherung",
+      "points": 8,
       "max": 15,
       "hint": "Ideal < 0,5"
      },
@@ -1676,77 +1593,77 @@
       "hint": "Echtes Geld, nicht nur Buchgewinn"
      },
      {
-      "name": "Sicherheitsmarge (DCF)",
-      "value": "-5 %",
-      "points": 4,
+      "name": "Bewertung (KGV/KBV)",
+      "value": "KGV 18.2 · KBV 7.0",
+      "points": 5,
       "max": 25,
-      "hint": "Innerer Wert ≈ 189.61 USD bei 8 % Wachstum"
+      "hint": "Günstig im Verhältnis zum Gewinn"
      }
     ],
     "reasons": [
-     "Hohe Eigenkapitalrendite von 18 % – Zeichen für einen Burggraben",
-     "Solide Bilanz mit wenig Schulden",
+     "Hohe Eigenkapitalrendite von 43 % – Zeichen für einen Burggraben",
      "Starke Preissetzungsmacht (operative Marge 29 %)",
-     "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum"
+     "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum",
+     "Zahlt 98.0 % Dividende"
     ],
     "risks": [],
-    "fair_value": 189.6145,
-    "fair_low": 143.4421,
-    "fair_high": 290.8398,
-    "valuation_method": "DCF auf Free Cashflow, 8 % Wachstum p. a., 10 % Mindestrendite",
-    "potential": -0.0468,
-    "potential_low": -0.2789,
-    "potential_high": 0.462,
+    "fair_value": 250.299,
+    "fair_low": 187.7242,
+    "fair_high": 312.8737,
+    "valuation_method": "Faires KGV 14 (8 + Wachstum in %) × Gewinn je Aktie",
+    "potential": -0.2485,
+    "potential_low": -0.4364,
+    "potential_high": -0.0606,
     "risk": {
      "level": 1,
      "name": "Niedrig",
      "points": 0,
      "factors": []
     },
-    "intrinsic_value": 189.6145,
-    "margin_of_safety": -0.0491,
-    "growth_assumption": 0.0763,
+    "intrinsic_value": null,
+    "margin_of_safety": null,
+    "growth_assumption": null,
     "metrics": {
-     "KGV": "24.8",
-     "Forward-KGV": "20.9",
-     "ROE": "18 %",
+     "KGV": "18.2",
+     "Forward-KGV": "16.5",
+     "ROE": "43 %",
      "Op. Marge": "29 %",
-     "Debt/Equity": "0.23",
-     "Marktkap.": "229.6 Mrd."
+     "Debt/Equity": "2.83",
+     "Marktkap.": "70.7 Mrd."
     },
     "new_today": true
    },
    {
-    "symbol": "ADP",
-    "name": "Automatic Data Processing, Inc.",
-    "sector": "Technology",
-    "industry": "Software - Application",
+    "symbol": "DVA",
+    "name": "DaVita Inc.",
+    "sector": "Healthcare",
+    "industry": "Medical Care Facilities",
     "country": "United States",
     "currency": "USD",
-    "price": 301.71,
-    "market_cap": 119102865408,
-    "summary": "Automatic Data Processing, Inc. provides cloud-based human capital management (HCM) solutions worldwide. It operates in two segments, Employer Services and Professional Employer Organization (PEO). The Employer Services segment offers strategic, cloud-based platforms, and human resources (HR) outsourcing solutions. This segment's offerings include RUN Powered by ADP, a software platform for small ",
+    "price": 161.03,
+    "market_cap": 10128786432,
+    "summary": "DaVita Inc. provides kidney dialysis services for patients suffering from chronic kidney failure in the United States. The company operates kidney dialysis centers and provides related lab services in outpatient dialysis centers. It also offers outpatient, hospital inpatient, and home-based hemodialysis dialysis services; operates clinical laboratories that provide routine laboratory tests for dia",
     "score": 73,
     "label": "Interessant",
     "criteria": [
      {
       "name": "Eigenkapitalrendite (ROE)",
-      "value": "79 %",
+      "value": "97 %",
       "points": 20,
       "max": 20,
       "hint": "Buffett will dauerhaft > 15 %"
      },
      {
       "name": "Verschuldung (Debt/Equity)",
-      "value": "1.10",
-      "points": 3,
+      "value": "11.90",
+      "points": 0,
       "max": 15,
       "hint": "Ideal < 0,5"
      },
      {
       "name": "Operative Marge",
-      "value": "27 %",
-      "points": 15,
+      "value": "15 %",
+      "points": 8,
       "max": 15,
       "hint": "Hohe Margen = Preissetzungsmacht"
      },
@@ -1759,49 +1676,53 @@
      },
      {
       "name": "Free-Cashflow-Marge",
-      "value": "29 %",
-      "points": 10,
+      "value": "6 %",
+      "points": 5,
       "max": 10,
       "hint": "Echtes Geld, nicht nur Buchgewinn"
      },
      {
       "name": "Sicherheitsmarge (DCF)",
-      "value": "2 %",
-      "points": 10,
+      "value": "34 %",
+      "points": 25,
       "max": 25,
-      "hint": "Innerer Wert ≈ 306.45 USD bei 7 % Wachstum"
+      "hint": "Innerer Wert ≈ 245.17 USD bei 6 % Wachstum"
      }
     ],
     "reasons": [
-     "Hohe Eigenkapitalrendite von 79 % – Zeichen für einen Burggraben",
-     "Starke Preissetzungsmacht (operative Marge 27 %)",
+     "Hohe Eigenkapitalrendite von 97 % – Zeichen für einen Burggraben",
      "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum",
-     "Zahlt 2.5 % Dividende"
+     "Notiert 34 % unter dem geschätzten inneren Wert"
     ],
-    "risks": [],
-    "fair_value": 306.4455,
-    "fair_low": 238.9479,
-    "fair_high": 456.0598,
-    "valuation_method": "DCF auf Free Cashflow, 7 % Wachstum p. a., 10 % Mindestrendite",
-    "potential": 0.0157,
-    "potential_low": -0.208,
-    "potential_high": 0.5116,
+    "risks": [
+     "Hohe Verschuldung bzw. negatives Eigenkapital"
+    ],
+    "fair_value": 245.1654,
+    "fair_low": 200.4425,
+    "fair_high": 347.8864,
+    "valuation_method": "DCF auf Free Cashflow, 6 % Wachstum p. a., 10 % Mindestrendite",
+    "potential": 0.5225,
+    "potential_low": 0.2448,
+    "potential_high": 1.1604,
     "risk": {
-     "level": 1,
-     "name": "Niedrig",
-     "points": 0,
-     "factors": []
+     "level": 2,
+     "name": "Mittel",
+     "points": 2,
+     "factors": [
+      "über 30 % unter dem Jahreshoch",
+      "hohe Verschuldung"
+     ]
     },
-    "intrinsic_value": 306.4455,
-    "margin_of_safety": 0.0155,
-    "growth_assumption": 0.0681,
+    "intrinsic_value": 245.1654,
+    "margin_of_safety": 0.3432,
+    "growth_assumption": 0.0553,
     "metrics": {
-     "KGV": "26.7",
-     "Forward-KGV": "22.3",
-     "ROE": "79 %",
-     "Op. Marge": "27 %",
-     "Debt/Equity": "1.10",
-     "Marktkap.": "119.1 Mrd."
+     "KGV": "12.2",
+     "Forward-KGV": "9.5",
+     "ROE": "97 %",
+     "Op. Marge": "15 %",
+     "Debt/Equity": "11.90",
+     "Marktkap.": "10.1 Mrd."
     },
     "new_today": true
    },
@@ -1891,6 +1812,95 @@
      "Debt/Equity": "0.33",
      "Marktkap.": "142.0 Mrd."
     },
+    "new_today": false
+   },
+   {
+    "symbol": "BAC",
+    "name": "Bank of America Corporation",
+    "sector": "Financial Services",
+    "industry": "Banks - Diversified",
+    "country": "United States",
+    "currency": "USD",
+    "price": 47.04,
+    "market_cap": 324585848832,
+    "summary": "Bank of America Corporation, through its subsidiaries, provides various financial products and services for individual consumers, small and middle-market businesses, institutional investors, large corporations, and governments worldwide. It operates through four segments: Consumer Banking, Global Wealth & Investment Management (GWIM), Global Banking, and Global Markets. The Consumer Banking segmen",
+    "score": 70,
+    "label": "Interessant",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite (ROE)",
+      "value": "11 %",
+      "points": 7,
+      "max": 20,
+      "hint": "Buffett will dauerhaft > 15 %"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "Bank/Versicherung",
+      "points": 8,
+      "max": 15,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "Operative Marge",
+      "value": "35 %",
+      "points": 15,
+      "max": 15,
+      "hint": "Hohe Margen = Preissetzungsmacht"
+     },
+     {
+      "name": "Gewinn-Beständigkeit",
+      "value": "4/4 Jahre Gewinn",
+      "points": 15,
+      "max": 15,
+      "hint": "Jedes Jahr profitabel und wachsend"
+     },
+     {
+      "name": "Free-Cashflow-Marge",
+      "value": "–",
+      "points": 0,
+      "max": 10,
+      "hint": "Echtes Geld, nicht nur Buchgewinn"
+     },
+     {
+      "name": "Bewertung (KGV/KBV)",
+      "value": "KGV 11.2 · KBV 1.2",
+      "points": 25,
+      "max": 25,
+      "hint": "Günstig im Verhältnis zum Gewinn"
+     }
+    ],
+    "reasons": [
+     "Starke Preissetzungsmacht (operative Marge 35 %)",
+     "In allen 4 letzten Geschäftsjahren profitabel und mit Gewinnwachstum",
+     "Günstiges KGV von 11.2",
+     "Zahlt 2.7 % Dividende"
+    ],
+    "risks": [],
+    "fair_value": 33.52,
+    "fair_low": 25.14,
+    "fair_high": 41.9,
+    "valuation_method": "Faires KGV 8 (8 + Wachstum in %) × Gewinn je Aktie",
+    "potential": -0.2874,
+    "potential_low": -0.4656,
+    "potential_high": -0.1093,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
+    "intrinsic_value": null,
+    "margin_of_safety": null,
+    "growth_assumption": null,
+    "metrics": {
+     "KGV": "11.2",
+     "Forward-KGV": "9.1",
+     "ROE": "11 %",
+     "Op. Marge": "35 %",
+     "Debt/Equity": "–",
+     "Marktkap.": "324.6 Mrd."
+    },
     "new_today": true
    }
   ],
@@ -1962,8 +1972,8 @@
     "price": 318.71,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 166.9075,
-    "potential": -0.4763,
+    "fair_value": 167.6451,
+    "potential": -0.474,
     "risk": "Niedrig",
     "risk_level": 1
    },
@@ -1974,8 +1984,8 @@
     "price": 1266.22,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 809.6697,
-    "potential": -0.3606,
+    "fair_value": 811.807,
+    "potential": -0.3589,
     "risk": "Mittel",
     "risk_level": 2
    },
@@ -1998,8 +2008,8 @@
     "price": 198.93,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 189.6145,
-    "potential": -0.0468,
+    "fair_value": 190.115,
+    "potential": -0.0443,
     "risk": "Niedrig",
     "risk_level": 1
    },
@@ -2250,8 +2260,8 @@
     "price": 63.82,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 39.146,
-    "potential": -0.3866,
+    "fair_value": 39.2493,
+    "potential": -0.385,
     "risk": "Niedrig",
     "risk_level": 1
    },
@@ -2274,8 +2284,8 @@
     "price": 37.82,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 16.4603,
-    "potential": -0.5648,
+    "fair_value": 16.5021,
+    "potential": -0.5637,
     "risk": "Niedrig",
     "risk_level": 1
    },
@@ -2370,8 +2380,8 @@
     "price": 38.54,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 25.4598,
-    "potential": -0.3394,
+    "fair_value": 25.5413,
+    "potential": -0.3373,
     "risk": "Niedrig",
     "risk_level": 1
    },
@@ -2580,18 +2590,6 @@
     "risk_level": 1
    },
    {
-    "symbol": "HD",
-    "name": "The Home Depot, Inc.",
-    "score": 43,
-    "price": 339.04,
-    "currency": "USD",
-    "label": "Eher nicht",
-    "fair_value": 153.6157,
-    "potential": -0.5469,
-    "risk": "Niedrig",
-    "risk_level": 1
-   },
-   {
     "symbol": "MRK",
     "name": "Merck & Co., Inc.",
     "score": 43,
@@ -2684,6 +2682,18 @@
     "label": "Eher nicht",
     "fair_value": 84.3957,
     "potential": -0.5416,
+    "risk": "Niedrig",
+    "risk_level": 1
+   },
+   {
+    "symbol": "HD",
+    "name": "The Home Depot, Inc.",
+    "score": 38,
+    "price": 339.04,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 147.7143,
+    "potential": -0.5643,
     "risk": "Niedrig",
     "risk_level": 1
    },
