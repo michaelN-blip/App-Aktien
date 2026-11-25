@@ -27,6 +27,8 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python scanner/scan.py
+      - name: Plausibilität prüfen (bei Fehlern wird nichts veröffentlicht)
+        run: python scanner/check_data.py docs
       - name: Ergebnisse committen
         run: |
           git config user.name "github-actions[bot]"
