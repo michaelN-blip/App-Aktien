@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "generated_at": "2026-11-25T11:25+00:00",
+ "generated_at": "2026-11-25T11:31+00:00",
  "innovation": {
   "picks": [
    {
@@ -1593,10 +1593,10 @@
      },
      {
       "name": "Sicherheitsmarge (Owner Earnings)",
-      "value": "Kurs 146 % unter innerem Wert",
+      "value": "Kurs 166 % unter innerem Wert",
       "points": 17,
       "max": 17,
-      "hint": "Owner-Earnings-Rendite 9.3 % · innerer Wert ≈ 99.29 USD"
+      "hint": "Owner-Earnings-Rendite 9.3 % · innerer Wert ≈ 107.29 USD"
      }
     ],
     "reasons": [
@@ -1607,18 +1607,18 @@
      "Gewinn in jedem der letzten 3 Jahre gestiegen (22.6 % p. a.)",
      "In allen 4 Jahren positiver Free Cashflow",
      "Günstiges KGV von 10.2",
-     "Sicherheitsmarge von 59 %: Kurs liegt klar unter dem inneren Wert",
+     "Sicherheitsmarge von 62 %: Kurs liegt klar unter dem inneren Wert",
      "Owner-Earnings-Rendite von 9.3 % – wie eine Anleihe mit wachsendem Kupon",
      "Zahlt 4.5 % Dividende"
     ],
     "risks": [],
-    "fair_value": 99.2909,
-    "fair_low": 73.6209,
-    "fair_high": 132.2108,
-    "valuation_method": "DCF auf Owner Earnings (16.6 Mrd./Jahr, letzte 12 Monate): 11 % Wachstum (Historie 20 %, Analysten -11 %) für 5 Jahre, dann abflachend auf 3 %, 9 % Mindestrendite (Risiko mittel)",
-    "potential": 1.4632,
-    "potential_low": 0.8264,
-    "potential_high": 2.2799,
+    "fair_value": 107.2907,
+    "fair_low": 76.5939,
+    "fair_high": 145.891,
+    "valuation_method": "DCF auf Owner Earnings (16.6 Mrd./Jahr, letzte 12 Monate): 12 % Wachstum (Historie 20 %, Analysten 5 %) für 5 Jahre, dann abflachend auf 3 %, 9 % Mindestrendite (Risiko mittel)",
+    "potential": 1.6616,
+    "potential_low": 0.9001,
+    "potential_high": 2.6192,
     "risk": {
      "level": 2,
      "name": "Mittel",
@@ -1628,9 +1628,9 @@
       "Analysten erwarten Gewinnrückgang (-11 %)"
      ]
     },
-    "intrinsic_value": 99.2909,
-    "margin_of_safety": 0.594,
-    "owner_earnings": 16565430366.1875,
+    "intrinsic_value": 107.2907,
+    "margin_of_safety": 0.6243,
+    "owner_earnings": 16566423696.2812,
     "owner_earnings_yield": 0.0933,
     "rules": [
      {
@@ -1759,10 +1759,10 @@
      },
      {
       "name": "Sicherheitsmarge (Owner Earnings)",
-      "value": "Kurs 100 % unter innerem Wert",
+      "value": "Kurs 43 % unter innerem Wert",
       "points": 17,
       "max": 17,
-      "hint": "Owner-Earnings-Rendite 3.9 % · innerer Wert ≈ 993.55 USD"
+      "hint": "Owner-Earnings-Rendite 3.9 % · innerer Wert ≈ 710.98 USD"
      }
     ],
     "reasons": [
@@ -1772,26 +1772,26 @@
      "Umsatz in jedem der letzten 3 Jahre gestiegen (16.1 % p. a.)",
      "Gewinn in jedem der letzten 3 Jahre gestiegen (22.7 % p. a.)",
      "In allen 4 Jahren positiver Free Cashflow",
-     "Sicherheitsmarge von 50 %: Kurs liegt klar unter dem inneren Wert"
+     "Sicherheitsmarge von 30 %: Kurs liegt klar unter dem inneren Wert"
     ],
     "risks": [
      "KGV von 25.9 ist für Buffett zu hoch"
     ],
-    "fair_value": 993.5484,
-    "fair_low": 580.3461,
-    "fair_high": 1359.8868,
-    "valuation_method": "DCF auf Owner Earnings (142.6 Mrd./Jahr, letzte 12 Monate): 19 % Wachstum (Historie 16 %, Analysten 26 %) für 5 Jahre, dann abflachend auf 3 %, 8 % Mindestrendite (Risiko niedrig)",
-    "potential": 1.0026,
-    "potential_low": 0.1697,
-    "potential_high": 1.741,
+    "fair_value": 710.9844,
+    "fair_low": 466.1871,
+    "fair_high": 1013.4519,
+    "valuation_method": "DCF auf Owner Earnings (142.6 Mrd./Jahr, letzte 12 Monate): 15 % Wachstum (Historie 16 %, Analysten 25 %) für 5 Jahre, dann abflachend auf 3 %, 8 % Mindestrendite (Risiko niedrig)",
+    "potential": 0.4331,
+    "potential_low": -0.0604,
+    "potential_high": 1.0427,
     "risk": {
      "level": 1,
      "name": "Niedrig",
      "points": 0,
      "factors": []
     },
-    "intrinsic_value": 993.5484,
-    "margin_of_safety": 0.5006,
+    "intrinsic_value": 710.9844,
+    "margin_of_safety": 0.3022,
     "owner_earnings": 142630993920.0,
     "owner_earnings_yield": 0.0387,
     "rules": [
@@ -1840,171 +1840,6 @@
      "Bruttomarge": "69 %",
      "Nettomarge": "37 %",
      "Owner Earn. Rendite": "3.9 %"
-    },
-    "new_today": true
-   },
-   {
-    "symbol": "RELX",
-    "name": "RELX PLC",
-    "sector": "Industrials",
-    "industry": "Specialty Business Services",
-    "country": "United Kingdom",
-    "currency": "USD",
-    "price": 39.54,
-    "market_cap": 68537389056,
-    "summary": "RELX PLC, together with its subsidiaries, provides information-based analytics and decision tools for professional and business customers in North America, Europe, and internationally. It operates through four segments: Risk; Scientific, Technical & Medical; Legal; and Exhibitions. The Risk segment offers information-based analytics and decision tools that combine public and industry specific cont",
-    "score": 89,
-    "label": "Starker Buffett-Kandidat",
-    "criteria": [
-     {
-      "name": "Eigenkapitalrendite Ø",
-      "value": "59 %",
-      "points": 12,
-      "max": 12,
-      "hint": "Mindestens 15 % (schwächstes Jahr 43 %)"
-     },
-     {
-      "name": "Gesamtkapitalrendite Ø (ROA)",
-      "value": "12.3 %",
-      "points": 10,
-      "max": 10,
-      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
-     },
-     {
-      "name": "Bruttomarge Ø",
-      "value": "65 %",
-      "points": 8,
-      "max": 8,
-      "hint": "Mindestens 40 % – Preissetzungsmacht"
-     },
-     {
-      "name": "Nettomarge Ø",
-      "value": "20 %",
-      "points": 8,
-      "max": 8,
-      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
-     },
-     {
-      "name": "Stetiges Umsatzwachstum",
-      "value": "3/3 Jahre gestiegen · 3.9 % p. a.",
-      "points": 10,
-      "max": 10,
-      "hint": "Umsatz steigt Jahr für Jahr"
-     },
-     {
-      "name": "Gewinnwachstum",
-      "value": "3/3 Jahre gestiegen · 8.1 % p. a.",
-      "points": 10,
-      "max": 10,
-      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
-     },
-     {
-      "name": "Cashflow stets positiv",
-      "value": "4/4 Jahre positiv",
-      "points": 10,
-      "max": 10,
-      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
-     },
-     {
-      "name": "Verschuldung (Debt/Equity)",
-      "value": "7.10",
-      "points": 0,
-      "max": 5,
-      "hint": "Ideal < 0,5"
-     },
-     {
-      "name": "KGV",
-      "value": "23.7",
-      "points": 4,
-      "max": 10,
-      "hint": "Ideal ≤ 15, höchstens 25"
-     },
-     {
-      "name": "Sicherheitsmarge (Owner Earnings)",
-      "value": "Kurs 52 % unter innerem Wert",
-      "points": 17,
-      "max": 17,
-      "hint": "Owner-Earnings-Rendite 4.6 % · innerer Wert ≈ 60.01 USD"
-     }
-    ],
-    "reasons": [
-     "Eigenkapitalrendite im Schnitt 59 % – Zeichen für einen Burggraben",
-     "Gesamtkapitalrendite im Schnitt 12 % – arbeitet mit wenig Kapital sehr profitabel",
-     "Gute Margen: brutto 65 %, netto 20 %",
-     "Umsatz in jedem der letzten 3 Jahre gestiegen (3.9 % p. a.)",
-     "Gewinn in jedem der letzten 3 Jahre gestiegen (8.1 % p. a.)",
-     "In allen 4 Jahren positiver Free Cashflow",
-     "Sicherheitsmarge von 34 %: Kurs liegt klar unter dem inneren Wert",
-     "Zahlt 2.3 % Dividende"
-    ],
-    "risks": [
-     "Hohe Verschuldung bzw. negatives Eigenkapital"
-    ],
-    "fair_value": 60.0077,
-    "fair_low": 43.5464,
-    "fair_high": 81.0125,
-    "valuation_method": "DCF auf Owner Earnings (3.2 Mrd./Jahr, letzte 12 Monate): 11 % Wachstum (Historie 4 %, Analysten 28 %) für 5 Jahre, dann abflachend auf 3 %, 8 % Mindestrendite (Risiko niedrig)",
-    "potential": 0.5176,
-    "potential_low": 0.1013,
-    "potential_high": 1.0489,
-    "risk": {
-     "level": 1,
-     "name": "Niedrig",
-     "points": 1,
-     "factors": [
-      "hohe Verschuldung"
-     ]
-    },
-    "intrinsic_value": 60.0077,
-    "margin_of_safety": 0.3411,
-    "owner_earnings": 3152857282.6365,
-    "owner_earnings_yield": 0.046,
-    "rules": [
-     {
-      "name": "Eigenkapitalrendite Ø ≥ 15 %",
-      "ok": true
-     },
-     {
-      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
-      "ok": true
-     },
-     {
-      "name": "Bruttomarge ≥ 40 %",
-      "ok": true
-     },
-     {
-      "name": "Nettomarge Ø ≥ 15 %",
-      "ok": true
-     },
-     {
-      "name": "Umsatz stetig wachsend",
-      "ok": true
-     },
-     {
-      "name": "Gewinn wachsend",
-      "ok": true
-     },
-     {
-      "name": "Cashflow jedes Jahr positiv",
-      "ok": true
-     },
-     {
-      "name": "KGV ≤ 25",
-      "ok": true
-     },
-     {
-      "name": "Kurs unter innerem Wert",
-      "ok": true
-     }
-    ],
-    "rules_met": "9/9",
-    "metrics": {
-     "KGV": "23.7",
-     "ROE Ø": "59 %",
-     "ROA Ø": "12 %",
-     "Bruttomarge": "65 %",
-     "Nettomarge": "20 %",
-     "Owner Earn. Rendite": "4.6 %"
     },
     "new_today": true
    },
@@ -2086,10 +1921,10 @@
      },
      {
       "name": "Sicherheitsmarge (Owner Earnings)",
-      "value": "Kurs 85 % unter innerem Wert",
+      "value": "Kurs 61 % unter innerem Wert",
       "points": 17,
       "max": 17,
-      "hint": "Owner-Earnings-Rendite 6.5 % · innerer Wert ≈ 430.67 USD"
+      "hint": "Owner-Earnings-Rendite 6.5 % · innerer Wert ≈ 374.39 USD"
      }
     ],
     "reasons": [
@@ -2098,26 +1933,26 @@
      "Umsatz in jedem der letzten 3 Jahre gestiegen (5.0 % p. a.)",
      "Gewinn in jedem der letzten 3 Jahre gestiegen (6.8 % p. a.)",
      "In allen 4 Jahren positiver Free Cashflow",
-     "Sicherheitsmarge von 46 %: Kurs liegt klar unter dem inneren Wert",
+     "Sicherheitsmarge von 38 %: Kurs liegt klar unter dem inneren Wert",
      "Owner-Earnings-Rendite von 6.5 % – wie eine Anleihe mit wachsendem Kupon",
      "Zahlt 2.9 % Dividende"
     ],
     "risks": [],
-    "fair_value": 430.6678,
-    "fair_low": 334.5635,
-    "fair_high": 559.9346,
-    "valuation_method": "DCF auf Owner Earnings (8.9 Mrd./Jahr, letzte 12 Monate): 9 % Wachstum (Historie 5 %, Analysten 17 %) für 5 Jahre, dann abflachend auf 3 %, 8 % Mindestrendite (Risiko niedrig)",
-    "potential": 0.8538,
-    "potential_low": 0.4401,
-    "potential_high": 1.4102,
+    "fair_value": 374.3897,
+    "fair_low": 297.6257,
+    "fair_high": 479.9957,
+    "valuation_method": "DCF auf Owner Earnings (8.9 Mrd./Jahr, letzte 12 Monate): 8 % Wachstum (Historie 5 %, Analysten 15 %) für 5 Jahre, dann abflachend auf 3 %, 8 % Mindestrendite (Risiko niedrig)",
+    "potential": 0.6115,
+    "potential_low": 0.2811,
+    "potential_high": 1.0661,
     "risk": {
      "level": 1,
      "name": "Niedrig",
      "points": 0,
      "factors": []
     },
-    "intrinsic_value": 430.6678,
-    "margin_of_safety": 0.4606,
+    "intrinsic_value": 374.3897,
+    "margin_of_safety": 0.3795,
     "owner_earnings": 8863464864.4059,
     "owner_earnings_yield": 0.0646,
     "rules": [
@@ -2170,56 +2005,56 @@
     "new_today": true
    },
    {
-    "symbol": "ASML",
-    "name": "ASML Holding N.V.",
+    "symbol": "QCOM",
+    "name": "QUALCOMM Incorporated",
     "sector": "Technology",
-    "industry": "Semiconductor Equipment & Materials",
-    "country": "Netherlands",
+    "industry": "Semiconductors",
+    "country": "United States",
     "currency": "USD",
-    "price": 1336.06,
-    "market_cap": 514941222912,
-    "summary": "ASML Holding N.V. provides lithography solutions for the development, production, marketing, sales, upgrading, and servicing of advanced semiconductor equipment systems. The company offers lithography, metrology, and inspection systems. It also provides extreme ultraviolet lithography systems; and deep ultraviolet lithography systems comprising immersion and dry lithography systems solutions to ma",
-    "score": 82,
-    "label": "Top-Firma, aber zu teuer",
+    "price": 164.96,
+    "market_cap": 176507207680,
+    "summary": "QUALCOMM Incorporated engages in the development and commercialization of foundational technologies for the wireless industry in China, the United States, South Korea, and internationally. It operates through three segments: Qualcomm CDMA Technologies (QCT); Qualcomm Technology Licensing (QTL); and Qualcomm Strategic Initiatives (QSI). The QCT segment develops and supplies integrated circuits and ",
+    "score": 85,
+    "label": "Starker Buffett-Kandidat",
     "criteria": [
      {
       "name": "Eigenkapitalrendite Ø",
-      "value": "53 %",
+      "value": "36 %",
       "points": 12,
       "max": 12,
-      "hint": "Mindestens 15 % (schwächstes Jahr 41 %)"
+      "hint": "Mindestens 15 % (schwächstes Jahr 26 %)"
      },
      {
       "name": "Gesamtkapitalrendite Ø (ROA)",
-      "value": "17.4 %",
+      "value": "16.5 %",
       "points": 10,
       "max": 10,
       "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
      },
      {
       "name": "Bruttomarge Ø",
-      "value": "51 %",
+      "value": "55 %",
       "points": 8,
       "max": 8,
       "hint": "Mindestens 40 % – Preissetzungsmacht"
      },
      {
       "name": "Nettomarge Ø",
-      "value": "28 %",
+      "value": "23 %",
       "points": 8,
       "max": 8,
       "hint": "Mindestens 15 % bleiben als Gewinn übrig"
      },
      {
       "name": "Stetiges Umsatzwachstum",
-      "value": "3/3 Jahre gestiegen · 15.6 % p. a.",
-      "points": 10,
+      "value": "2/3 Jahre gestiegen · 6.4 % p. a.",
+      "points": 5,
       "max": 10,
       "hint": "Umsatz steigt Jahr für Jahr"
      },
      {
       "name": "Gewinnwachstum",
-      "value": "2/3 Jahre gestiegen · 19.5 % p. a.",
+      "value": "2/3 Jahre gestiegen · 23.5 % p. a.",
       "points": 6,
       "max": 10,
       "hint": "Jedes Jahr Gewinn, Tendenz steigend"
@@ -2233,57 +2068,57 @@
      },
      {
       "name": "Verschuldung (Debt/Equity)",
-      "value": "0.09",
-      "points": 5,
+      "value": "0.53",
+      "points": 3,
       "max": 5,
       "hint": "Ideal < 0,5"
      },
      {
       "name": "KGV",
-      "value": "32.9",
-      "points": 0,
+      "value": "13.0",
+      "points": 10,
       "max": 10,
       "hint": "Ideal ≤ 15, höchstens 25"
      },
      {
       "name": "Sicherheitsmarge (Owner Earnings)",
-      "value": "Kurs 26 % unter innerem Wert",
+      "value": "Kurs 35 % unter innerem Wert",
       "points": 13,
       "max": 17,
-      "hint": "Owner-Earnings-Rendite 2.9 % · innerer Wert ≈ 1689.84 USD"
+      "hint": "Owner-Earnings-Rendite 7.7 % · innerer Wert ≈ 223.43 USD"
      }
     ],
     "reasons": [
-     "Eigenkapitalrendite im Schnitt 53 % – Zeichen für einen Burggraben",
+     "Eigenkapitalrendite im Schnitt 36 % – Zeichen für einen Burggraben",
      "Gesamtkapitalrendite im Schnitt 17 % – arbeitet mit wenig Kapital sehr profitabel",
-     "Gute Margen: brutto 51 %, netto 28 %",
-     "Umsatz in jedem der letzten 3 Jahre gestiegen (15.6 % p. a.)",
+     "Gute Margen: brutto 55 %, netto 23 %",
      "In allen 4 Jahren positiver Free Cashflow",
-     "Sicherheitsmarge von 21 %: Kurs liegt klar unter dem inneren Wert"
+     "Günstiges KGV von 13.0",
+     "Sicherheitsmarge von 26 %: Kurs liegt klar unter dem inneren Wert",
+     "Owner-Earnings-Rendite von 7.7 % – wie eine Anleihe mit wachsendem Kupon",
+     "Zahlt 2.2 % Dividende"
     ],
-    "risks": [
-     "KGV von 32.9 ist für Buffett zu hoch"
-    ],
-    "fair_value": 1689.8385,
-    "fair_low": 976.6797,
-    "fair_high": 2202.7185,
-    "valuation_method": "DCF auf Owner Earnings (14.7 Mrd./Jahr, letzte 12 Monate): 20 % Wachstum (Historie 16 %, Analysten 56 %) für 5 Jahre, dann abflachend auf 3 %, 9 % Mindestrendite (Risiko mittel)",
-    "potential": 0.2648,
-    "potential_low": -0.269,
-    "potential_high": 0.6487,
+    "risks": [],
+    "fair_value": 223.4273,
+    "fair_low": 197.872,
+    "fair_high": 265.2911,
+    "valuation_method": "DCF auf Owner Earnings (13.6 Mrd./Jahr, letzte 12 Monate): 3 % Wachstum (Historie 6 %, Analysten -4 %) für 5 Jahre, dann abflachend auf 3 %, 9 % Mindestrendite (Risiko mittel)",
+    "potential": 0.3544,
+    "potential_low": 0.1995,
+    "potential_high": 0.6082,
     "risk": {
      "level": 2,
      "name": "Mittel",
      "points": 2,
      "factors": [
-      "schwankungsfreudig (Beta 1.3)",
+      "schwankungsfreudig (Beta 1.8)",
       "über 30 % unter dem Jahreshoch"
      ]
     },
-    "intrinsic_value": 1689.8385,
-    "margin_of_safety": 0.2094,
-    "owner_earnings": 14746963551.4297,
-    "owner_earnings_yield": 0.0286,
+    "intrinsic_value": 223.4273,
+    "margin_of_safety": 0.2617,
+    "owner_earnings": 13628000256.0,
+    "owner_earnings_yield": 0.0772,
     "rules": [
      {
       "name": "Eigenkapitalrendite Ø ≥ 15 %",
@@ -2315,76 +2150,76 @@
      },
      {
       "name": "KGV ≤ 25",
-      "ok": false
+      "ok": true
      },
      {
       "name": "Kurs unter innerem Wert",
       "ok": true
      }
     ],
-    "rules_met": "8/9",
+    "rules_met": "9/9",
     "metrics": {
-     "KGV": "32.9",
-     "ROE Ø": "53 %",
+     "KGV": "13.0",
+     "ROE Ø": "36 %",
      "ROA Ø": "17 %",
-     "Bruttomarge": "51 %",
-     "Nettomarge": "28 %",
-     "Owner Earn. Rendite": "2.9 %"
+     "Bruttomarge": "55 %",
+     "Nettomarge": "23 %",
+     "Owner Earn. Rendite": "7.7 %"
     },
     "new_today": true
    },
    {
-    "symbol": "LRCX",
-    "name": "Lam Research Corporation",
-    "sector": "Technology",
-    "industry": "Semiconductor Equipment & Materials",
+    "symbol": "TRV",
+    "name": "The Travelers Companies, Inc.",
+    "sector": "Financial Services",
+    "industry": "Insurance - Property & Casualty",
     "country": "United States",
     "currency": "USD",
-    "price": 196.16,
-    "market_cap": 245037383680,
-    "summary": "Lam Research Corporation designs, manufactures, markets, refurbishes, and services semiconductor processing equipment used in the fabrication of integrated circuits in the United States, China, Korea, Taiwan, Japan, Southeast Asia, and Europe. The company offers ALTUS systems to deposit conformal or selective films for tungsten or molybdenum metallization applications; SABRE electrochemical deposi",
+    "price": 400.87,
+    "market_cap": 82156847104,
+    "summary": "The Travelers Companies, Inc., through its subsidiaries, provides a range of commercial and personal property, and casualty insurance products and services to businesses, government units, associations, and individuals in the United States, Canada, and internationally. It operates through three segments: Business Insurance, Bond & Specialty Insurance, and Personal Insurance. The Business Insurance",
     "score": 78,
     "label": "Starker Buffett-Kandidat",
     "criteria": [
      {
       "name": "Eigenkapitalrendite Ø",
-      "value": "53 %",
-      "points": 12,
+      "value": "16 %",
+      "points": 9,
       "max": 12,
-      "hint": "Mindestens 15 % (schwächstes Jahr 45 %)"
+      "hint": "Mindestens 15 % (schwächstes Jahr 12 %)"
      },
      {
       "name": "Gesamtkapitalrendite Ø (ROA)",
-      "value": "25.1 %",
-      "points": 10,
+      "value": "3.2 % (Bank/Versicherung)",
+      "points": 5,
       "max": 10,
       "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
      },
      {
       "name": "Bruttomarge Ø",
-      "value": "48 %",
-      "points": 8,
+      "value": "35 %",
+      "points": 4,
       "max": 8,
       "hint": "Mindestens 40 % – Preissetzungsmacht"
      },
      {
       "name": "Nettomarge Ø",
-      "value": "28 %",
-      "points": 8,
+      "value": "10 %",
+      "points": 0,
       "max": 8,
       "hint": "Mindestens 15 % bleiben als Gewinn übrig"
      },
      {
       "name": "Stetiges Umsatzwachstum",
-      "value": "2/3 Jahre gestiegen · 10.1 % p. a.",
-      "points": 5,
+      "value": "3/3 Jahre gestiegen · 9.8 % p. a.",
+      "points": 10,
       "max": 10,
       "hint": "Umsatz steigt Jahr für Jahr"
      },
      {
       "name": "Gewinnwachstum",
-      "value": "2/3 Jahre gestiegen · 17.2 % p. a.",
-      "points": 6,
+      "value": "3/3 Jahre gestiegen · 30.3 % p. a.",
+      "points": 10,
       "max": 10,
       "hint": "Jedes Jahr Gewinn, Tendenz steigend"
      },
@@ -2397,56 +2232,54 @@
      },
      {
       "name": "Verschuldung (Debt/Equity)",
-      "value": "0.27",
-      "points": 5,
+      "value": "Bank/Versicherung",
+      "points": 3,
       "max": 5,
       "hint": "Ideal < 0,5"
      },
      {
       "name": "KGV",
-      "value": "29.2",
-      "points": 1,
+      "value": "10.5",
+      "points": 10,
       "max": 10,
       "hint": "Ideal ≤ 15, höchstens 25"
      },
      {
       "name": "Sicherheitsmarge (Owner Earnings)",
-      "value": "Kurs 28 % unter innerem Wert",
-      "points": 13,
+      "value": "Kurs 52 % unter innerem Wert",
+      "points": 17,
       "max": 17,
-      "hint": "Owner-Earnings-Rendite 3.4 % · innerer Wert ≈ 251.08 USD"
+      "hint": "Owner-Earnings-Rendite 17.0 % · innerer Wert ≈ 608.48 USD"
      }
     ],
     "reasons": [
-     "Eigenkapitalrendite im Schnitt 53 % – Zeichen für einen Burggraben",
-     "Gesamtkapitalrendite im Schnitt 25 % – arbeitet mit wenig Kapital sehr profitabel",
-     "Gute Margen: brutto 48 %, netto 28 %",
-     "In allen 4 Jahren positiver Free Cashflow",
-     "Sicherheitsmarge von 22 %: Kurs liegt klar unter dem inneren Wert"
+     "Eigenkapitalrendite im Schnitt 16 % – Zeichen für einen Burggraben",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (9.8 % p. a.)",
+     "Gewinn in jedem der letzten 3 Jahre gestiegen (30.3 % p. a.)",
+     "Günstiges KGV von 10.5",
+     "Sicherheitsmarge von 34 %: Kurs liegt klar unter dem inneren Wert",
+     "Owner-Earnings-Rendite von 17.0 % – wie eine Anleihe mit wachsendem Kupon"
     ],
-    "risks": [
-     "KGV von 29.2 ist für Buffett zu hoch"
-    ],
-    "fair_value": 251.0775,
-    "fair_low": 146.6288,
-    "fair_high": 325.9249,
-    "valuation_method": "DCF auf Owner Earnings (8.4 Mrd./Jahr, letzte 12 Monate): 20 % Wachstum (Historie 10 %, Analysten 83 %) für 5 Jahre, dann abflachend auf 3 %, 10 % Mindestrendite (Risiko hoch)",
-    "potential": 0.28,
-    "potential_low": -0.2525,
-    "potential_high": 0.6615,
+    "risks": [],
+    "fair_value": 608.48,
+    "fair_low": 456.36,
+    "fair_high": 760.6,
+    "valuation_method": "Faires KGV 16 (8 + Gewinnwachstum in %) × Gewinn je Aktie",
+    "potential": 0.5179,
+    "potential_low": 0.1384,
+    "potential_high": 0.8974,
     "risk": {
-     "level": 3,
-     "name": "Hoch",
-     "points": 4,
+     "level": 1,
+     "name": "Niedrig",
+     "points": 1,
      "factors": [
-      "sehr volatil (Beta 2.0)",
-      "über 50 % unter dem Jahreshoch"
+      "Analysten erwarten Gewinnrückgang (-18 %)"
      ]
     },
-    "intrinsic_value": 251.0775,
-    "margin_of_safety": 0.2187,
-    "owner_earnings": 8449873920.0,
-    "owner_earnings_yield": 0.0345,
+    "intrinsic_value": 608.48,
+    "margin_of_safety": 0.3412,
+    "owner_earnings": 13952422391.8575,
+    "owner_earnings_yield": 0.1698,
     "rules": [
      {
       "name": "Eigenkapitalrendite Ø ≥ 15 %",
@@ -2454,15 +2287,15 @@
      },
      {
       "name": "Gesamtkapitalrendite Ø ≥ 10 %",
-      "ok": true
+      "ok": null
      },
      {
       "name": "Bruttomarge ≥ 40 %",
-      "ok": true
+      "ok": false
      },
      {
       "name": "Nettomarge Ø ≥ 15 %",
-      "ok": true
+      "ok": false
      },
      {
       "name": "Umsatz stetig wachsend",
@@ -2474,27 +2307,184 @@
      },
      {
       "name": "Cashflow jedes Jahr positiv",
-      "ok": true
+      "ok": null
      },
      {
       "name": "KGV ≤ 25",
-      "ok": false
+      "ok": true
      },
      {
       "name": "Kurs unter innerem Wert",
       "ok": true
      }
     ],
-    "rules_met": "8/9",
+    "rules_met": "5/7",
     "metrics": {
-     "KGV": "29.2",
-     "ROE Ø": "53 %",
-     "ROA Ø": "25 %",
-     "Bruttomarge": "48 %",
-     "Nettomarge": "28 %",
-     "Owner Earn. Rendite": "3.4 %"
+     "KGV": "10.5",
+     "ROE Ø": "16 %",
+     "ROA Ø": "3 %",
+     "Bruttomarge": "35 %",
+     "Nettomarge": "10 %",
+     "Owner Earn. Rendite": "17.0 %"
     },
     "new_today": false
+   },
+   {
+    "symbol": "AXP",
+    "name": "American Express Company",
+    "sector": "Financial Services",
+    "industry": "Credit Services",
+    "country": "United States",
+    "currency": "USD",
+    "price": 308.63,
+    "market_cap": 206952464384,
+    "summary": "American Express Company, together with its subsidiaries, operates as an integrated payments company in the United States, Europe, the Middle East and Africa, the Asia Pacific, Australia, New Zealand, Latin America, Canada, the Caribbean, and internationally. It operates through four segments: U.S. Consumer Services, Commercial Services, International Card Services, and Global Merchant and Network",
+    "score": 71,
+    "label": "Interessant",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "32 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 30 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "3.5 % (Bank/Versicherung)",
+      "points": 5,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "62 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "15 %",
+      "points": 3,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 11.0 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "3/3 Jahre gestiegen · 13.0 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "Bank/Versicherung",
+      "points": 3,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "17.4",
+      "points": 7,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 8 % über innerem Wert",
+      "points": 3,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 5.8 % · innerer Wert ≈ 284.00 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 32 % – Zeichen für einen Burggraben",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (11.0 % p. a.)",
+     "Gewinn in jedem der letzten 3 Jahre gestiegen (13.0 % p. a.)",
+     "Owner-Earnings-Rendite von 5.8 % – wie eine Anleihe mit wachsendem Kupon"
+    ],
+    "risks": [],
+    "fair_value": 284.0,
+    "fair_low": 213.0,
+    "fair_high": 355.0,
+    "valuation_method": "Faires KGV 16 (8 + Gewinnwachstum in %) × Gewinn je Aktie",
+    "potential": -0.0798,
+    "potential_low": -0.3099,
+    "potential_high": 0.1502,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
+    "intrinsic_value": 284.0,
+    "margin_of_safety": -0.0867,
+    "owner_earnings": 12092000256.0,
+    "owner_earnings_yield": 0.0584,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": null
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": true
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": false
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": null
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": true
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": false
+     }
+    ],
+    "rules_met": "5/7",
+    "metrics": {
+     "KGV": "17.4",
+     "ROE Ø": "32 %",
+     "ROA Ø": "3 %",
+     "Bruttomarge": "62 %",
+     "Nettomarge": "15 %",
+     "Owner Earn. Rendite": "5.8 %"
+    },
+    "new_today": true
    }
   ],
   "ranking": [
@@ -2505,8 +2495,8 @@
     "price": 40.31,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 99.2909,
-    "potential": 1.4632,
+    "fair_value": 107.2907,
+    "potential": 1.6616,
     "risk": "Mittel",
     "risk_level": 2,
     "ms_fair_value": null,
@@ -2535,8 +2525,8 @@
     "price": 496.13,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 993.5484,
-    "potential": 1.0026,
+    "fair_value": 710.9844,
+    "potential": 0.4331,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2550,23 +2540,8 @@
     "price": 589.82,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 1592.2298,
-    "potential": 1.6995,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "9/9"
-   },
-   {
-    "symbol": "RELX",
-    "name": "RELX PLC",
-    "score": 89,
-    "price": 39.54,
-    "currency": "USD",
-    "label": "Starker Buffett-Kandidat",
-    "fair_value": 60.0077,
-    "potential": 0.5176,
+    "fair_value": 1089.7111,
+    "potential": 0.8475,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2580,8 +2555,8 @@
     "price": 232.32,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 430.6678,
-    "potential": 0.8538,
+    "fair_value": 374.3897,
+    "potential": 0.6115,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2595,8 +2570,8 @@
     "price": 164.96,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 221.6723,
-    "potential": 0.3438,
+    "fair_value": 223.4273,
+    "potential": 0.3544,
     "risk": "Mittel",
     "risk_level": 2,
     "ms_fair_value": null,
@@ -2610,8 +2585,8 @@
     "price": 349.2,
     "currency": "USD",
     "label": "Starker Buffett-Kandidat",
-    "fair_value": 795.7363,
-    "potential": 1.2787,
+    "fair_value": 544.5964,
+    "potential": 0.5596,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2625,8 +2600,8 @@
     "price": 279.05,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 122.9508,
-    "potential": -0.5594,
+    "fair_value": 181.7396,
+    "potential": -0.3487,
     "risk": "Mittel",
     "risk_level": 2,
     "ms_fair_value": null,
@@ -2634,49 +2609,19 @@
     "rules_met": "8/9"
    },
    {
-    "symbol": "ASML",
-    "name": "ASML Holding N.V.",
-    "score": 82,
-    "price": 1336.06,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 1689.8385,
-    "potential": 0.2648,
-    "risk": "Mittel",
-    "risk_level": 2,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "8/9"
-   },
-   {
-    "symbol": "JNJ",
-    "name": "Johnson & Johnson",
+    "symbol": "RELX",
+    "name": "RELX PLC",
     "score": 80,
-    "price": 276.46,
+    "price": 39.54,
     "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 392.473,
-    "potential": 0.4196,
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 42.6237,
+    "potential": 0.078,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
-    "rules_met": "8/9"
-   },
-   {
-    "symbol": "ROL",
-    "name": "Rollins, Inc.",
-    "score": 79,
-    "price": 38.07,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 45.4153,
-    "potential": 0.1929,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "7/9"
+    "rules_met": "9/9"
    },
    {
     "symbol": "TRV",
@@ -2694,44 +2639,14 @@
     "rules_met": "5/7"
    },
    {
-    "symbol": "LRCX",
-    "name": "Lam Research Corporation",
-    "score": 78,
-    "price": 196.16,
+    "symbol": "ROL",
+    "name": "Rollins, Inc.",
+    "score": 74,
+    "price": 38.07,
     "currency": "USD",
-    "label": "Starker Buffett-Kandidat",
-    "fair_value": 251.0775,
-    "potential": 0.28,
-    "risk": "Hoch",
-    "risk_level": 3,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "8/9"
-   },
-   {
-    "symbol": "CSCO",
-    "name": "Cisco Systems, Inc.",
-    "score": 78,
-    "price": 93.99,
-    "currency": "USD",
-    "label": "Starker Buffett-Kandidat",
-    "fair_value": 216.896,
-    "potential": 1.3076,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "8/9"
-   },
-   {
-    "symbol": "ADP",
-    "name": "Automatic Data Processing, Inc.",
-    "score": 76,
-    "price": 310.79,
-    "currency": "USD",
-    "label": "Starker Buffett-Kandidat",
-    "fair_value": 369.6966,
-    "potential": 0.1895,
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 41.032,
+    "potential": 0.0778,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2739,61 +2654,16 @@
     "rules_met": "7/9"
    },
    {
-    "symbol": "CL",
-    "name": "Colgate-Palmolive Company",
-    "score": 76,
-    "price": 99.24,
+    "symbol": "ASML",
+    "name": "ASML Holding N.V.",
+    "score": 72,
+    "price": 1336.06,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 144.0166,
-    "potential": 0.4512,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "7/9"
-   },
-   {
-    "symbol": "KLAC",
-    "name": "KLA Corporation",
-    "score": 75,
-    "price": 133.65,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 178.8988,
-    "potential": 0.3386,
+    "fair_value": 1288.1735,
+    "potential": -0.0358,
     "risk": "Mittel",
     "risk_level": 2,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "8/9"
-   },
-   {
-    "symbol": "PG",
-    "name": "The Procter & Gamble Company",
-    "score": 73,
-    "price": 172.47,
-    "currency": "USD",
-    "label": "Interessant",
-    "fair_value": 156.8361,
-    "potential": -0.0906,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "7/9"
-   },
-   {
-    "symbol": "CTAS",
-    "name": "Cintas Corporation",
-    "score": 72,
-    "price": 225.76,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 194.4035,
-    "potential": -0.1389,
-    "risk": "Niedrig",
-    "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "7/9"
@@ -2829,14 +2699,14 @@
     "rules_met": "5/7"
    },
    {
-    "symbol": "AAPL",
-    "name": "Apple Inc.",
-    "score": 70,
-    "price": 354.07,
+    "symbol": "ADP",
+    "name": "Automatic Data Processing, Inc.",
+    "score": 71,
+    "price": 310.79,
     "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 302.7084,
-    "potential": -0.1451,
+    "label": "Interessant",
+    "fair_value": 317.3227,
+    "potential": 0.021,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2859,14 +2729,14 @@
     "rules_met": "6/7"
    },
    {
-    "symbol": "PM",
-    "name": "Philip Morris International Inc.",
+    "symbol": "PG",
+    "name": "The Procter & Gamble Company",
     "score": 70,
-    "price": 183.95,
+    "price": 172.47,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 291.995,
-    "potential": 0.5874,
+    "fair_value": 142.367,
+    "potential": -0.1745,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2880,8 +2750,8 @@
     "price": 164.17,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 489.7685,
-    "potential": 1.9833,
+    "fair_value": 396.8645,
+    "potential": 1.4174,
     "risk": "Mittel",
     "risk_level": 2,
     "ms_fair_value": null,
@@ -2889,14 +2759,44 @@
     "rules_met": "6/9"
    },
    {
-    "symbol": "VRSK",
-    "name": "Verisk Analytics, Inc.",
-    "score": 68,
-    "price": 203.97,
+    "symbol": "CTAS",
+    "name": "Cintas Corporation",
+    "score": 69,
+    "price": 225.76,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 225.74,
-    "potential": 0.1067,
+    "fair_value": 166.9505,
+    "potential": -0.2605,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "LRCX",
+    "name": "Lam Research Corporation",
+    "score": 68,
+    "price": 196.16,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 173.1911,
+    "potential": -0.1171,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "score": 67,
+    "price": 354.07,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 273.5577,
+    "potential": -0.2274,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2925,13 +2825,28 @@
     "price": 53.38,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 120.6475,
-    "potential": 1.2602,
+    "fair_value": 96.4181,
+    "potential": 0.8063,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "5/9"
+   },
+   {
+    "symbol": "JNJ",
+    "name": "Johnson & Johnson",
+    "score": 67,
+    "price": 276.46,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 187.5177,
+    "potential": -0.3217,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
    },
    {
     "symbol": "FAST",
@@ -2940,8 +2855,8 @@
     "price": 52.27,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 34.1228,
-    "potential": -0.3472,
+    "fair_value": 30.8811,
+    "potential": -0.4092,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2955,8 +2870,8 @@
     "price": 97.62,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 73.6563,
-    "potential": -0.2455,
+    "fair_value": 66.9162,
+    "potential": -0.3145,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -2994,31 +2909,16 @@
     "rules_met": "5/7"
    },
    {
-    "symbol": "TXN",
-    "name": "Texas Instruments Incorporated",
-    "score": 66,
-    "price": 258.44,
+    "symbol": "KLAC",
+    "name": "KLA Corporation",
+    "score": 65,
+    "price": 133.65,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 331.4149,
-    "potential": 0.2824,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "6/9"
-   },
-   {
-    "symbol": "MO",
-    "name": "Altria Group, Inc.",
-    "score": 66,
-    "price": 74.82,
-    "currency": "USD",
-    "label": "Interessant",
-    "fair_value": 125.5964,
-    "potential": 0.6786,
-    "risk": "Niedrig",
-    "risk_level": 1,
+    "fair_value": 115.3673,
+    "potential": -0.1368,
+    "risk": "Mittel",
+    "risk_level": 2,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "7/9"
@@ -3030,8 +2930,23 @@
     "price": 166.33,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 141.6729,
-    "potential": -0.1482,
+    "fair_value": 157.8989,
+    "potential": -0.0507,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "CSCO",
+    "name": "Cisco Systems, Inc.",
+    "score": 64,
+    "price": 93.99,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 85.0866,
+    "potential": -0.0947,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3045,28 +2960,13 @@
     "price": 280.7,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 312.0255,
-    "potential": 0.1116,
+    "fair_value": 283.0348,
+    "potential": 0.0083,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "8/9"
-   },
-   {
-    "symbol": "AZO",
-    "name": "AutoZone, Inc.",
-    "score": 64,
-    "price": 3355.69,
-    "currency": "USD",
-    "label": "Interessant",
-    "fair_value": 4455.4028,
-    "potential": 0.3277,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "7/9"
    },
    {
     "symbol": "HSY",
@@ -3075,8 +2975,8 @@
     "price": 176.56,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 126.815,
-    "potential": -0.2817,
+    "fair_value": 115.4368,
+    "potential": -0.3462,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3090,8 +2990,8 @@
     "price": 142.68,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 157.4403,
-    "potential": 0.1035,
+    "fair_value": 143.2499,
+    "potential": 0.004,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3099,29 +2999,14 @@
     "rules_met": "6/9"
    },
    {
-    "symbol": "DPZ",
-    "name": "Domino's Pizza, Inc.",
+    "symbol": "MO",
+    "name": "Altria Group, Inc.",
     "score": 62,
-    "price": 356.52,
+    "price": 74.82,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 457.1185,
-    "potential": 0.2822,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "6/9"
-   },
-   {
-    "symbol": "UNP",
-    "name": "Union Pacific Corporation",
-    "score": 62,
-    "price": 290.83,
-    "currency": "USD",
-    "label": "Interessant",
-    "fair_value": 274.9114,
-    "potential": -0.0547,
+    "fair_value": 91.8022,
+    "potential": 0.227,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3129,49 +3014,19 @@
     "rules_met": "7/9"
    },
    {
-    "symbol": "UNH",
-    "name": "UnitedHealth Group Incorporated",
+    "symbol": "PM",
+    "name": "Philip Morris International Inc.",
     "score": 61,
-    "price": 341.88,
+    "price": 183.95,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 588.4303,
-    "potential": 0.7212,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "5/9"
-   },
-   {
-    "symbol": "ITW",
-    "name": "Illinois Tool Works Inc.",
-    "score": 61,
-    "price": 283.75,
-    "currency": "USD",
-    "label": "Interessant",
-    "fair_value": 237.194,
-    "potential": -0.1641,
+    "fair_value": 208.6511,
+    "potential": 0.1343,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "7/9"
-   },
-   {
-    "symbol": "GWW",
-    "name": "W.W. Grainger, Inc.",
-    "score": 61,
-    "price": 1398.02,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 1180.6836,
-    "potential": -0.1555,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "5/9"
    },
    {
     "symbol": "NVR",
@@ -3180,8 +3035,8 @@
     "price": 5868.8,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 6432.7083,
-    "potential": 0.0961,
+    "fair_value": 5875.5139,
+    "potential": 0.0011,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3195,8 +3050,8 @@
     "price": 226.18,
     "currency": "USD",
     "label": "Interessant",
-    "fair_value": 214.1163,
-    "potential": -0.0533,
+    "fair_value": 194.188,
+    "potential": -0.1414,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3210,10 +3065,55 @@
     "price": 141.57,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 48.1004,
-    "potential": -0.6602,
+    "fair_value": 22.342,
+    "potential": -0.8422,
     "risk": "Mittel",
     "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "VRSK",
+    "name": "Verisk Analytics, Inc.",
+    "score": 60,
+    "price": 203.97,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 140.0174,
+    "potential": -0.3135,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "CL",
+    "name": "Colgate-Palmolive Company",
+    "score": 59,
+    "price": 99.24,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 63.869,
+    "potential": -0.3564,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "UNP",
+    "name": "Union Pacific Corporation",
+    "score": 59,
+    "price": 290.83,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 240.0745,
+    "potential": -0.1745,
+    "risk": "Niedrig",
+    "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "7/9"
@@ -3249,29 +3149,14 @@
     "rules_met": "4/7"
    },
    {
-    "symbol": "SAP",
-    "name": "SAP SE",
-    "score": 58,
-    "price": 208.75,
-    "currency": "USD",
-    "label": "Beobachten",
-    "fair_value": 268.7052,
-    "potential": 0.2872,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "5/9"
-   },
-   {
     "symbol": "TJX",
     "name": "The TJX Companies, Inc.",
     "score": 58,
     "price": 143.86,
     "currency": "USD",
     "label": "Beobachten",
-    "fair_value": 134.1378,
-    "potential": -0.0676,
+    "fair_value": 121.7032,
+    "potential": -0.154,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3279,14 +3164,29 @@
     "rules_met": "5/9"
    },
    {
-    "symbol": "DEO",
-    "name": "Diageo plc",
+    "symbol": "ITW",
+    "name": "Illinois Tool Works Inc.",
     "score": 58,
-    "price": 100.37,
+    "price": 283.75,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 293.3176,
-    "potential": 1.9224,
+    "fair_value": 215.5919,
+    "potential": -0.2402,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "GWW",
+    "name": "W.W. Grainger, Inc.",
+    "score": 58,
+    "price": 1398.02,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 1047.8731,
+    "potential": -0.2505,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3300,8 +3200,8 @@
     "price": 1091.71,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 581.7004,
-    "potential": -0.4672,
+    "fair_value": 554.3947,
+    "potential": -0.4922,
     "risk": "Mittel",
     "risk_level": 2,
     "ms_fair_value": null,
@@ -3309,29 +3209,14 @@
     "rules_met": "5/9"
    },
    {
-    "symbol": "ABBV",
-    "name": "AbbVie Inc.",
+    "symbol": "DPZ",
+    "name": "Domino's Pizza, Inc.",
     "score": 57,
-    "price": 300.28,
+    "price": 356.52,
     "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 511.8279,
-    "potential": 0.7045,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "5/9"
-   },
-   {
-    "symbol": "VRSN",
-    "name": "VeriSign, Inc.",
-    "score": 55,
-    "price": 317.25,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 279.632,
-    "potential": -0.1186,
+    "label": "Beobachten",
+    "fair_value": 409.6604,
+    "potential": 0.1491,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3345,8 +3230,8 @@
     "price": 95.43,
     "currency": "USD",
     "label": "Beobachten",
-    "fair_value": 90.3468,
-    "potential": -0.0533,
+    "fair_value": 81.866,
+    "potential": -0.1421,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3360,8 +3245,53 @@
     "price": 65.23,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 46.2396,
-    "potential": -0.2911,
+    "fair_value": 42.2252,
+    "potential": -0.3527,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "AZO",
+    "name": "AutoZone, Inc.",
+    "score": 54,
+    "price": 3355.69,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 3096.3928,
+    "potential": -0.0773,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "TXN",
+    "name": "Texas Instruments Incorporated",
+    "score": 53,
+    "price": 258.44,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 144.9372,
+    "potential": -0.4392,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "SAP",
+    "name": "SAP SE",
+    "score": 53,
+    "price": 208.75,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 238.5932,
+    "potential": 0.143,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3375,13 +3305,28 @@
     "price": 252.15,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 208.5466,
-    "potential": -0.1729,
+    "fair_value": 188.87,
+    "potential": -0.251,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "5/9"
+   },
+   {
+    "symbol": "VRSN",
+    "name": "VeriSign, Inc.",
+    "score": 52,
+    "price": 317.25,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 241.0777,
+    "potential": -0.2401,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
    },
    {
     "symbol": "NKE",
@@ -3399,14 +3344,14 @@
     "rules_met": "5/9"
    },
    {
-    "symbol": "KMB",
-    "name": "Kimberly-Clark Corporation",
+    "symbol": "UNH",
+    "name": "UnitedHealth Group Incorporated",
     "score": 52,
-    "price": 108.7,
+    "price": 341.88,
     "currency": "USD",
     "label": "Beobachten",
-    "fair_value": 91.8055,
-    "potential": -0.1554,
+    "fair_value": 352.3323,
+    "potential": 0.0306,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3444,29 +3389,14 @@
     "rules_met": "4/7"
    },
    {
-    "symbol": "HD",
-    "name": "The Home Depot, Inc.",
-    "score": 50,
-    "price": 353.69,
-    "currency": "USD",
-    "label": "Beobachten",
-    "fair_value": 299.2067,
-    "potential": -0.154,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "5/9"
-   },
-   {
     "symbol": "WM",
     "name": "Waste Management, Inc.",
     "score": 50,
     "price": 244.71,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 236.0497,
-    "potential": -0.0354,
+    "fair_value": 210.7181,
+    "potential": -0.1389,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3474,19 +3404,19 @@
     "rules_met": "4/9"
    },
    {
-    "symbol": "CVX",
-    "name": "Chevron Corporation",
+    "symbol": "KMB",
+    "name": "Kimberly-Clark Corporation",
     "score": 49,
-    "price": 208.73,
+    "price": 108.7,
     "currency": "USD",
-    "label": "Beobachten",
-    "fair_value": 291.2385,
-    "potential": 0.3953,
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 53.3125,
+    "potential": -0.5095,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
-    "rules_met": "3/9"
+    "rules_met": "5/9"
    },
    {
     "symbol": "POOL",
@@ -3495,8 +3425,8 @@
     "price": 213.85,
     "currency": "USD",
     "label": "Beobachten",
-    "fair_value": 202.859,
-    "potential": -0.0514,
+    "fair_value": 184.8176,
+    "potential": -0.1358,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3504,49 +3434,34 @@
     "rules_met": "4/9"
    },
    {
-    "symbol": "DHR",
-    "name": "Danaher Corporation",
-    "score": 48,
-    "price": 229.09,
+    "symbol": "DEO",
+    "name": "Diageo plc",
+    "score": 49,
+    "price": 100.37,
     "currency": "USD",
     "label": "Top-Firma, aber zu teuer",
-    "fair_value": 364.768,
-    "potential": 0.5922,
+    "fair_value": 101.5561,
+    "potential": 0.0118,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
-    "rules_met": "4/9"
+    "rules_met": "5/9"
    },
    {
-    "symbol": "SBUX",
-    "name": "Starbucks Corporation",
-    "score": 46,
-    "price": 106.38,
-    "currency": "USD",
-    "label": "Top-Firma, aber zu teuer",
-    "fair_value": 135.5943,
-    "potential": 0.2746,
-    "risk": "Niedrig",
-    "risk_level": 1,
-    "ms_fair_value": null,
-    "ms_stars": null,
-    "rules_met": "4/9"
-   },
-   {
-    "symbol": "CSX",
-    "name": "CSX Corporation",
-    "score": 46,
-    "price": 50.08,
+    "symbol": "HD",
+    "name": "The Home Depot, Inc.",
+    "score": 47,
+    "price": 353.69,
     "currency": "USD",
     "label": "Beobachten",
-    "fair_value": 49.4486,
-    "potential": -0.0126,
+    "fair_value": 272.1086,
+    "potential": -0.2307,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
-    "rules_met": "3/9"
+    "rules_met": "5/9"
    },
    {
     "symbol": "BAC",
@@ -3564,14 +3479,44 @@
     "rules_met": "4/7"
    },
    {
+    "symbol": "CVX",
+    "name": "Chevron Corporation",
+    "score": 44,
+    "price": 208.73,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 217.1544,
+    "potential": 0.0404,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "CSX",
+    "name": "CSX Corporation",
+    "score": 43,
+    "price": 50.08,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 36.3797,
+    "potential": -0.2736,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
     "symbol": "LOW",
     "name": "Lowe's Companies, Inc.",
     "score": 40,
     "price": 231.04,
     "currency": "USD",
     "label": "Eher nicht",
-    "fair_value": 227.4759,
-    "potential": -0.0154,
+    "fair_value": 207.0941,
+    "potential": -0.1036,
     "risk": "Niedrig",
     "risk_level": 1,
     "ms_fair_value": null,
@@ -3579,16 +3524,46 @@
     "rules_met": "4/9"
    },
    {
-    "symbol": "KR",
-    "name": "The Kroger Co.",
-    "score": 38,
-    "price": 70.12,
+    "symbol": "ABBV",
+    "name": "AbbVie Inc.",
+    "score": 40,
+    "price": 300.28,
     "currency": "USD",
     "label": "Eher nicht",
-    "fair_value": 85.7709,
-    "potential": 0.2232,
-    "risk": "Mittel",
-    "risk_level": 2,
+    "fair_value": 177.2114,
+    "potential": -0.4098,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "SBUX",
+    "name": "Starbucks Corporation",
+    "score": 33,
+    "price": 106.38,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 46.9471,
+    "potential": -0.5587,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "DHR",
+    "name": "Danaher Corporation",
+    "score": 31,
+    "price": 229.09,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 154.9524,
+    "potential": -0.3236,
+    "risk": "Niedrig",
+    "risk_level": 1,
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "3/9"
@@ -3607,6 +3582,21 @@
     "ms_fair_value": null,
     "ms_stars": null,
     "rules_met": "1/7"
+   },
+   {
+    "symbol": "KR",
+    "name": "The Kroger Co.",
+    "score": 25,
+    "price": 70.12,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 33.3389,
+    "potential": -0.5245,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "2/9"
    }
   ]
  }
