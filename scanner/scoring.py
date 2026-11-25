@@ -123,6 +123,8 @@ def buffett_history(s):
     if oe:
         last = max(oe)
         oe_last = oe[last]
+        if ni and last < max(ni):  # Owner Earnings nur aus veralteten Jahren -> letzter Free Cashflow
+            oe_last = max(oe_last, (fcf or {}).get(max(ni), oe_last))
         oe_norm = oe_last
         ni_ttm = s.get("net_income_ttm")
         if ni_ttm and ni.get(last, 0) > 0 and oe_last > 0:

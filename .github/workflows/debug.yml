@@ -21,9 +21,16 @@ jobs:
           import sys, json
           sys.path.insert(0, "scanner")
           import yfinance as yf, scan, scoring
-          for sym in ("GOOGL", "META"):
+          for sym in ("GOOGL", "META", "TSM", "KO", "V", "MSFT"):
               t = yf.Ticker(sym); info = t.info
               print("=====", sym)
+              s = scan.fetch(sym)
+              b = scoring.score_buffett(s)
+              print(f"  KURS {s['price']}  FAIR {b['fair_value']:.0f} ({b['potential']:+.0%})  {b['label']} {b['rules_met']}")
+              print("  ", b["valuation_method"])
+              print("   NI clean:", {y: round(v/1e9, 1) for y, v in s["history"]["net_income"].items()}, "TTM clean:", round((s["net_income_ttm"] or 0)/1e9, 1), "fwd:", s["forward_growth"])
+              if sym != "GOOGL":
+                  continue
               for k in ("currentPrice", "marketCap", "sharesOutstanding", "impliedSharesOutstanding", "trailingPE", "forwardPE",
                         "trailingEps", "forwardEps", "netIncomeToCommon", "freeCashflow", "operatingCashflow", "totalRevenue",
                         "financialCurrency", "earningsGrowth", "revenueGrowth"):
