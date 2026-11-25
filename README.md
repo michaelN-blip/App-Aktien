@@ -41,11 +41,12 @@ Die App loggt sich **nicht** bei Morningstar ein. Stattdessen trägst du die Wer
 selbst in `scanner/morningstar.csv` ein (geht auch am Handy: Datei auf GitHub öffnen → ✏️ → Commit):
 
 ```csv
-symbol,fair_value,stars,moat,uncertainty,date
-AAPL,180,3,wide,medium,2026-11-25
-KO,65,4,wide,low,2026-11-25
+symbol,fair_value,stars,moat,uncertainty,date,currency
+AAPL,180,3,wide,medium,2026-11-25,USD
+TSM,500,4,wide,medium,2026-11-25,EUR
 ```
 
+- `currency` (optional): Währung des Morningstar-Werts, z. B. `EUR` – wird automatisch in die Kurswährung umgerechnet
 - `moat`: wide / narrow / none · `uncertainty`: low / medium / high / very high / extreme
 - Nach dem Speichern rechnet der Workflow automatisch neu. Auf der Karte erscheint dann der Morningstar-Wert
   mit Sternen, Burggraben und dem Vergleich zur eigenen Schätzung.

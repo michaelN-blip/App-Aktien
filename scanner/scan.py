@@ -117,7 +117,8 @@ def fetch(symbol: str) -> dict | None:
         "currency": info.get("currency", "USD"),
         "price": float(price),
         "market_cap": info.get("marketCap"),
-        "shares": info.get("sharesOutstanding"),
+        # Aktienzahl aus Börsenwert/Kurs: stimmt auch bei ADRs (z. B. 1 TSM-ADR = 5 Aktien)
+        "shares": info["marketCap"] / float(price),
         "summary": (info.get("longBusinessSummary") or "")[:400],
         "roe": info.get("returnOnEquity"),
         "debt_to_equity": (info["debtToEquity"] / 100) if info.get("debtToEquity") is not None else None,
@@ -141,6 +142,7 @@ def fetch(symbol: str) -> dict | None:
         "free_cashflow": info["freeCashflow"] * fx if info.get("freeCashflow") and fx else None,
         "total_cash": info["totalCash"] * fx if info.get("totalCash") and fx else None,
         "total_debt": info["totalDebt"] * fx if info.get("totalDebt") is not None and fx else None,
+        "net_income_ttm": info["netIncomeToCommon"] * fx if info.get("netIncomeToCommon") and fx else None,
         "revenue_ttm": info["totalRevenue"] * fx if info.get("totalRevenue") and fx else None,
         "history": history,
         "fx": fx,
@@ -181,7 +183,7 @@ UNC_DE = {"low": "Niedrig", "medium": "Mittel", "high": "Hoch", "very high": "Se
 
 
 def load_morningstar() -> dict:
-    """Eigene Morningstar-Notizen: symbol,fair_value,stars,moat,uncertainty,date."""
+    """Eigene Morningstar-Notizen: symbol,fair_value,stars,moat,uncertainty,date[,currency]."""
     import csv
     if not MORNINGSTAR_CSV.exists():
         return {}
@@ -200,7 +202,8 @@ def load_morningstar() -> dict:
             unc = (row.get("uncertainty") or "").strip().lower()
             out[sym] = {"fair_value": fv, "stars": int(stars) if stars.isdigit() else None,
                         "moat": MOAT_DE.get(moat, moat or None), "uncertainty": UNC_DE.get(unc, unc or None),
-                        "date": (row.get("date") or "").strip() or None}
+                        "date": (row.get("date") or "").strip() or None,
+                        "currency": (row.get("currency") or "").strip().upper() or None}
     return out
 
 
@@ -210,6 +213,13 @@ def attach_morningstar(results: list[dict], ms: dict) -> None:
         if not m:
             continue
         m = dict(m)
+        if m["fair_value"] and m.get("currency") and m["currency"] != r["currency"]:
+            rate = fx_rate(m["currency"], r["currency"])
+            if math.isfinite(rate):
+                m["fair_value_original"] = f'{m["fair_value"]:.2f} {m["currency"]}'
+                m["fair_value"] *= rate
+            else:
+                m["fair_value"] = None
         if m["fair_value"]:
             m["potential"] = m["fair_value"] / r["price"] - 1
             if r.get("fair_value"):

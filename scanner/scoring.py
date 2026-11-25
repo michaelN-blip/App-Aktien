@@ -6,8 +6,8 @@ einen Score von 0-100 plus nachvollziehbare Einzelkriterien zurück.
 from __future__ import annotations
 
 DISCOUNT_RATE = 0.10   # Buffett rechnet grob mit 10 % Mindestrendite
-TERMINAL_GROWTH = 0.025
-MAX_GROWTH = 0.12
+TERMINAL_GROWTH = 0.03   # ewiges Wachstum nach Jahr 10 (etwa Inflation)
+MAX_GROWTH = 0.20        # Wachstum in Phase 1 (Jahre 1-5) höchstens 20 %
 
 
 def pct(x, digits=0):
@@ -46,9 +46,12 @@ def cagr(hist):
 
 
 def _dcf(fcf, shares, g):
+    """Zwei-Phasen-DCF: Jahre 1-5 mit Wachstum g, Jahre 6-10 flacht es linear auf 3 % ab,
+    danach ewig 3 %. Abgezinst mit 10 % Mindestrendite."""
     total, cf = 0.0, fcf
     for year in range(1, 11):
-        cf *= 1 + g
+        gy = g if year <= 5 or g <= TERMINAL_GROWTH else g + (TERMINAL_GROWTH - g) * (year - 5) / 5
+        cf *= 1 + gy
         total += cf / (1 + DISCOUNT_RATE) ** year
     terminal = cf * (1 + TERMINAL_GROWTH) / (DISCOUNT_RATE - TERMINAL_GROWTH)
     total += terminal / (1 + DISCOUNT_RATE) ** 10
@@ -99,9 +102,20 @@ def buffett_history(s):
     oe = {y: ni[y] + da[y] - min(abs(capex[y]), da[y]) for y in _years(ni, da, capex)}
     if not oe:
         oe = {y: ocf[y] + capex[y] for y in _years(ocf, capex)} or dict(fcf)
-    oe_recent = [oe[y] for y in sorted(oe)[-2:]]
+    # Aktuelle Ertragskraft: Gewinn der letzten 12 Monate, umgerechnet mit dem Owner-Earnings-
+    # Verhältnis des letzten Geschäftsjahres. Gedeckelt auf das 1,5-fache des letzten Jahres
+    # (Schutz vor Einmaleffekten). Ohne 12-Monats-Zahl: letztes Geschäftsjahr.
     fx = s.get("fx") or 1.0
-    oe_norm = avg(oe_recent) * fx if oe_recent else None
+    oe_norm = None
+    if oe:
+        last = max(oe)
+        oe_last = oe[last]
+        oe_norm = oe_last
+        ni_ttm = s.get("net_income_ttm")
+        if ni_ttm and ni.get(last, 0) > 0 and oe_last > 0:
+            ni_ttm_fin = ni_ttm / fx  # net_income_ttm ist schon in Handelswährung
+            oe_norm = min(ni_ttm_fin * oe_last / ni[last], 1.5 * oe_last)
+        oe_norm *= fx
 
     rev_up, rev_n = _ups(rev)
     ni_up, ni_n = _ups(ni)
@@ -143,8 +157,9 @@ def valuation_buffett(s, hb=None):
     if (s.get("sector") or "") != "Financial Services" and oe and oe > 0 and shares:
         low = _dcf(oe, shares, g * 0.5)
         base = _dcf(oe, shares, g)
-        high = _dcf(oe, shares, min(g * 1.5 + 0.02, 0.15))
-        method = f"DCF auf Owner Earnings ({big(oe)}/Jahr), {pct(g)} Wachstum p. a., 10 % Mindestrendite"
+        high = _dcf(oe, shares, min(g * 1.3 + 0.02, 0.25))
+        method = (f"DCF auf Owner Earnings ({big(oe)}/Jahr, letzte 12 Monate): {pct(g)} Wachstum für 5 Jahre, "
+                  f"dann abflachend auf 3 %, 10 % Mindestrendite")
         return low, base, high, method
     pe = s.get("pe")
     if pe and pe > 0:
