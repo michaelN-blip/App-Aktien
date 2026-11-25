@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "17 5 * * 1-6"   # Di–Sa ~06:17 MEZ, nach US-Börsenschluss des Vortags
   workflow_dispatch:          # manuell starten: Actions -> Run workflow
+  push:                       # neu rechnen, wenn du Morningstar-Werte einträgst
+    branches: [main]
+    paths: [scanner/morningstar.csv]
 
 permissions:
   contents: write
@@ -30,4 +33,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data
           git diff --cached --quiet || git commit -m "Aktien-Vorschläge $(date -u +%F)"
-          git push
+          git pull --rebase origin main && git push

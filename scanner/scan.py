@@ -54,6 +54,21 @@ def _row(df, *names):
     return []
 
 
+def _byyear(df, *names) -> dict:
+    """Zeile eines Jahres-Finanzberichts als {Jahr: Wert} (fehlende Werte weggelassen)."""
+    if df is None or getattr(df, "empty", True):
+        return {}
+    for n in names:
+        if n in df.index:
+            out = {}
+            for col, v in df.loc[n].items():
+                if v is not None and not (isinstance(v, float) and math.isnan(v)):
+                    out[int(getattr(col, "year", 0) or 0)] = float(v)
+            if out:
+                return out
+    return {}
+
+
 def fetch(symbol: str) -> dict | None:
     import yfinance as yf
 
@@ -70,6 +85,25 @@ def fetch(symbol: str) -> dict | None:
     net_income = _row(inc, "Net Income", "Net Income Common Stockholders")
     revenue = _row(inc, "Total Revenue", "Operating Revenue")
     rnd = _row(inc, "Research And Development")
+    try:
+        cf = t.cashflow
+    except Exception:
+        cf = None
+    try:
+        bs = t.balance_sheet
+    except Exception:
+        bs = None
+    history = {
+        "revenue": _byyear(inc, "Total Revenue", "Operating Revenue"),
+        "gross_profit": _byyear(inc, "Gross Profit"),
+        "net_income": _byyear(inc, "Net Income", "Net Income Common Stockholders"),
+        "operating_cf": _byyear(cf, "Operating Cash Flow", "Cash Flow From Continuing Operating Activities"),
+        "capex": _byyear(cf, "Capital Expenditure"),
+        "depreciation": _byyear(cf, "Depreciation And Amortization", "Depreciation Amortization Depletion"),
+        "free_cf": _byyear(cf, "Free Cash Flow"),
+        "total_assets": _byyear(bs, "Total Assets"),
+        "equity": _byyear(bs, "Stockholders Equity", "Common Stock Equity"),
+    }
 
     rate = fx_rate(info.get("financialCurrency"), info.get("currency"))
     fx = rate if math.isfinite(rate) else None
@@ -108,6 +142,8 @@ def fetch(symbol: str) -> dict | None:
         "total_cash": info["totalCash"] * fx if info.get("totalCash") and fx else None,
         "total_debt": info["totalDebt"] * fx if info.get("totalDebt") is not None and fx else None,
         "revenue_ttm": info["totalRevenue"] * fx if info.get("totalRevenue") and fx else None,
+        "history": history,
+        "fx": fx,
         "net_income_hist": net_income[:5],
         "revenue_hist": revenue[:5],
         "rnd_latest": rnd[0] if rnd else None,
@@ -139,9 +175,54 @@ def clean(obj):
     return obj
 
 
+MORNINGSTAR_CSV = Path(__file__).parent / "morningstar.csv"
+MOAT_DE = {"wide": "Breit", "narrow": "Schmal", "none": "Kein"}
+UNC_DE = {"low": "Niedrig", "medium": "Mittel", "high": "Hoch", "very high": "Sehr hoch", "extreme": "Extrem"}
+
+
+def load_morningstar() -> dict:
+    """Eigene Morningstar-Notizen: symbol,fair_value,stars,moat,uncertainty,date."""
+    import csv
+    if not MORNINGSTAR_CSV.exists():
+        return {}
+    out = {}
+    with MORNINGSTAR_CSV.open(encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            sym = (row.get("symbol") or "").strip().upper()
+            if not sym:
+                continue
+            try:
+                fv = float((row.get("fair_value") or "").replace(",", "."))
+            except ValueError:
+                fv = None
+            stars = (row.get("stars") or "").strip()
+            moat = (row.get("moat") or "").strip().lower()
+            unc = (row.get("uncertainty") or "").strip().lower()
+            out[sym] = {"fair_value": fv, "stars": int(stars) if stars.isdigit() else None,
+                        "moat": MOAT_DE.get(moat, moat or None), "uncertainty": UNC_DE.get(unc, unc or None),
+                        "date": (row.get("date") or "").strip() or None}
+    return out
+
+
+def attach_morningstar(results: list[dict], ms: dict) -> None:
+    for r in results:
+        m = ms.get(r["symbol"])
+        if not m:
+            continue
+        m = dict(m)
+        if m["fair_value"]:
+            m["potential"] = m["fair_value"] / r["price"] - 1
+            if r.get("fair_value"):
+                m["vs_model"] = r["fair_value"] / m["fair_value"] - 1
+        r["morningstar"] = m
+
+
 def build(stocks_innov: list[dict], stocks_value: list[dict], day: str, previous: dict | None) -> dict:
     innov = [score_innovation(s, INNOVATION.get(s["symbol"])) for s in stocks_innov]
     value = [score_buffett(s) for s in stocks_value]
+    ms = load_morningstar()
+    attach_morningstar(innov, ms)
+    attach_morningstar(value, ms)
     innov.sort(key=lambda x: -x["score"])
     value.sort(key=lambda x: -x["score"])
 
@@ -155,7 +236,10 @@ def build(stocks_innov: list[dict], stocks_value: list[dict], day: str, previous
             p["new_today"] = p["symbol"] not in prev_syms
         ranking = [{**{k: r[k] for k in ("symbol", "name", "score", "price", "currency", "label",
                                          "fair_value", "potential")},
-                    "risk": r["risk"]["name"], "risk_level": r["risk"]["level"]} for r in ranked]
+                    "risk": r["risk"]["name"], "risk_level": r["risk"]["level"],
+                    "ms_fair_value": (r.get("morningstar") or {}).get("fair_value"),
+                    "ms_stars": (r.get("morningstar") or {}).get("stars"),
+                    "rules_met": r.get("rules_met")} for r in ranked]
         return {"picks": picks, "ranking": ranking}
 
     return clean({

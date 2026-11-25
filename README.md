@@ -5,7 +5,7 @@ Eine Web-App, die dir **jeden Tag neue Aktien-Vorschläge** in zwei Kategorien m
 | Kategorie | Idee | Kriterien (je 0–100 Punkte) |
 |---|---|---|
 | 🚀 **Innovation · 10–100-Bagger** | Kleine, schnell wachsende Firmen mit disruptiven Technologien (KI, Raumfahrt, Quanten, Gen-Editing, Fintech, Mini-Atomreaktoren …) | Umsatzwachstum, Bruttomarge, Größe (Luft nach oben), Insider-Anteil, Cash vs. Schulden, F&E-Quote, Analysten-Kursziel, Trend |
-| 🏛️ **Buffett-Value** | Qualitätsfirmen mit Burggraben zu einem vernünftigen Preis | Eigenkapitalrendite, Verschuldung, operative Marge, Gewinn-Beständigkeit, Free-Cashflow-Marge, **Sicherheitsmarge** zum inneren Wert (DCF, 10 % Abzinsung) |
+| 🏛️ **Buffett-Value** | Qualitätsfirmen mit Burggraben zu einem vernünftigen Preis | Eigenkapitalrendite Ø ≥ 15 %, Gesamtkapitalrendite Ø ≥ 10 %, Bruttomarge ≥ 40 %, Nettomarge ≥ 15 %, stetiges Umsatz- und Gewinnwachstum, Cashflow jedes Jahr positiv, KGV ≤ 25, wenig Schulden, **Sicherheitsmarge** zum inneren Wert (DCF auf **Owner Earnings**, 10 % Mindestrendite) |
 
 Pro Kategorie werden täglich **6 Aktien** gezogen – gewichtet aus den 15 besten. So wechselt die Auswahl täglich,
 starke Aktien tauchen aber immer wieder auf. „Neu heute“ markiert Aktien, die gestern nicht dabei waren.
@@ -34,6 +34,21 @@ python scanner/scan.py            # ~2–3 Minuten
 python -m http.server -d docs 8000
 # -> http://localhost:8000
 ```
+
+## Morningstar-Vergleich
+
+Die App loggt sich **nicht** bei Morningstar ein. Stattdessen trägst du die Werte, die dich interessieren,
+selbst in `scanner/morningstar.csv` ein (geht auch am Handy: Datei auf GitHub öffnen → ✏️ → Commit):
+
+```csv
+symbol,fair_value,stars,moat,uncertainty,date
+AAPL,180,3,wide,medium,2026-11-25
+KO,65,4,wide,low,2026-11-25
+```
+
+- `moat`: wide / narrow / none · `uncertainty`: low / medium / high / very high / extreme
+- Nach dem Speichern rechnet der Workflow automatisch neu. Auf der Karte erscheint dann der Morningstar-Wert
+  mit Sternen, Burggraben und dem Vergleich zur eigenen Schätzung.
 
 ## Anpassen
 

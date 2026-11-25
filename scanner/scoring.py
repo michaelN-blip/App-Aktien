@@ -55,41 +55,102 @@ def _dcf(fcf, shares, g):
     return total / shares
 
 
-def _value_growth(s):
-    candidates = [g for g in (s.get("earnings_growth"), cagr(s.get("revenue_hist", []))) if g is not None]
+def _years(*series):
+    """Gemeinsame Jahre mehrerer {Jahr: Wert}-Reihen, aufsteigend."""
+    common = set(series[0])
+    for x in series[1:]:
+        common &= set(x)
+    return sorted(common)
+
+
+def _ups(series):
+    """(Anzahl Jahre mit Anstieg, Anzahl Vergleiche) für eine {Jahr: Wert}-Reihe."""
+    ys = sorted(series)
+    pairs = list(zip(ys, ys[1:]))
+    return sum(series[b] > series[a] for a, b in pairs), len(pairs)
+
+
+def _series_cagr(series):
+    ys = sorted(series)
+    if len(ys) < 2:
+        return None
+    first, last = series[ys[0]], series[ys[-1]]
+    if first <= 0 or last <= 0:
+        return None
+    return (last / first) ** (1 / (ys[-1] - ys[0])) - 1
+
+
+def buffett_history(s):
+    """Mehrjahres-Kennzahlen aus den Jahresberichten (meist 4 Jahre)."""
+    h = s.get("history") or {}
+    rev, ni, gp = h.get("revenue", {}), h.get("net_income", {}), h.get("gross_profit", {})
+    ocf, capex, da = h.get("operating_cf", {}), h.get("capex", {}), h.get("depreciation", {})
+    fcf, assets, eq = h.get("free_cf", {}), h.get("total_assets", {}), h.get("equity", {})
+    avg = lambda xs: sum(xs) / len(xs) if xs else None  # noqa: E731
+
+    roe = {y: ni[y] / eq[y] for y in _years(ni, eq) if eq[y] > 0}
+    roa = {y: ni[y] / assets[y] for y in _years(ni, assets) if assets[y] > 0}
+    gm = {y: gp[y] / rev[y] for y in _years(gp, rev) if rev[y] > 0}
+    nm = {y: ni[y] / rev[y] for y in _years(ni, rev) if rev[y] > 0}
+
+    # Owner Earnings nach Buffett: Gewinn + Abschreibungen - Investitionen (Capex ist negativ verbucht).
+    # Wir ziehen die GESAMTEN Investitionen ab, nicht nur die Erhaltungsinvestitionen -> eher vorsichtig.
+    oe = {y: ni[y] + da[y] + capex[y] for y in _years(ni, da, capex)}
+    if not oe:
+        oe = {y: ocf[y] + capex[y] for y in _years(ocf, capex)} or dict(fcf)
+    oe_recent = [oe[y] for y in sorted(oe)[-2:]]
+    fx = s.get("fx") or 1.0
+    oe_norm = avg(oe_recent) * fx if oe_recent else None
+
+    rev_up, rev_n = _ups(rev)
+    ni_up, ni_n = _ups(ni)
+    cash = {y: v for y, v in (fcf or oe).items()}
+    return {
+        "roe_avg": avg(list(roe.values())), "roe_min": min(roe.values()) if roe else None,
+        "roa_avg": avg(list(roa.values())),
+        "gross_margin": avg(list(gm.values())) if gm else s.get("gross_margin"),
+        "net_margin": avg(list(nm.values())) if nm else s.get("profit_margin"),
+        "rev_up": rev_up, "rev_n": rev_n, "rev_cagr": _series_cagr(rev),
+        "ni_up": ni_up, "ni_n": ni_n, "ni_cagr": _series_cagr(ni),
+        "ni_all_positive": bool(ni) and all(v > 0 for v in ni.values()),
+        "ocf_positive": sum(v > 0 for v in ocf.values()), "ocf_n": len(ocf),
+        "cash_positive": sum(v > 0 for v in cash.values()), "cash_n": len(cash),
+        "oe_norm": oe_norm, "oe_years": len(oe),
+    }
+
+
+def _value_growth(s, hb=None):
+    """Vorsichtige Wachstumsannahme: das kleinere von Umsatz- und Gewinnwachstum, max. 12 %."""
+    hb = hb or buffett_history(s)
+    candidates = [g for g in (hb["rev_cagr"], hb["ni_cagr"]) if g is not None]
+    if not candidates:
+        candidates = [g for g in (s.get("earnings_growth"), cagr(s.get("revenue_hist", []))) if g is not None]
     g = min(candidates) if candidates else 0.03
     return max(0.0, min(g, MAX_GROWTH))
 
 
-def intrinsic_value(s):
-    """Vereinfachte DCF auf Basis des Free Cashflows ("Owner Earnings")."""
-    fcf, shares = s.get("free_cashflow"), s.get("shares")
-    if not fcf or fcf <= 0 or not shares:
-        return None, None
-    g = _value_growth(s)
-    return _dcf(fcf, shares, g), g
+def valuation_buffett(s, hb=None):
+    """Fairer Wert (pessimistisch / Basis / optimistisch).
 
-
-def valuation_buffett(s):
-    """Fairer Wert (pessimistisch / Basis / optimistisch) für Qualitätsaktien.
-
-    1. Free Cashflow vorhanden -> DCF mit 10 % Abzinsung, Wachstum halbiert / normal / erhöht.
-    2. Banken & Firmen ohne FCF -> faires KGV (8 + Gewinnwachstum in %, max. 16).
+    1. Owner Earnings vorhanden -> DCF mit 10 % Mindestrendite, Wachstum halbiert / normal / erhöht.
+    2. Banken & Firmen ohne Owner Earnings -> faires KGV (8 + Gewinnwachstum in %, max. 16).
     """
-    fcf, shares = s.get("free_cashflow"), s.get("shares")
-    g = _value_growth(s)
-    if (s.get("sector") or "") != "Financial Services" and fcf and fcf > 0 and shares:
-        low = _dcf(fcf, shares, g * 0.5)
-        base = _dcf(fcf, shares, g)
-        high = _dcf(fcf, shares, min(g * 1.5 + 0.02, 0.15))
-        method = f"DCF auf Free Cashflow, {pct(g)} Wachstum p. a., 10 % Mindestrendite"
+    hb = hb or buffett_history(s)
+    shares = s.get("shares")
+    oe = hb["oe_norm"] or s.get("free_cashflow")
+    g = _value_growth(s, hb)
+    if (s.get("sector") or "") != "Financial Services" and oe and oe > 0 and shares:
+        low = _dcf(oe, shares, g * 0.5)
+        base = _dcf(oe, shares, g)
+        high = _dcf(oe, shares, min(g * 1.5 + 0.02, 0.15))
+        method = f"DCF auf Owner Earnings ({big(oe)}/Jahr), {pct(g)} Wachstum p. a., 10 % Mindestrendite"
         return low, base, high, method
     pe = s.get("pe")
     if pe and pe > 0:
         eps = s["price"] / pe
-        g_pct = min(max(s.get("earnings_growth") or 0.03, 0), 0.10) * 100
+        g_pct = min(max(hb["ni_cagr"] if hb["ni_cagr"] is not None else (s.get("earnings_growth") or 0.03), 0), 0.08) * 100
         fair_pe = min(8 + g_pct, 16)
-        method = f"Faires KGV {fair_pe:.0f} (8 + Wachstum in %) × Gewinn je Aktie"
+        method = f"Faires KGV {fair_pe:.0f} (8 + Gewinnwachstum in %) × Gewinn je Aktie"
         return eps * fair_pe * 0.75, eps * fair_pe, eps * fair_pe * 1.25, method
     return None, None, None, None
 
@@ -123,9 +184,17 @@ def valuation_innovation(s):
     base = _growth_case(s, 1.0, 1.0, 25)
     high = _growth_case(s, 1.3, 1.2, 35)
     method = "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite"
-    if (s.get("revenue_ttm") or 0) < 100e6:
+    if _revenue(s) is not None and _revenue(s) < 100e6:
         method += " – bei so wenig Umsatz kaum aussagekräftig (Wert hängt an künftigen Durchbrüchen)"
     return low, base, high, method
+
+
+def _revenue(s):
+    """Umsatz der letzten 12 Monate, sonst letztes Geschäftsjahr; None wenn unbekannt."""
+    if s.get("revenue_ttm") is not None:
+        return s["revenue_ttm"]
+    rev = (s.get("history") or {}).get("revenue") or {}
+    return rev[max(rev)] * (s.get("fx") or 1.0) if rev else None
 
 
 def risk_assessment(s, low=None, high=None):
@@ -154,7 +223,7 @@ def risk_assessment(s, low=None, high=None):
     ps, pe = s.get("ps"), s.get("pe")
     if (ps and ps > 20) or (pe and pe > 50):
         pts += 1; why.append("sehr hohe Bewertung")
-    if (s.get("revenue_ttm") or 0) < 100e6:
+    if _revenue(s) is not None and _revenue(s) < 100e6:
         pts += 2; why.append("kaum Umsatz – Geschäftsmodell noch unbewiesen")
     mc = s.get("market_cap") or 0
     if mc < 2e9:
@@ -201,93 +270,149 @@ def crit(name, shown, pts, max_pts, hint):
 def score_buffett(s):
     c, reasons, risks = [], [], []
     is_financial = (s.get("sector") or "") == "Financial Services"
+    hb = buffett_history(s)
+    rules = []  # Buffett-Mindestkriterien (erfüllt ja/nein)
 
-    # 1. Hohe Eigenkapitalrendite = Burggraben
-    roe = s.get("roe")
-    p = tiers(roe, [(0.20, 20), (0.15, 15), (0.10, 7)])
-    c.append(crit("Eigenkapitalrendite (ROE)", pct(roe), p, 20, "Buffett will dauerhaft > 15 %"))
+    # 1. Eigenkapitalrendite im Schnitt >= 15 %
+    roe = hb["roe_avg"] if hb["roe_avg"] is not None else s.get("roe")
+    p = tiers(roe, [(0.20, 12), (0.15, 9), (0.10, 3)])
+    if p and hb["roe_min"] is not None and hb["roe_min"] < 0.10:
+        p -= 3  # nicht stetig
+    c.append(crit("Eigenkapitalrendite Ø", pct(roe), p, 12, f"Mindestens 15 % (schwächstes Jahr {pct(hb['roe_min'])})"))
+    rules.append(("Eigenkapitalrendite Ø ≥ 15 %", roe is not None and roe >= 0.15))
     if roe and roe >= 0.15:
-        reasons.append(f"Hohe Eigenkapitalrendite von {pct(roe)} – Zeichen für einen Burggraben")
+        reasons.append(f"Eigenkapitalrendite im Schnitt {pct(roe)} – Zeichen für einen Burggraben")
 
-    # 2. Wenig Schulden
-    de = s.get("debt_to_equity")
+    # 2. Gesamtkapitalrendite im Schnitt >= 10 %
+    roa = hb["roa_avg"]
     if is_financial:
-        p = 8
-        shown = "Bank/Versicherung"
+        p, shown = 5, f"{pct(roa, 1)} (Bank/Versicherung)"
+        rules.append(("Gesamtkapitalrendite Ø ≥ 10 %", None))
     else:
-        p = tiers(de, [(0.5, 15), (1.0, 8), (2.0, 3)], higher_is_better=False) if de is not None and de >= 0 else 0
-        shown = num(de, 2)
-    c.append(crit("Verschuldung (Debt/Equity)", shown, p, 15, "Ideal < 0,5"))
-    if not is_financial and de is not None and 0 <= de < 0.5:
-        reasons.append("Solide Bilanz mit wenig Schulden")
-    if not is_financial and de is not None and (de > 2 or de < 0):
-        risks.append("Hohe Verschuldung bzw. negatives Eigenkapital")
+        p, shown = tiers(roa, [(0.10, 10), (0.07, 5), (0.05, 2)]), pct(roa, 1)
+        rules.append(("Gesamtkapitalrendite Ø ≥ 10 %", roa is not None and roa >= 0.10))
+    c.append(crit("Gesamtkapitalrendite Ø (ROA)", shown, p, 10, "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"))
+    if not is_financial and roa and roa >= 0.10:
+        reasons.append(f"Gesamtkapitalrendite im Schnitt {pct(roa)} – arbeitet mit wenig Kapital sehr profitabel")
 
-    # 3. Preissetzungsmacht
-    om = s.get("operating_margin")
-    p = tiers(om, [(0.20, 15), (0.12, 8), (0.06, 3)])
-    c.append(crit("Operative Marge", pct(om), p, 15, "Hohe Margen = Preissetzungsmacht"))
-    if om and om >= 0.20:
-        reasons.append(f"Starke Preissetzungsmacht (operative Marge {pct(om)})")
+    # 3. Bruttomarge
+    gm = hb["gross_margin"]
+    if is_financial and gm is None:
+        p, shown = 4, "Bank/Versicherung"
+        rules.append(("Bruttomarge ≥ 40 %", None))
+    else:
+        p, shown = tiers(gm, [(0.40, 8), (0.30, 4), (0.20, 1)]), pct(gm)
+        rules.append(("Bruttomarge ≥ 40 %", gm is not None and gm >= 0.40))
+    c.append(crit("Bruttomarge Ø", shown, p, 8, "Mindestens 40 % – Preissetzungsmacht"))
 
-    # 4. Beständige Gewinne
-    ni = s.get("net_income_hist") or []
+    # 4. Nettomarge
+    nm = hb["net_margin"]
+    p = tiers(nm, [(0.20, 8), (0.15, 6), (0.10, 3)])
+    c.append(crit("Nettomarge Ø", pct(nm), p, 8, "Mindestens 15 % bleiben als Gewinn übrig"))
+    rules.append(("Nettomarge Ø ≥ 15 %", nm is not None and nm >= 0.15))
+    if gm and gm >= 0.40 and nm and nm >= 0.15:
+        reasons.append(f"Gute Margen: brutto {pct(gm)}, netto {pct(nm)}")
+
+    # 5. Stetiges Umsatzwachstum
+    up, n = hb["rev_up"], hb["rev_n"]
     p = 0
-    if ni and all(v > 0 for v in ni):
-        p += 10
-        if len(ni) >= 2 and ni[0] > ni[-1]:
-            p += 5
-    c.append(crit("Gewinn-Beständigkeit", f"{sum(v > 0 for v in ni)}/{len(ni)} Jahre Gewinn" if ni else "–",
-                  p, 15, "Jedes Jahr profitabel und wachsend"))
-    if p == 15:
-        reasons.append(f"In allen {len(ni)} letzten Geschäftsjahren profitabel und mit Gewinnwachstum")
-    elif ni and ni[0] < ni[-1]:
+    if n:
+        p = 10 if up == n else 5 if up == n - 1 and (hb["rev_cagr"] or 0) > 0 else 0
+    c.append(crit("Stetiges Umsatzwachstum", f"{up}/{n} Jahre gestiegen · {pct(hb['rev_cagr'], 1)} p. a." if n else "–",
+                  p, 10, "Umsatz steigt Jahr für Jahr"))
+    rules.append(("Umsatz stetig wachsend", bool(n) and up >= n - 1 and (hb["rev_cagr"] or 0) > 0))
+    if n and up == n:
+        reasons.append(f"Umsatz in jedem der letzten {n} Jahre gestiegen ({pct(hb['rev_cagr'], 1)} p. a.)")
+    elif n and (hb["rev_cagr"] or 0) <= 0:
+        risks.append("Umsatz wächst nicht")
+
+    # 6. Gewinnwachstum
+    up, n = hb["ni_up"], hb["ni_n"]
+    p = 0
+    if n and hb["ni_all_positive"]:
+        p = 10 if up == n else 6 if (hb["ni_cagr"] or 0) > 0 else 2
+    c.append(crit("Gewinnwachstum", f"{up}/{n} Jahre gestiegen · {pct(hb['ni_cagr'], 1)} p. a." if n else "–",
+                  p, 10, "Jedes Jahr Gewinn, Tendenz steigend"))
+    rules.append(("Gewinn wachsend", hb["ni_all_positive"] and (hb["ni_cagr"] or 0) > 0))
+    if p == 10:
+        reasons.append(f"Gewinn in jedem der letzten {n} Jahre gestiegen ({pct(hb['ni_cagr'], 1)} p. a.)")
+    elif n and not hb["ni_all_positive"]:
+        risks.append("In mindestens einem der letzten Jahre Verlust gemacht")
+    elif n and (hb["ni_cagr"] or 0) <= 0:
         risks.append("Gewinn ist in den letzten Jahren gesunken")
 
-    # 5. Cash-Maschine
-    fcf, rev = s.get("free_cashflow"), s.get("revenue_ttm")
-    fcf_margin = fcf / rev if fcf and rev else None
-    p = 10 if fcf_margin and fcf_margin >= 0.10 else 5 if fcf and fcf > 0 else 0
-    c.append(crit("Free-Cashflow-Marge", pct(fcf_margin), p, 10, "Echtes Geld, nicht nur Buchgewinn"))
+    # 7. Immer guter Cashflow
+    cp, cn = hb["cash_positive"], hb["cash_n"]
+    p = 10 if cn and cp == cn else 5 if hb["ocf_n"] and hb["ocf_positive"] == hb["ocf_n"] else 0
+    if is_financial and not cn:
+        p = 5
+    c.append(crit("Cashflow stets positiv", f"{cp}/{cn} Jahre positiv" if cn else "–", p, 10,
+                  "Free Cashflow / Owner Earnings in jedem Jahr positiv"))
+    rules.append(("Cashflow jedes Jahr positiv", (cn > 0 and cp == cn) if not is_financial else None))
+    if cn and cp == cn and not is_financial:
+        reasons.append(f"In allen {cn} Jahren positiver Free Cashflow")
 
-    # 6. Preis vs. innerer Wert (Sicherheitsmarge)
-    iv, g = (None, None) if is_financial else intrinsic_value(s)
-    price = s["price"]
-    mos = (iv - price) / iv if iv else None
-    if mos is not None:
-        p = tiers(mos, [(0.30, 25), (0.15, 18), (0.0, 10), (-0.20, 4)])
-        c.append(crit("Sicherheitsmarge (DCF)", pct(mos), p, 25,
-                      f"Innerer Wert ≈ {iv:.2f} {s['currency']} bei {pct(g)} Wachstum"))
-        if mos >= 0.15:
-            reasons.append(f"Notiert {pct(mos)} unter dem geschätzten inneren Wert")
-        elif mos < -0.20:
-            risks.append(f"Aktuell deutlich über dem geschätzten inneren Wert ({iv:.0f} {s['currency']})")
+    # 8. Wenig Schulden
+    de = s.get("debt_to_equity")
+    if is_financial:
+        p, shown = 3, "Bank/Versicherung"
     else:
-        pe, pb = s.get("pe"), s.get("pb")
-        p = tiers(pe, [(12, 15), (16, 10), (22, 5)], higher_is_better=False) if pe and pe > 0 else 0
-        if is_financial and pb:
-            p += tiers(pb, [(1.2, 10), (2.0, 5)], higher_is_better=False)
-        c.append(crit("Bewertung (KGV/KBV)", f"KGV {num(pe)} · KBV {num(pb)}", p, 25, "Günstig im Verhältnis zum Gewinn"))
-        if pe and 0 < pe < 15:
-            reasons.append(f"Günstiges KGV von {num(pe)}")
+        p = tiers(de, [(0.5, 5), (1.0, 3), (2.0, 1)], higher_is_better=False) if de is not None and de >= 0 else 0
+        shown = num(de, 2)
+        if de is not None and (de > 2 or de < 0):
+            risks.append("Hohe Verschuldung bzw. negatives Eigenkapital")
+    c.append(crit("Verschuldung (Debt/Equity)", shown, p, 5, "Ideal < 0,5"))
 
+    # 9. KGV nicht zu hoch
     pe = s.get("pe")
-    if pe and pe > 35:
-        risks.append(f"Hohes KGV von {num(pe)} – wenig Spielraum für Enttäuschungen")
-    if s.get("dividend_yield"):
-        dy = s["dividend_yield"]
+    p = tiers(pe, [(15, 10), (20, 7), (25, 4), (30, 1)], higher_is_better=False) if pe and pe > 0 else 0
+    c.append(crit("KGV", num(pe), p, 10, "Ideal ≤ 15, höchstens 25"))
+    rules.append(("KGV ≤ 25", pe is not None and 0 < pe <= 25))
+    if pe and 0 < pe <= 15:
+        reasons.append(f"Günstiges KGV von {num(pe)}")
+    elif pe and pe > 25:
+        risks.append(f"KGV von {num(pe)} ist für Buffett zu hoch")
+
+    # 10. Owner Earnings & Sicherheitsmarge
+    low, iv, high, method = valuation_buffett(s, hb)
+    price = s["price"]
+    mos = (iv - price) / iv if iv and iv > 0 else None
+    oe = hb["oe_norm"]
+    oe_yield = oe / s["market_cap"] if oe and s.get("market_cap") else None
+    p = tiers(mos, [(0.30, 17), (0.15, 13), (0.0, 8), (-0.20, 3)])
+    gap = iv / price - 1 if iv and iv > 0 else None
+    shown = "–" if gap is None else f"Kurs {pct(abs(gap))} {'unter' if gap >= 0 else 'über'} innerem Wert"
+    c.append(crit("Sicherheitsmarge (Owner Earnings)", shown, p, 17,
+                  f"Owner-Earnings-Rendite {pct(oe_yield, 1)} · innerer Wert ≈ {iv:.2f} {s['currency']}" if iv
+                  else "Kurs unter dem inneren Wert"))
+    rules.append(("Kurs unter innerem Wert", mos is not None and mos >= 0))
+    if mos is not None and mos >= 0.15:
+        reasons.append(f"Sicherheitsmarge von {pct(mos)}: Kurs liegt klar unter dem inneren Wert")
+    elif mos is not None and mos < -0.20:
+        risks.append(f"Deutlich über dem geschätzten inneren Wert ({iv:.0f} {s['currency']})")
+    if oe_yield and oe_yield >= 0.05:
+        reasons.append(f"Owner-Earnings-Rendite von {pct(oe_yield, 1)} – wie eine Anleihe mit wachsendem Kupon")
+
+    dy = s.get("dividend_yield")
+    if dy:
         dy = dy / 100 if dy > 1 else dy  # yfinance liefert je nach Version % oder Anteil
         if dy >= 0.02:
             reasons.append(f"Zahlt {pct(dy, 1)} Dividende")
 
+    checked = [ok for _, ok in rules if ok is not None]
+    met = sum(checked)
     score = sum(x["points"] for x in c)
     label = ("Starker Buffett-Kandidat" if score >= 75 else "Interessant" if score >= 60
              else "Beobachten" if score >= 45 else "Eher nicht")
+    too_expensive = (pe is not None and pe > 30) or (mos is not None and mos < -0.30)
+    if too_expensive and score >= 45:
+        label = "Top-Firma, aber zu teuer"
     extra = {
-        **_valuation_fields(s, *valuation_buffett(s)),
-        "intrinsic_value": iv, "margin_of_safety": mos, "growth_assumption": g,
-        "metrics": {"KGV": num(pe), "Forward-KGV": num(s.get("forward_pe")), "ROE": pct(roe),
-                    "Op. Marge": pct(om), "Debt/Equity": num(de, 2), "Marktkap.": big(s.get("market_cap"))},
+        **_valuation_fields(s, low, iv, high, method),
+        "intrinsic_value": iv, "margin_of_safety": mos, "owner_earnings": oe, "owner_earnings_yield": oe_yield,
+        "rules": [{"name": n, "ok": ok} for n, ok in rules], "rules_met": f"{met}/{len(checked)}",
+        "metrics": {"KGV": num(pe), "ROE Ø": pct(roe), "ROA Ø": pct(hb["roa_avg"]),
+                    "Bruttomarge": pct(gm), "Nettomarge": pct(nm), "Owner Earn. Rendite": pct(oe_yield, 1)},
     }
     return _result(s, score, c, reasons, risks, label, extra)
 
@@ -360,7 +485,7 @@ def score_innovation(s, theme=None):
         risks.append(f"Sehr hoch bewertet: {num(ps, 0)}-facher Umsatz")
     hi = s.get("fifty_two_high")
     if hi and price < hi * 0.5:
-        risks.append(f"Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen")
+        risks.append("Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen")
     beta = s.get("beta")
     if beta and beta > 2:
         risks.append(f"Sehr volatil (Beta {num(beta)})")
