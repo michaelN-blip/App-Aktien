@@ -45,16 +45,20 @@ def cagr(hist):
     return (vals[0] / vals[-1]) ** (1 / (len(vals) - 1)) - 1
 
 
-def _dcf(fcf, shares, g):
+ANALYST_WEIGHT = 0.30    # Analysten-Erwartung fließt nur zu 30 % ins Wachstum ein
+RATE_BY_RISK = {1: 0.08, 2: 0.09}  # Mindestrendite nach Risikostufe, sonst DISCOUNT_RATE
+
+
+def _dcf(fcf, shares, g, rate=DISCOUNT_RATE):
     """Zwei-Phasen-DCF: Jahre 1-5 mit Wachstum g, Jahre 6-10 flacht es linear auf 3 % ab,
-    danach ewig 3 %. Abgezinst mit 10 % Mindestrendite."""
+    danach ewig 3 %. Abgezinst mit der Mindestrendite `rate`."""
     total, cf = 0.0, fcf
     for year in range(1, 11):
         gy = g if year <= 5 or g <= TERMINAL_GROWTH else g + (TERMINAL_GROWTH - g) * (year - 5) / 5
         cf *= 1 + gy
-        total += cf / (1 + DISCOUNT_RATE) ** year
-    terminal = cf * (1 + TERMINAL_GROWTH) / (DISCOUNT_RATE - TERMINAL_GROWTH)
-    total += terminal / (1 + DISCOUNT_RATE) ** 10
+        total += cf / (1 + rate) ** year
+    terminal = cf * (1 + TERMINAL_GROWTH) / (rate - TERMINAL_GROWTH)
+    total += terminal / (1 + rate) ** 10
     return total / shares
 
 
@@ -134,14 +138,26 @@ def buffett_history(s):
     }
 
 
-def _value_growth(s, hb=None):
-    """Vorsichtige Wachstumsannahme: das kleinere von Umsatz- und Gewinnwachstum, max. 12 %."""
+def _growth_parts(s, hb=None):
+    """(historisches Wachstum, Analysten-Erwartung, gemischtes Wachstum).
+
+    Historie = das kleinere von Umsatz- und Gewinnwachstum der letzten Jahre.
+    Analysten = erwartetes Gewinnwachstum nächstes Jahr (Forward- vs. Trailing-EPS).
+    Mischung: 70 % Historie + 30 % Analysten, begrenzt auf 0-20 %.
+    """
     hb = hb or buffett_history(s)
     candidates = [g for g in (hb["rev_cagr"], hb["ni_cagr"]) if g is not None]
     if not candidates:
         candidates = [g for g in (s.get("earnings_growth"), cagr(s.get("revenue_hist", []))) if g is not None]
-    g = min(candidates) if candidates else 0.03
-    return max(0.0, min(g, MAX_GROWTH))
+    hist = min(candidates) if candidates else 0.03
+    hist_c = max(0.0, min(hist, MAX_GROWTH))
+    fwd = s.get("forward_growth")
+    g = hist_c if fwd is None else (1 - ANALYST_WEIGHT) * hist_c + ANALYST_WEIGHT * fwd
+    return hist, fwd, max(0.0, min(g, MAX_GROWTH))
+
+
+def _value_growth(s, hb=None):
+    return _growth_parts(s, hb)[2]
 
 
 def valuation_buffett(s, hb=None):
@@ -153,13 +169,16 @@ def valuation_buffett(s, hb=None):
     hb = hb or buffett_history(s)
     shares = s.get("shares")
     oe = hb["oe_norm"] or s.get("free_cashflow")
-    g = _value_growth(s, hb)
+    hist, fwd, g = _growth_parts(s, hb)
+    risk_level = risk_assessment(s)["level"]
+    rate = RATE_BY_RISK.get(risk_level, DISCOUNT_RATE)
+    growth_txt = f"{pct(g)} Wachstum" + (f" (Historie {pct(hist)}, Analysten {pct(fwd)})" if fwd is not None else "")
     if (s.get("sector") or "") != "Financial Services" and oe and oe > 0 and shares:
-        low = _dcf(oe, shares, g * 0.5)
-        base = _dcf(oe, shares, g)
-        high = _dcf(oe, shares, min(g * 1.3 + 0.02, 0.25))
-        method = (f"DCF auf Owner Earnings ({big(oe)}/Jahr, letzte 12 Monate): {pct(g)} Wachstum für 5 Jahre, "
-                  f"dann abflachend auf 3 %, 10 % Mindestrendite")
+        low = _dcf(oe, shares, g * 0.5, rate)
+        base = _dcf(oe, shares, g, rate)
+        high = _dcf(oe, shares, min(g * 1.3 + 0.02, 0.25), rate)
+        method = (f"DCF auf Owner Earnings ({big(oe)}/Jahr, letzte 12 Monate): {growth_txt} für 5 Jahre, "
+                  f"dann abflachend auf 3 %, {pct(rate)} Mindestrendite (Risiko {risk_assessment(s)['name'].lower()})")
         return low, base, high, method
     pe = s.get("pe")
     if pe and pe > 0:
@@ -241,6 +260,9 @@ def risk_assessment(s, low=None, high=None):
         pts += 1; why.append("sehr hohe Bewertung")
     if _revenue(s) is not None and _revenue(s) < 100e6:
         pts += 2; why.append("kaum Umsatz – Geschäftsmodell noch unbewiesen")
+    fwd = s.get("forward_growth")
+    if fwd is not None and fwd < -0.05:
+        pts += 1; why.append(f"Analysten erwarten Gewinnrückgang ({pct(fwd)})")
     mc = s.get("market_cap") or 0
     if mc < 2e9:
         pts += 2; why.append("kleines Unternehmen")
@@ -409,11 +431,9 @@ def score_buffett(s):
     if oe_yield and oe_yield >= 0.05:
         reasons.append(f"Owner-Earnings-Rendite von {pct(oe_yield, 1)} – wie eine Anleihe mit wachsendem Kupon")
 
-    dy = s.get("dividend_yield")
-    if dy:
-        dy = dy / 100 if dy > 1 else dy  # yfinance liefert je nach Version % oder Anteil
-        if dy >= 0.02:
-            reasons.append(f"Zahlt {pct(dy, 1)} Dividende")
+    dy = s.get("dividend_yield")  # Anteil, z. B. 0.03 = 3 %
+    if dy and dy >= 0.02:
+        reasons.append(f"Zahlt {pct(dy, 1)} Dividende")
 
     checked = [ok for _, ok in rules if ok is not None]
     met = sum(checked)
@@ -517,3 +537,67 @@ def score_innovation(s, theme=None):
                     "Marktkap.": big(mc), "Insider": pct(ins, 1), "Kursziel": num(tp, 2)},
     }
     return _result(s, score, c, reasons, risks, label, extra)
+
+
+# ---------------------------------------------------------- Einstufung ---
+
+def classify(s, b, i, theme=None):
+    """Aktien-Typ (Value, Growth, Qualität …), Zusatz-Merkmale und welche Strategie passt.
+
+    b = score_buffett(s), i = score_innovation(s, theme)
+    """
+    hb = buffett_history(s)
+    growth = max([x for x in (s.get("revenue_growth"), hb["rev_cagr"]) if x is not None], default=None)
+    pe, pm, rev = s.get("pe"), s.get("profit_margin"), _revenue(s)
+    met, total = (int(x) for x in b["rules_met"].split("/")) if b.get("rules_met") else (0, 1)
+
+    if (rev is not None and rev < 100e6) or (pm is not None and pm < 0 and (growth or 0) >= 0.15):
+        style, why = "Spekulativ / Frühphase", "macht noch Verluste oder kaum Umsatz – setzt auf künftige Durchbrüche"
+    elif total and met / total >= 0.7 and growth is not None and growth >= 0.15:
+        style, why = "Qualitäts-Wachstum", (f"erfüllt {b['rules_met']} Buffett-Kriterien und wächst trotzdem um "
+                                             f"{pct(growth)} pro Jahr – seltene Kombination")
+    elif total and met / total >= 0.7:
+        style, why = "Qualität (Buffett-Typ)", f"erfüllt {b['rules_met']} Buffett-Kriterien – stabiler, profitabler Burggraben"
+    elif growth is not None and growth >= 0.20:
+        style, why = "Growth (Wachstum)", f"wächst den Umsatz um {pct(growth)} pro Jahr"
+    elif pe is not None and 0 < pe <= 15:
+        style, why = "Value (günstig)", f"niedriges KGV von {num(pe)}"
+    elif pm is not None and pm < 0:
+        style, why = "Turnaround / Verlust", "macht Verluste ohne starkes Wachstum"
+    else:
+        style, why = "Standardwert (gemischt)", "weder klarer Wachstums- noch klarer Value-Wert"
+
+    tags = []
+    mc = s.get("market_cap") or 0
+    tags.append("Large Cap" if mc >= 10e9 else "Mid Cap" if mc >= 2e9 else "Small Cap")
+    dy = s.get("dividend_yield")  # Anteil
+    if dy and dy >= 0.025:
+        tags.append(f"Dividende {pct(dy, 1)}")
+    sector, industry = s.get("sector") or "", (s.get("industry") or "").lower()
+    if sector in ("Energy", "Basic Materials") or "semiconductor equipment" in industry or "auto" in industry:
+        tags.append("Zyklisch")
+    if sector in ("Consumer Defensive", "Utilities") or "insurance" in industry:
+        tags.append("Defensiv")
+    if theme:
+        tags.append(theme)
+    if (s.get("beta") or 0) > 1.8:
+        tags.append("Hohe Schwankung")
+
+    primary = "innovation" if style in ("Spekulativ / Frühphase", "Growth (Wachstum)") else "buffett"
+    main = i if primary == "innovation" else b
+    fits = []
+    if b["score"] >= 60 and b["label"] != "Top-Firma, aber zu teuer":
+        fits.append("Buffett-Value")
+    if i["score"] >= 55:
+        fits.append("Innovation / Vervielfacher")
+
+    pot = main.get("potential")
+    risk = main.get("risk") or {}
+    verdict = (f"Einstufung: {style} – {why}. "
+               f"Buffett-Score {b['score']}/100 ({b['label']}), Innovations-Score {i['score']}/100 ({i['label']}). ")
+    if main.get("fair_value"):
+        verdict += (f"Geschätzter fairer Wert ≈ {main['fair_value']:.2f} {s['currency']} "
+                    f"({'+' if pot >= 0 else '−'}{abs(pot) * 100:.0f} % zum Kurs). ")
+    verdict += f"Risiko: {risk.get('name', '–')}."
+    return {"style": style, "style_reason": why, "tags": tags, "primary": primary,
+            "fits": fits, "verdict": verdict}

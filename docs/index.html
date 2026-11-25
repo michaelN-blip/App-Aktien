@@ -91,6 +91,21 @@ td.r, th.r { text-align: right; }
 .ms b { font-size: 13px; }
 .stars { color: #e8a400; letter-spacing: 1px; }
 .method { font-size: 11.5px; color: var(--muted); }
+.search { display: flex; gap: 8px; margin: 0 0 14px; }
+.search input { flex: 1; min-width: 0; background: var(--card); color: var(--text); border: 1px solid var(--line);
+                border-radius: 10px; padding: 10px 12px; font: inherit; font-size: 16px; }
+.search button, .btn { background: var(--text); color: var(--bg); border: 0; border-radius: 10px; padding: 10px 14px;
+                font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; text-decoration: none; display: inline-block; }
+.btn.ghost { background: var(--chip); color: var(--text); }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+.panel h2 { margin: 0; font-size: 22px; letter-spacing: -.01em; }
+.style-badge { display: inline-block; background: var(--accent); color: #fff; border-radius: 8px; padding: 3px 10px; font-weight: 700; font-size: 14px; }
+.verdict { font-size: 14.5px; margin: 10px 0 0; }
+.kind-head { font-weight: 700; margin: 0 0 6px; font-size: 15px; }
+.matches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--line); border-top-color: var(--accent);
+           border-radius: 50%; animation: spin 1s linear infinite; vertical-align: -2px; margin-right: 6px; }
+@keyframes spin { to { transform: rotate(360deg); } }
 .empty { text-align: center; padding: 60px 20px; color: var(--muted); }
 footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
 </style>
@@ -105,10 +120,17 @@ footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
     <label class="sub">Tag: <select id="day"></select></label>
   </header>
 
+  <form id="search" class="search" role="search">
+    <input id="q" list="symbols" placeholder="Aktie suchen – Ticker oder Name (z. B. TSM, Nestlé)" autocomplete="off" enterkeyhint="search">
+    <datalist id="symbols"></datalist>
+    <button type="submit">🔎 Suchen</button>
+  </form>
+
   <nav class="tabs" role="tablist">
     <button class="tab" role="tab" data-tab="innovation" aria-selected="true">🚀 Innovation · 10–100-Bagger</button>
     <button class="tab" role="tab" data-tab="buffett" aria-selected="false">🏛️ Buffett-Value</button>
     <button class="tab" role="tab" data-tab="ranking" aria-selected="false">📊 Gesamt-Ranking</button>
+    <button class="tab" role="tab" data-tab="suche" aria-selected="false">🔎 Suche</button>
   </nav>
 
   <div id="intro" class="intro"></div>
@@ -128,7 +150,11 @@ const INTRO = {
   buffett: `<b>Qualität zum fairen Preis – nach Warren Buffetts Kriterien.</b> Eigenkapitalrendite Ø ≥ 15 %,
     Gesamtkapitalrendite Ø ≥ 10 %, Bruttomarge ≥ 40 %, Nettomarge ≥ 15 %, stetig steigender Umsatz und Gewinn,
     jedes Jahr positiver Cashflow, KGV ≤ 25 – und eine <b>Sicherheitsmarge</b>: Der Kurs sollte unter dem inneren Wert liegen,
-    berechnet aus den <b>Owner Earnings</b> (Gewinn + Abschreibungen − Erhaltungsinvestitionen) mit 10 % Mindestrendite.`,
+    berechnet aus den <b>Owner Earnings</b> (Gewinn + Abschreibungen − Erhaltungsinvestitionen). Wachstum: 70 % eigene Historie,
+    30 % Analysten-Erwartung. Mindestrendite je nach Risiko 8 % (niedrig), 9 % (mittel) oder 10 % (hoch).`,
+  suche: `<b>Jede Aktie analysieren.</b> Ticker oder Firmennamen eingeben. Du bekommst beide Bewertungen (Buffett &amp; Innovation),
+    die Einstufung (Value, Growth, Qualität …), fairen Wert, Potenzial und Risiko. Aktien aus der täglichen Liste erscheinen sofort,
+    alle anderen über <b>„Jetzt bewerten“</b> (dauert ca. 2–3 Minuten).`,
   ranking: `<b>Alle bewerteten Aktien</b> nach Punktzahl. Die Tagesauswahl wird aus den besten 15 jeder Kategorie gezogen
     (gewichtet nach Score) – deshalb wechselt sie täglich, gute Aktien tauchen aber immer wieder auf.
     <br><br><b>Fairer Wert & Potenzial</b> sind grobe Modell-Schätzungen (Buffett: Discounted Cashflow bzw. faires KGV;
@@ -245,9 +271,121 @@ function rankingTable(list, kind, title) {
     <th class="r">Potenzial</th><th>Risiko</th>${kind === "buffett" ? '<th class="r">Kriterien</th>' : ""}<th class="r">Score</th></tr>${rows}</table></div>`;
 }
 
+// ------------------------------------------------------------------ Suche ---
+const REPO = "michaelN-blip/App-Aktien";
+let searchIndex = null, searchHtml = "", pollTimer = null;
+const slug = q => q.toUpperCase().replace(/[^A-Z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 40) || "LEER";
+const norm = t => (t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+async function loadIndex() {
+  if (searchIndex) return searchIndex;
+  try {
+    searchIndex = (await (await fetch(`data/lookup/index.json?v=${Date.now()}`)).json()).stocks;
+  } catch { searchIndex = []; }
+  $("#symbols").innerHTML = searchIndex.map(e => `<option value="${esc(e.symbol)}">${esc(e.name)}</option>`).join("");
+  return searchIndex;
+}
+
+function showSearch(html) { searchHtml = html; tab = "suche"; render(); window.scrollTo({top: 0}); }
+
+async function openAnalysis(file) {
+  showSearch(`<div class="panel"><span class="spinner"></span>Lade Analyse …</div>`);
+  try {
+    const r = await fetch(`data/lookup/${encodeURIComponent(file)}.json?v=${Date.now()}`);
+    if (!r.ok) throw new Error(r.status);
+    showSearch(analysisView(await r.json()));
+  } catch { showSearch(`<div class="panel">Analyse konnte nicht geladen werden.</div>`); }
+}
+
+function analysisView(a) {
+  const kinds = a.primary === "innovation" ? ["innovation", "buffett"] : ["buffett", "innovation"];
+  const head = {buffett: "🏛️ Buffett-Bewertung", innovation: "🚀 Innovations-Bewertung"};
+  const d = new Date((a.date || "") + "T12:00:00");
+  return `<div class="panel">
+      <div class="sub">${esc(a.symbol)} · ${esc(a.sector || "")}${a.industry ? " · " + esc(a.industry) : ""}${a.country ? " · " + esc(a.country) : ""}</div>
+      <h2>${esc(a.name)}</h2>
+      <div class="price" style="font-size:16px;margin:2px 0 10px">${fmtPrice(a.price, a.currency)}</div>
+      <span class="style-badge">${esc(a.style)}</span>
+      <div class="chips" style="margin-top:8px">
+        ${(a.tags || []).map(t => `<span class="chip">${esc(t)}</span>`).join("")}
+        ${(a.fits || []).length ? a.fits.map(f => `<span class="chip label">✓ passt zu ${esc(f)}</span>`).join("")
+                                : `<span class="chip label">passt zu keiner Strategie</span>`}
+      </div>
+      <p class="verdict">${esc(a.verdict)}</p>
+      ${a.summary ? `<p class="summary">${esc(a.summary)}…</p>` : ""}
+      <div class="sub" style="font-size:12px">Bewertet am ${isNaN(d) ? "–" : d.toLocaleDateString("de-DE")} ·
+        <a href="#" onclick="requestLookup(${esc(JSON.stringify(a.symbol))});return false">neu bewerten</a></div>
+    </div>
+    <div class="grid">${kinds.map((k, n) => `<div><p class="kind-head">${head[k]}${n === 0 ? " · passt am besten" : ""}</p>
+      ${card({...a[k], new_today: false, ...(n > 0 ? {morningstar: null} : {})}, k)}</div>`).join("")}</div>`;
+}
+
+async function doSearch(q) {
+  q = q.trim();
+  if (!q) return;
+  clearInterval(pollTimer);
+  const idx = await loadIndex();
+  const nq = norm(q);
+  const exact = idx.find(e => e.symbol.toLowerCase() === nq);
+  if (exact) return openAnalysis(exact.file);
+  const hits = idx.filter(e => norm(e.name).includes(nq) || e.symbol.toLowerCase().startsWith(nq));
+  if (hits.length === 1) return openAnalysis(hits[0].file);
+  const list = hits.slice(0, 12).map(e => `<button class="btn ghost" onclick="openAnalysis(${esc(JSON.stringify(e.file))})">
+      <b>${esc(e.symbol)}</b> · ${esc(e.name)}</button>`).join("");
+  showSearch(`<div class="panel">
+    ${hits.length ? `<b>${hits.length} Treffer</b> in den bereits bewerteten Aktien:<div class="matches">${list}</div><hr style="border:0;border-top:1px solid var(--line);margin:14px 0">`
+                  : `<b>„${esc(q)}“</b> ist noch nicht bewertet.`}
+    <p>Soll ich <b>„${esc(q)}“</b> jetzt bewerten? Es öffnet sich GitHub mit einem fertigen Formular – dort nur auf
+      <b>„Create“ / „Submit new issue“</b> tippen. Nach ca. 2–3 Minuten erscheint die Analyse hier automatisch.</p>
+    <button class="btn" onclick="requestLookup(${esc(JSON.stringify(q))})">⚡ Jetzt bewerten</button>
+    <p class="sub" style="font-size:12px">Tipp: Mit dem Yahoo-Ticker klappt es am zuverlässigsten (z. B. NESN.SW für Nestlé, ALV.DE für Allianz).</p>
+  </div>`);
+}
+
+function requestLookup(q) {
+  const url = `https://github.com/${REPO}/issues/new?title=${encodeURIComponent("Bewerten: " + q)}`
+            + `&body=${encodeURIComponent("Automatische Bewertung aus der Aktien-App. Einfach absenden.")}`;
+  window.open(url, "_blank", "noopener");
+  const started = Date.now(), key = slug(q);
+  const status = () => `<div class="panel"><span class="spinner"></span><b>Bewertung von „${esc(q)}“ läuft …</b>
+    <p>Bitte das GitHub-Formular absenden, falls noch nicht geschehen. Diese Seite prüft alle 20 Sekunden,
+    ob das Ergebnis da ist (${Math.round((Date.now() - started) / 1000)} s).</p>
+    <button class="btn ghost" onclick="clearInterval(pollTimer);doSearch(${esc(JSON.stringify(q))})">Abbrechen</button></div>`;
+  showSearch(status());
+  clearInterval(pollTimer);
+  pollTimer = setInterval(async () => {
+    if (Date.now() - started > 12 * 60 * 1000) {
+      clearInterval(pollTimer);
+      return showSearch(`<div class="panel">Keine Antwort nach 12 Minuten. Bitte unter GitHub → Actions nachsehen,
+        ob „Aktie bewerten (Suche)“ gelaufen ist.</div>`);
+    }
+    try {
+      const r = await fetch(`data/lookup/q/${key}.json?v=${Date.now()}`);
+      if (r.ok) {
+        const alias = await r.json();
+        if (alias.generated_at && new Date(alias.generated_at) >= new Date(started - 2 * 60000)) {
+          clearInterval(pollTimer);
+          searchIndex = null; loadIndex();
+          if (alias.error) return showSearch(`<div class="panel">Zu <b>„${esc(q)}“</b> wurde keine Aktie gefunden.
+            Versuch es mit dem Yahoo-Ticker (z. B. NESN.SW, ALV.DE, 7203.T).</div>`);
+          return openAnalysis(alias.file);
+        }
+      }
+    } catch {}
+    if (tab === "suche") showSearch(status());
+  }, 20000);
+}
+
+$("#search").onsubmit = e => { e.preventDefault(); $("#q").blur(); doSearch($("#q").value); };
+$("#q").addEventListener("focus", loadIndex, {once: true});
+
 function render() {
   document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
   $("#intro").innerHTML = INTRO[tab];
+  if (tab === "suche") {
+    $("#content").innerHTML = searchHtml || `<div class="panel">Gib oben einen Ticker oder Firmennamen ein.</div>`;
+    return;
+  }
   if (!data) return;
   if (tab === "ranking") {
     $("#content").innerHTML = rankingTable(data.innovation.ranking, "innovation", "🚀 Innovation")
