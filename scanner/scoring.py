@@ -214,15 +214,18 @@ def _growth_case(s, growth_mult, margin_mult, exit_pe):
     rg = s.get("revenue_growth")
     hist = cagr(s.get("revenue_hist", []))
     g0 = max([x for x in (rg, hist) if x is not None], default=0.10)
-    g0 = max(0.0, min(g0 * growth_mult, 1.5))
+    # Startwachstum höchstens 100 %, flacht jedes Jahr um ein Drittel ab (mind. 6 %)
+    g0 = max(0.0, min(g0 * growth_mult, 1.0))
     for year in range(5):
-        rev *= 1 + max(0.06, g0 * 0.75 ** year)
+        rev *= 1 + max(0.06, g0 * 0.65 ** year)
     gm = s.get("gross_margin") or 0.3
-    margin = max(0.04, min(gm * 0.4, 0.30)) * margin_mult
+    margin = max(0.03, min(gm * 0.35, 0.25)) * margin_mult
+    pm = s.get("profit_margin")
+    if pm is not None and pm < 0:
+        margin *= 0.75  # Verlustfirmen: reife Marge ist unsicherer
     future_equity = rev * margin * exit_pe + (s.get("total_cash") or 0) - (s.get("total_debt") or 0)
     if future_equity <= 0:
         return 0.0
-    pm = s.get("profit_margin")
     future_shares = shares * (1.04 ** 5 if pm is not None and pm < 0 else 1.01 ** 5)  # Verwässerung
     return future_equity / future_shares / (1 + GROWTH_DISCOUNT) ** 5
 
@@ -234,7 +237,8 @@ def valuation_innovation(s):
     low = _growth_case(s, 0.5, 0.7, 15)
     base = _growth_case(s, 1.0, 1.0, 25)
     high = _growth_case(s, 1.3, 1.2, 35)
-    method = "5-Jahres-Umsatzmodell mit reifer Gewinnmarge, Exit-KGV 25, 12 % Mindestrendite"
+    method = ("5-Jahres-Umsatzmodell: Wachstum max. 100 %, jährlich abflachend, reife Gewinnmarge, "
+              "Exit-KGV 25, 12 % Mindestrendite")
     if _revenue(s) is not None and _revenue(s) < 100e6:
         method += " – bei so wenig Umsatz kaum aussagekräftig (Wert hängt an künftigen Durchbrüchen)"
     return low, base, high, method
@@ -567,6 +571,10 @@ def classify(s, b, i, theme=None):
     pe, pm, rev = s.get("pe"), s.get("profit_margin"), _revenue(s)
     met, total = (int(x) for x in b["rules_met"].split("/")) if b.get("rules_met") else (0, 1)
 
+    sector, industry = s.get("sector") or "", (s.get("industry") or "").lower()
+    cyclical = sector in ("Energy", "Basic Materials") or "semiconductor equipment" in industry or "auto" in industry
+    if sector in ("Energy", "Basic Materials"):
+        growth = min(growth, 0.10) if growth is not None else None  # Rohstoff-Umsatz schwankt mit Preisen/Übernahmen
     if (rev is not None and rev < 100e6) or (pm is not None and pm < 0 and (growth or 0) >= 0.15):
         style, why = "Spekulativ / Frühphase", "macht noch Verluste oder kaum Umsatz – setzt auf künftige Durchbrüche"
     elif total and met / total >= 0.7 and growth is not None and growth >= 0.15:
@@ -589,8 +597,7 @@ def classify(s, b, i, theme=None):
     dy = s.get("dividend_yield")  # Anteil
     if dy and dy >= 0.025:
         tags.append(f"Dividende {pct(dy, 1)}")
-    sector, industry = s.get("sector") or "", (s.get("industry") or "").lower()
-    if sector in ("Energy", "Basic Materials") or "semiconductor equipment" in industry or "auto" in industry:
+    if cyclical:
         tags.append("Zyklisch")
     if sector in ("Consumer Defensive", "Utilities") or "insurance" in industry:
         tags.append("Defensiv")

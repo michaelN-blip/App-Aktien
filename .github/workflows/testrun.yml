@@ -1,0 +1,27 @@
+name: Testlauf (temporär)
+
+on:
+  push:
+    branches: [claude/daily-stock-suggestions-app-e9nfen]
+    paths: [.github/workflows/testrun.yml]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scanner/scan.py > scan.log 2>&1; tail -3 scan.log; grep -c " ok$" scan.log
+      - name: Plausibilität
+        run: python scanner/check_data.py docs
+      - name: Suche testen
+        run: |
+          for q in "Bewerten: Rheinmetall" "Bewerten: NESN.SW" "Bewerten: gibtsnichtxyz123"; do
+            echo "### $q"; python scanner/scan.py --lookup "$q"
+          done
+          echo "### Aliase"; ls docs/data/lookup/q/
+          python -c "import json;a=json.load(open('docs/data/lookup/RHM_DE.json'));print(a['style'],a['tags'],a['fits']);print(a['buffett']['valuation_method'])" || true
