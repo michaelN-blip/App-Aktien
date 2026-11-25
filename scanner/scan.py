@@ -82,11 +82,35 @@ def _dividend_yield(info: dict, price: float) -> float | None:
     return trailing if trailing is not None and trailing < 0.5 else None
 
 
-def _forward_growth(info: dict) -> float | None:
-    """Von Analysten erwartetes Gewinnwachstum (Forward- vs. Trailing-Gewinn je Aktie), -50 % … +100 %."""
+TAX = 0.21  # Sondergewinne werden nach Steuern herausgerechnet
+
+
+def _clean_income(net_income: dict, unusual: dict) -> dict:
+    """Gewinn ohne Sondereffekte (z. B. Buchgewinne auf Beteiligungen) – wie Buffett ihn sehen würde."""
+    return {y: v - unusual.get(y, 0.0) * (1 - TAX) for y, v in net_income.items()}
+
+
+def _ttm_clean_income(t, info: dict) -> float | None:
+    """Gewinn der letzten 4 Quartale ohne Sondereffekte (in Berichtswährung)."""
+    try:
+        q = t.quarterly_income_stmt
+        ni = _row(q, "Net Income", "Net Income Common Stockholders")[:4]
+        unusual = _row(q, "Total Unusual Items")[:4]
+        if len(ni) == 4:
+            return sum(ni) - sum(unusual) * (1 - TAX)
+    except Exception:  # noqa: BLE001
+        pass
+    return info.get("netIncomeToCommon")
+
+
+def _forward_growth(info: dict, ni_ttm_clean: float | None) -> float | None:
+    """Von Analysten erwartetes Gewinnwachstum: Forward-EPS vs. bereinigter Trailing-EPS, -50 % … +100 %."""
     fwd, trail = info.get("forwardEps"), info.get("trailingEps")
     if not fwd or not trail or trail <= 0 or fwd <= 0:
         return None
+    ni_raw = info.get("netIncomeToCommon")
+    if ni_ttm_clean and ni_raw and ni_raw > 0 and ni_ttm_clean > 0:
+        trail *= ni_ttm_clean / ni_raw  # Sondergewinne auch aus dem EPS herausrechnen
     return max(-0.5, min(fwd / trail - 1, 1.0))
 
 
@@ -117,16 +141,20 @@ def fetch(symbol: str) -> dict | None:
     history = {
         "revenue": _byyear(inc, "Total Revenue", "Operating Revenue"),
         "gross_profit": _byyear(inc, "Gross Profit"),
-        "net_income": _byyear(inc, "Net Income", "Net Income Common Stockholders"),
+        "net_income": _clean_income(_byyear(inc, "Net Income", "Net Income Common Stockholders"),
+                                    _byyear(inc, "Total Unusual Items")),
         "operating_cf": _byyear(cf, "Operating Cash Flow", "Cash Flow From Continuing Operating Activities"),
         "capex": _byyear(cf, "Capital Expenditure"),
-        "depreciation": (_byyear(cf, "Depreciation And Amortization", "Depreciation Amortization Depletion",
-                                 "Depreciation") or _byyear(inc, "Reconciled Depreciation")),
+        # Jahr für Jahr ergänzen: Cashflow-Zeile hat Vorrang, fehlende Jahre aus der GuV
+        "depreciation": {**_byyear(inc, "Reconciled Depreciation"),
+                         **_byyear(cf, "Depreciation And Amortization", "Depreciation Amortization Depletion",
+                                   "Depreciation")},
         "free_cf": _byyear(cf, "Free Cash Flow"),
         "total_assets": _byyear(bs, "Total Assets"),
         "equity": _byyear(bs, "Stockholders Equity", "Common Stock Equity"),
     }
 
+    ni_ttm_clean = _ttm_clean_income(t, info)
     rate = fx_rate(info.get("financialCurrency"), info.get("currency"))
     fx = rate if math.isfinite(rate) else None
 
@@ -164,8 +192,8 @@ def fetch(symbol: str) -> dict | None:
         "free_cashflow": info["freeCashflow"] * fx if info.get("freeCashflow") and fx else None,
         "total_cash": info["totalCash"] * fx if info.get("totalCash") and fx else None,
         "total_debt": info["totalDebt"] * fx if info.get("totalDebt") is not None and fx else None,
-        "forward_growth": _forward_growth(info),
-        "net_income_ttm": info["netIncomeToCommon"] * fx if info.get("netIncomeToCommon") and fx else None,
+        "forward_growth": _forward_growth(info, ni_ttm_clean),
+        "net_income_ttm": ni_ttm_clean * fx if ni_ttm_clean and fx else None,
         "revenue_ttm": info["totalRevenue"] * fx if info.get("totalRevenue") and fx else None,
         "history": history,
         "fx": fx,
