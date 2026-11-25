@@ -93,9 +93,10 @@ def buffett_history(s):
     gm = {y: gp[y] / rev[y] for y in _years(gp, rev) if rev[y] > 0}
     nm = {y: ni[y] / rev[y] for y in _years(ni, rev) if rev[y] > 0}
 
-    # Owner Earnings nach Buffett: Gewinn + Abschreibungen - Investitionen (Capex ist negativ verbucht).
-    # Wir ziehen die GESAMTEN Investitionen ab, nicht nur die Erhaltungsinvestitionen -> eher vorsichtig.
-    oe = {y: ni[y] + da[y] + capex[y] for y in _years(ni, da, capex)}
+    # Owner Earnings nach Buffett: Gewinn + Abschreibungen - ERHALTUNGS-Investitionen.
+    # Erhaltungs-Capex wird (üblich) mit den Abschreibungen angesetzt, höchstens aber mit dem
+    # tatsächlichen Capex. Investitionen darüber hinaus sind Wachstum und werden nicht abgezogen.
+    oe = {y: ni[y] + da[y] - min(abs(capex[y]), da[y]) for y in _years(ni, da, capex)}
     if not oe:
         oe = {y: ocf[y] + capex[y] for y in _years(ocf, capex)} or dict(fcf)
     oe_recent = [oe[y] for y in sorted(oe)[-2:]]

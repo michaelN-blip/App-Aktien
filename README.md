@@ -5,7 +5,7 @@ Eine Web-App, die dir **jeden Tag neue Aktien-Vorschläge** in zwei Kategorien m
 | Kategorie | Idee | Kriterien (je 0–100 Punkte) |
 |---|---|---|
 | 🚀 **Innovation · 10–100-Bagger** | Kleine, schnell wachsende Firmen mit disruptiven Technologien (KI, Raumfahrt, Quanten, Gen-Editing, Fintech, Mini-Atomreaktoren …) | Umsatzwachstum, Bruttomarge, Größe (Luft nach oben), Insider-Anteil, Cash vs. Schulden, F&E-Quote, Analysten-Kursziel, Trend |
-| 🏛️ **Buffett-Value** | Qualitätsfirmen mit Burggraben zu einem vernünftigen Preis | Eigenkapitalrendite Ø ≥ 15 %, Gesamtkapitalrendite Ø ≥ 10 %, Bruttomarge ≥ 40 %, Nettomarge ≥ 15 %, stetiges Umsatz- und Gewinnwachstum, Cashflow jedes Jahr positiv, KGV ≤ 25, wenig Schulden, **Sicherheitsmarge** zum inneren Wert (DCF auf **Owner Earnings**, 10 % Mindestrendite) |
+| 🏛️ **Buffett-Value** | Qualitätsfirmen mit Burggraben zu einem vernünftigen Preis | Eigenkapitalrendite Ø ≥ 15 %, Gesamtkapitalrendite Ø ≥ 10 %, Bruttomarge ≥ 40 %, Nettomarge ≥ 15 %, stetiges Umsatz- und Gewinnwachstum, Cashflow jedes Jahr positiv, KGV ≤ 25, wenig Schulden, **Sicherheitsmarge** zum inneren Wert (DCF auf **Owner Earnings** = Gewinn + Abschreibungen − Erhaltungsinvestitionen, 10 % Mindestrendite) |
 
 Pro Kategorie werden täglich **6 Aktien** gezogen – gewichtet aus den 15 besten. So wechselt die Auswahl täglich,
 starke Aktien tauchen aber immer wieder auf. „Neu heute“ markiert Aktien, die gestern nicht dabei waren.
