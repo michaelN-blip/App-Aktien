@@ -7,7 +7,7 @@ from __future__ import annotations
 
 DISCOUNT_RATE = 0.10   # Buffett rechnet grob mit 10 % Mindestrendite
 TERMINAL_GROWTH = 0.03   # ewiges Wachstum nach Jahr 10 (etwa Inflation)
-MAX_GROWTH = 0.20        # Wachstum in Phase 1 (Jahre 1-5) höchstens 20 %
+MAX_GROWTH = 0.15        # Wachstum in Phase 1 (Jahre 1-5) höchstens 15 %
 
 
 def pct(x, digits=0):
@@ -46,7 +46,7 @@ def cagr(hist):
 
 
 ANALYST_WEIGHT = 0.30    # Analysten-Erwartung fließt nur zu 30 % ins Wachstum ein
-RATE_BY_RISK = {1: 0.08, 2: 0.09}  # Mindestrendite nach Risikostufe, sonst DISCOUNT_RATE
+RATE_BY_RISK = {1: 0.085, 2: 0.09}  # Mindestrendite nach Risikostufe, sonst DISCOUNT_RATE
 
 
 def _dcf(fcf, shares, g, rate=DISCOUNT_RATE):
@@ -152,6 +152,11 @@ def _growth_parts(s, hb=None):
     hist = min(candidates) if candidates else 0.03
     hist_c = max(0.0, min(hist, MAX_GROWTH))
     fwd = s.get("forward_growth")
+    if fwd is not None:
+        # Forward- vs. Trailing-EPS ist durch Sondereffekte verzerrt -> begrenzen:
+        # -15 % … +25 % und höchstens 10 Prozentpunkte Abstand zur Historie.
+        fwd = max(-0.15, min(fwd, 0.25, hist_c + 0.10))
+        fwd = max(fwd, hist_c - 0.10)
     g = hist_c if fwd is None else (1 - ANALYST_WEIGHT) * hist_c + ANALYST_WEIGHT * fwd
     return hist, fwd, max(0.0, min(g, MAX_GROWTH))
 
