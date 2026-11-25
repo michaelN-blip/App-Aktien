@@ -150,7 +150,7 @@ function morningstar(p) {
                 m.date && `Stand ${esc(m.date)}`].filter(Boolean).join(" · ");
   const cmp = m.vs_model == null ? "" : `<br>Meine Schätzung liegt <b class="${pctClass(m.vs_model)}">${fmtPct(m.vs_model)}</b> ${m.vs_model >= 0 ? "über" : "unter"} Morningstar.`;
   return `<div class="ms"><b>Morningstar:</b> ${m.fair_value ? `Fairer Wert ${fmtPrice(m.fair_value, p.currency)}
-    (<span class="${pctClass(m.potential)}">${fmtPct(m.potential)}</span>)` : ""} ${stars}
+    (<span class="${pctClass(m.potential)}">${fmtPct(m.potential)}</span>)${m.fair_value_original ? ` <span class="sub" style="font-size:11px">= ${esc(m.fair_value_original)}</span>` : ""}` : ""} ${stars}
     ${bits ? `<br><span class="sub" style="font-size:12px">${bits}</span>` : ""}${cmp}</div>`;
 }
 
