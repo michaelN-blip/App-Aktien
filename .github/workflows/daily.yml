@@ -33,4 +33,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data
           git diff --cached --quiet || git commit -m "Aktien-Vorschläge $(date -u +%F)"
-          git pull --rebase origin main && git push
+          git pull --rebase -X theirs origin main && git push   # bei Konflikt gewinnt der neue Scan
