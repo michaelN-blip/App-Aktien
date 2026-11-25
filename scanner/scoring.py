@@ -194,7 +194,7 @@ def valuation_buffett(s, hb=None):
         base = _dcf(oe, shares, g, rate)
         high = _dcf(oe, shares, min(g * 1.3 + 0.02, 0.25), rate)
         method = (f"DCF auf Owner Earnings ({big(oe)}/Jahr, letzte 12 Monate): {growth_txt} für 5 Jahre, "
-                  f"dann abflachend auf 3 %, {pct(rate)} Mindestrendite (Risiko {risk_assessment(s)['name'].lower()})")
+                  f"dann abflachend auf 3 %, {pct(rate, 1)} Mindestrendite (Risiko {risk_assessment(s)['name'].lower()})")
         return low, base, high, method
     pe = s.get("pe")
     if pe and pe > 0:
