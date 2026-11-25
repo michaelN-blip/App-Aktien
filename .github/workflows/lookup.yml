@@ -1,0 +1,49 @@
+name: Aktie bewerten (Suche)
+
+# Wird über den Button "Jetzt bewerten" in der App ausgelöst: Er öffnet ein GitHub-Issue
+# mit dem Titel "Bewerten: <Ticker oder Name>". Nur Issues des Repo-Besitzers werden bearbeitet.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: daily-scan
+  cancel-in-progress: false
+
+jobs:
+  lookup:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Bewerten:')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Aktie bewerten
+        env:
+          QUERY: ${{ github.event.issue.title }}   # als Umgebungsvariable, nie direkt im Skript
+          LOOKUP_MSG: ${{ runner.temp }}/msg.txt
+        run: python scanner/scan.py --lookup "$QUERY"
+      - name: Ergebnis committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/lookup
+          git diff --cached --quiet || git commit -m "Suche: Aktie bewertet"
+          git pull --rebase -X theirs origin main && git push
+      - name: Issue beantworten und schließen
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUM: ${{ github.event.issue.number }}
+          MSG_FILE: ${{ runner.temp }}/msg.txt
+        run: |
+          [ -s "$MSG_FILE" ] || echo "Bewertung fehlgeschlagen – Details im Actions-Log." > "$MSG_FILE"
+          gh issue close "$NUM" --repo "$GITHUB_REPOSITORY" --comment "$(cat "$MSG_FILE")"

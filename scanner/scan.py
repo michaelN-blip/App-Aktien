@@ -12,13 +12,16 @@ import argparse
 import datetime as dt
 import json
 import math
+import os
 import random
 import sys
 import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from scoring import score_buffett, score_innovation  # noqa: E402
+import re  # noqa: E402
+
+from scoring import classify, score_buffett, score_innovation  # noqa: E402
 from universe import INNOVATION, VALUE  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -67,6 +70,24 @@ def _byyear(df, *names) -> dict:
             if out:
                 return out
     return {}
+
+
+def _dividend_yield(info: dict, price: float) -> float | None:
+    """Dividendenrendite als Anteil (0.03 = 3 %). Yahoos 'dividendYield' ist je nach Version
+    in Prozent oder als Anteil angegeben - daher aus Dividende je Aktie / Kurs berechnen."""
+    rate = info.get("dividendRate")
+    if rate and price:
+        return rate / price
+    trailing = info.get("trailingAnnualDividendYield")
+    return trailing if trailing is not None and trailing < 0.5 else None
+
+
+def _forward_growth(info: dict) -> float | None:
+    """Von Analysten erwartetes Gewinnwachstum (Forward- vs. Trailing-Gewinn je Aktie), -50 % … +100 %."""
+    fwd, trail = info.get("forwardEps"), info.get("trailingEps")
+    if not fwd or not trail or trail <= 0 or fwd <= 0:
+        return None
+    return max(-0.5, min(fwd / trail - 1, 1.0))
 
 
 def fetch(symbol: str) -> dict | None:
@@ -131,7 +152,7 @@ def fetch(symbol: str) -> dict | None:
         "forward_pe": info.get("forwardPE"),
         "pb": info.get("priceToBook"),
         "ps": info.get("priceToSalesTrailing12Months"),
-        "dividend_yield": info.get("dividendYield"),
+        "dividend_yield": _dividend_yield(info, float(price)),
         "beta": info.get("beta"),
         "insider_pct": info.get("heldPercentInsiders"),
         "target_price": info.get("targetMeanPrice"),
@@ -142,6 +163,7 @@ def fetch(symbol: str) -> dict | None:
         "free_cashflow": info["freeCashflow"] * fx if info.get("freeCashflow") and fx else None,
         "total_cash": info["totalCash"] * fx if info.get("totalCash") and fx else None,
         "total_debt": info["totalDebt"] * fx if info.get("totalDebt") is not None and fx else None,
+        "forward_growth": _forward_growth(info),
         "net_income_ttm": info["netIncomeToCommon"] * fx if info.get("netIncomeToCommon") and fx else None,
         "revenue_ttm": info["totalRevenue"] * fx if info.get("totalRevenue") and fx else None,
         "history": history,
@@ -260,15 +282,113 @@ def build(stocks_innov: list[dict], stocks_value: list[dict], day: str, previous
     })
 
 
+LOOKUP = DATA / "lookup"
+
+
+def analyze(s: dict, ms: dict) -> dict:
+    """Vollständige Analyse einer Aktie nach beiden Strategien (für die Suche)."""
+    theme = INNOVATION.get(s["symbol"])
+    b, i = score_buffett(s), score_innovation(s, theme)
+    attach_morningstar([b, i], ms)
+    info = classify(s, b, i, theme)
+    return clean({
+        "symbol": s["symbol"], "name": s["name"], "sector": s.get("sector"), "industry": s.get("industry"),
+        "country": s.get("country"), "currency": s["currency"], "price": s["price"],
+        "market_cap": s.get("market_cap"), "summary": s.get("summary"),
+        "date": dt.date.today().isoformat(),
+        "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
+        **info, "buffett": b, "innovation": i,
+    })
+
+
+def _now() -> str:
+    return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+
+
+def slug(query: str) -> str:
+    return re.sub(r"[^A-Z0-9]+", "_", query.upper()).strip("_")[:40] or "LEER"
+
+
+def write_lookup(a: dict, custom: bool) -> None:
+    """Analyse als docs/data/lookup/<SYMBOL>.json speichern und im Such-Index eintragen."""
+    LOOKUP.mkdir(parents=True, exist_ok=True)
+    (LOOKUP / f"{slug(a['symbol'])}.json").write_text(json.dumps(a, ensure_ascii=False))
+    idx_file = LOOKUP / "index.json"
+    idx = json.loads(idx_file.read_text()) if idx_file.exists() else {"stocks": []}
+    old = {e["symbol"]: e for e in idx["stocks"]}
+    prev = old.get(a["symbol"], {})
+    old[a["symbol"]] = {"symbol": a["symbol"], "name": a["name"], "file": slug(a["symbol"]),
+                        "date": a["date"], "custom": prev.get("custom", False) or custom}
+    idx["stocks"] = sorted(old.values(), key=lambda e: e["symbol"])
+    idx_file.write_text(json.dumps(idx, ensure_ascii=False))
+
+
+def resolve(query: str) -> tuple[str | None, dict | None]:
+    """Ticker oder Firmenname -> (Yahoo-Ticker, Kennzahlen)."""
+    import yfinance as yf
+    q = query.strip()
+    if re.fullmatch(r"[A-Za-z0-9.\-^=]{1,15}", q):
+        try:
+            d = fetch(q.upper())
+            if d:
+                return q.upper(), d
+        except Exception:  # noqa: BLE001
+            pass
+    try:
+        quotes = yf.Search(q, max_results=5).quotes
+    except Exception:  # noqa: BLE001
+        return None, None
+    for qt in quotes:
+        if qt.get("quoteType") in ("EQUITY", None) and qt.get("symbol"):
+            try:
+                d = fetch(qt["symbol"])
+            except Exception:  # noqa: BLE001
+                d = None
+            if d:
+                return qt["symbol"], d
+    return None, None
+
+
+def lookup(query: str) -> str:
+    """Einzelne Aktie bewerten (aus dem Such-Button). Gibt eine Statusmeldung zurück."""
+    query = re.sub(r"^\s*bewerten\s*:\s*", "", query, flags=re.I).strip()[:60]
+    alias = LOOKUP / "q" / f"{slug(query)}.json"
+    alias.parent.mkdir(parents=True, exist_ok=True)
+    if not query:
+        return "Kein Suchbegriff angegeben."
+    sym, s = resolve(query)
+    if not s:
+        alias.write_text(json.dumps({"query": query, "error": "nicht gefunden", "generated_at": _now()}))
+        return f"Keine Aktie zu „{query}“ gefunden. Tipp: den Yahoo-Ticker verwenden (z. B. SAP, NESN.SW, ALV.DE)."
+    a = analyze(s, load_morningstar())
+    write_lookup(a, custom=sym not in INNOVATION and sym not in VALUE)
+    alias.write_text(json.dumps({"query": query, "symbol": sym, "file": slug(sym), "generated_at": _now()}))
+    return (f"**{a['name']} ({sym})** bewertet.\n\n{a['verdict']}\n\n"
+            f"Ergebnis in der App unter 🔎 Suche (nach ca. 1 Minute sichtbar).")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="nur die ersten N Ticker je Liste (Test)")
+    ap.add_argument("--lookup", help="nur eine Aktie bewerten (Ticker oder Name)")
     args = ap.parse_args()
+
+    if args.lookup is not None:
+        msg = lookup(args.lookup)
+        print(msg)
+        out = Path(os.environ.get("LOOKUP_MSG", "")) if os.environ.get("LOOKUP_MSG") else None
+        if out:
+            out.write_text(msg)
+        return
 
     innov_syms = list(INNOVATION)
     value_syms = list(VALUE)
     if args.limit:
         innov_syms, value_syms = innov_syms[: args.limit], value_syms[: args.limit]
+    idx_file = LOOKUP / "index.json"
+    custom_syms = []
+    if idx_file.exists() and not args.limit:
+        custom_syms = [e["symbol"] for e in json.loads(idx_file.read_text())["stocks"] if e.get("custom")]
 
     def run(symbols):
         out = []
@@ -287,6 +407,7 @@ def main():
 
     stocks_innov = run(innov_syms)
     stocks_value = run(value_syms)
+    stocks_custom = run(custom_syms)
     if len(stocks_innov) + len(stocks_value) < 10:
         sys.exit("Zu wenige Daten geladen – Scan abgebrochen, alte Daten bleiben erhalten.")
 
@@ -308,7 +429,17 @@ def main():
     (DATA / "history" / f"{day}.json").write_text(text)
     dates = sorted((h.stem for h in (DATA / "history").glob("*.json")), reverse=True)
     (DATA / "index.json").write_text(json.dumps({"dates": dates}))
-    print(f"Fertig: {len(stocks_innov)} Innovations- und {len(stocks_value)} Value-Aktien bewertet.")
+
+    # Such-Analysen für alle Aktien (Universum + selbst gesuchte) aktualisieren
+    ms = load_morningstar()
+    seen = set()
+    for s in stocks_innov + stocks_value + stocks_custom:
+        if s["symbol"] in seen:
+            continue
+        seen.add(s["symbol"])
+        write_lookup(analyze(s, ms), custom=s["symbol"] in custom_syms)
+    print(f"Fertig: {len(stocks_innov)} Innovations-, {len(stocks_value)} Value- und "
+          f"{len(stocks_custom)} selbst gesuchte Aktien bewertet.")
 
 
 if __name__ == "__main__":
