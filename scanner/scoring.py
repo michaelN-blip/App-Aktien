@@ -49,6 +49,15 @@ ANALYST_WEIGHT = 0.30    # Analysten-Erwartung fließt nur zu 30 % ins Wachstum 
 RATE_BY_RISK = {1: 0.085, 2: 0.09}  # Mindestrendite nach Risikostufe, sonst DISCOUNT_RATE
 
 
+def is_balance_sheet_business(s):
+    """Banken, Versicherer, Vermögensverwalter: Cashflow/ROA/Bruttomarge passen nicht.
+    Zahlungsnetzwerke (Visa, Mastercard) und Börsen/Ratingagenturen sind dagegen kapitalarm."""
+    if (s.get("sector") or "") != "Financial Services":
+        return False
+    industry = (s.get("industry") or "").lower()
+    return not any(k in industry for k in ("credit services", "financial data", "stock exchange"))
+
+
 def _dcf(fcf, shares, g, rate=DISCOUNT_RATE):
     """Zwei-Phasen-DCF: Jahre 1-5 mit Wachstum g, Jahre 6-10 flacht es linear auf 3 % ab,
     danach ewig 3 %. Abgezinst mit der Mindestrendite `rate`."""
@@ -178,7 +187,7 @@ def valuation_buffett(s, hb=None):
     risk_level = risk_assessment(s)["level"]
     rate = RATE_BY_RISK.get(risk_level, DISCOUNT_RATE)
     growth_txt = f"{pct(g)} Wachstum" + (f" (Historie {pct(hist)}, Analysten {pct(fwd)})" if fwd is not None else "")
-    if (s.get("sector") or "") != "Financial Services" and oe and oe > 0 and shares:
+    if not is_balance_sheet_business(s) and oe and oe > 0 and shares:
         low = _dcf(oe, shares, g * 0.5, rate)
         base = _dcf(oe, shares, g, rate)
         high = _dcf(oe, shares, min(g * 1.3 + 0.02, 0.25), rate)
@@ -256,7 +265,7 @@ def risk_assessment(s, low=None, high=None):
     elif pm is not None and pm < 0.05:
         pts += 1; why.append("geringe Gewinnmarge")
     de = s.get("debt_to_equity")
-    if (s.get("sector") or "") != "Financial Services" and de is not None and (de > 2 or de < 0):
+    if not is_balance_sheet_business(s) and de is not None and (de > 2 or de < 0):
         pts += 1; why.append("hohe Verschuldung")
     if (s.get("total_cash") or 0) < (s.get("total_debt") or 0) and pm is not None and pm < 0:
         pts += 1; why.append("mehr Schulden als Cash bei Verlusten")
@@ -312,7 +321,7 @@ def crit(name, shown, pts, max_pts, hint):
 
 def score_buffett(s):
     c, reasons, risks = [], [], []
-    is_financial = (s.get("sector") or "") == "Financial Services"
+    is_financial = is_balance_sheet_business(s)
     hb = buffett_history(s)
     rules = []  # Buffett-Mindestkriterien (erfüllt ja/nein)
 
