@@ -4,7 +4,7 @@ Eine Web-App, die dir **jeden Tag neue Aktien-Vorschläge** in zwei Kategorien m
 
 | Kategorie | Idee | Kriterien (je 0–100 Punkte) |
 |---|---|---|
-| 🚀 **Innovation · 10–100-Bagger** | Kleine, schnell wachsende Firmen mit disruptiven Technologien (KI, Raumfahrt, Quanten, Gen-Editing, Fintech, Mini-Atomreaktoren …) | Umsatzwachstum, Bruttomarge, Größe (Luft nach oben), Insider-Anteil, Cash vs. Schulden, F&E-Quote, Analysten-Kursziel, Trend |
+| 🚀 **Innovation · 10–100-Bagger** | Nach Christopher Mayer, „100 Baggers“: kleine, schnell wachsende, skalierbare Firmen mit Gründern an Bord | Wachstumstempo, Wachstums-Beständigkeit, Größe, Skalierbarkeit (Bruttomarge), Gründer/Insider, Innovationskraft, Weg zur Profitabilität, Preis vs. Wachstum, finanzielle Reichweite → **Wachstumschance** (Hoch/Mittel/Niedrig), fairer Wert per Wachstumsmodell und **Vervielfachung in 10 Jahren** |
 | 🏛️ **Buffett-Value** | Qualitätsfirmen mit Burggraben zu einem vernünftigen Preis | Eigenkapitalrendite Ø ≥ 15 %, Gesamtkapitalrendite Ø ≥ 10 %, Bruttomarge ≥ 40 %, Nettomarge ≥ 15 %, stetiges Umsatz- und Gewinnwachstum, Cashflow jedes Jahr positiv, KGV ≤ 25, wenig Schulden, **Sicherheitsmarge** zum inneren Wert (DCF auf **Owner Earnings** = Gewinn + Abschreibungen − Erhaltungsinvestitionen; Wachstum 70 % Historie / 30 % Analysten; Mindestrendite 8,5–10 % je nach Risiko) |
 
 Pro Kategorie werden täglich **6 Aktien** gezogen – gewichtet aus den 15 besten. So wechselt die Auswahl täglich,
