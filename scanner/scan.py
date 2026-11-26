@@ -408,6 +408,8 @@ def main():
         out = Path(os.environ.get("LOOKUP_MSG", "")) if os.environ.get("LOOKUP_MSG") else None
         if out:
             out.write_text(msg)
+        if msg.startswith("Keine Aktie"):
+            sys.exit(2)  # nicht gefunden (oder Yahoo kurz gesperrt) -> Workflow versucht es erneut
         return
 
     innov_syms = list(INNOVATION)

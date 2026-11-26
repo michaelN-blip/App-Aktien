@@ -30,7 +30,8 @@ jobs:
         env:
           QUERY: ${{ github.event.issue.title }}   # als Umgebungsvariable, nie direkt im Skript
           LOOKUP_MSG: ${{ runner.temp }}/msg.txt
-        run: python scanner/scan.py --lookup "$QUERY"
+        run: |
+          python scanner/scan.py --lookup "$QUERY" || { echo "Neuer Versuch in 60 s"; sleep 60; python scanner/scan.py --lookup "$QUERY" || true; }
       - name: Ergebnis committen
         run: |
           git config user.name "github-actions[bot]"

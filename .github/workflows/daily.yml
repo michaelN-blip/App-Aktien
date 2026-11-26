@@ -18,7 +18,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,7 +26,14 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python scanner/scan.py
+      - name: Scan (bei Yahoo-Sperre bis zu 3 Versuche, je 10 Min. Pause)
+        run: |
+          for i in 1 2 3; do
+            python scanner/scan.py && exit 0
+            echo "Versuch $i fehlgeschlagen (Yahoo blockiert evtl. kurzzeitig) – warte 10 Minuten"
+            [ "$i" -lt 3 ] && sleep 600
+          done
+          exit 1
       - name: Plausibilität prüfen (bei Fehlern wird nichts veröffentlicht)
         run: python scanner/check_data.py docs
       - name: Ergebnisse committen
