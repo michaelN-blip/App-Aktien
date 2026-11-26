@@ -1,0 +1,37 @@
+name: Testlauf (temporär)
+
+on:
+  push:
+    branches: [claude/daily-stock-suggestions-app-e9nfen]
+    paths: [.github/workflows/testrun.yml]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scanner/scan.py > scan.log 2>&1; tail -1 scan.log
+      - name: Plausibilität
+        run: python scanner/check_data.py docs | grep -E "PROBLEME|Einstufungen"
+      - name: Innovations-Ergebnisse
+        run: |
+          python - <<'PY'
+          import json
+          d = json.load(open("docs/data/latest.json"))
+          print("TAGESAUSWAHL:", [(p["symbol"], p["score"]) for p in d["innovation"]["picks"]])
+          rows = []
+          for r in d["innovation"]["ranking"]:
+              a = json.load(open(f"docs/data/lookup/{r['symbol'].replace('.', '_').replace('-', '_')}.json"))
+              i = a["innovation"]; b = i.get("bagger") or {}
+              f = lambda x: "–" if x is None else f"{x:.1f}x"
+              pot = lambda x: "–" if x is None else f"{x:+.0%}"
+              rows.append(f"{r['symbol']:5} {i['score']:3} {i['label'][:22]:22} Chance {i['growth_chance']:7} | "
+                          f"{pot(i['potential_low']):>6} / {pot(i['potential']):>6} / {pot(i['potential_high']):>7} | "
+                          f"10J {f(b.get('low'))} / {f(b.get('base'))} / {f(b.get('high'))} | Risiko {i['risk']['name']}")
+          print("\n".join(rows))
+          PY

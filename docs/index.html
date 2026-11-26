@@ -144,9 +144,11 @@ footer { margin-top: 30px; font-size: 12px; color: var(--muted); }
 
 <script>
 const INTRO = {
-  innovation: `<b>Innovations-Aktien mit Vervielfachungs-Potenzial.</b> Bewertet werden starkes Umsatzwachstum,
-    skalierbare Margen, eine noch kleine Unternehmensgröße, Gründer-/Insider-Beteiligung, finanzielle Ausdauer,
-    Forschungsausgaben, Analysten-Kursziele und Trend. Hohes Risiko – solche Aktien können sich verzehnfachen oder auf null fallen.`,
+  innovation: `<b>10- bis 100-Bagger nach Christopher Mayer („100 Baggers“).</b> Bewertet wird nicht der Cashflow, sondern
+    die <b>Wachstumschance</b>: Wachstumstempo und -beständigkeit, kleine Größe (Luft nach oben), skalierbares Geschäft,
+    Gründer mit eigenem Geld, Innovationskraft, Weg zur Profitabilität, finanzielle Reichweite – und ein Startpreis,
+    der nicht schon alles vorwegnimmt. Fairer Wert und <b>Vervielfachung in 10 Jahren</b> kommen aus einem Wachstumsmodell:
+    je höher die Wachstumschance, desto länger hält das Wachstum an. Hohes Risiko – Totalverlust möglich.`,
   buffett: `<b>Qualität zum fairen Preis – nach Warren Buffetts Kriterien.</b> Eigenkapitalrendite Ø ≥ 15 %,
     Gesamtkapitalrendite Ø ≥ 10 %, Bruttomarge ≥ 40 %, Nettomarge ≥ 15 %, stetig steigender Umsatz und Gewinn,
     jedes Jahr positiver Cashflow, KGV ≤ 25 – und eine <b>Sicherheitsmarge</b>: Der Kurs sollte unter dem inneren Wert liegen,
@@ -187,11 +189,24 @@ function rulesBox(p) {
     <div class="rules">${p.rules.map(r => `<span class="${cls(r.ok)}">${esc(r.name)}</span>`).join("")}</div></div>`;
 }
 
+const fmtX = x => x == null ? "–" : (x < 10 ? x.toFixed(1).replace(".", ",") : Math.round(x)) + "x";
+
+function baggerRow(p) {
+  const b = p.bagger;
+  if (!b || b.base == null) return "";
+  return `<div class="ms"><b>Vervielfachung in 10 Jahren:</b>
+    <span class="sub">pessimistisch</span> <b class="${b.low >= 1 ? "up" : "down"}">${fmtX(b.low)}</b> ·
+    <span class="sub">Basis</span> <b class="${b.base >= 1 ? "up" : "down"}">${fmtX(b.base)}</b> ·
+    <span class="sub">optimistisch</span> <b class="${b.high >= 1 ? "up" : "down"}">${fmtX(b.high)}</b>
+    ${b.high >= 10 ? '<br><span class="chip new" style="display:inline-block;margin-top:4px">10-Bagger im optimistischen Fall möglich</span>' : ""}</div>`;
+}
+
 function valuation(p) {
   if (p.fair_value == null) {
     return p.risk ? `<div class="val"><div class="val-row"><div><small>Fairer Wert</small><b>–</b></div><div><small>Potenzial</small><b>–</b></div>
       <div><small>Risiko</small><span class="risk risk${p.risk.level}">${esc(p.risk.name)}</span></div></div>
-      <div class="method">Für diese Aktie fehlen Daten für eine Wertschätzung.</div></div>` : "";
+      ${baggerRow(p)}
+      <div class="method">${esc(p.valuation_method || "Für diese Aktie fehlen Daten für eine Wertschätzung.")}</div></div>` : "";
   }
   const pts = [p.fair_low, p.fair_value, p.fair_high, p.price].filter(v => v != null && v > 0);
   const lo = Math.min(...pts) * 0.9, hi = Math.max(...pts) * 1.05;
@@ -212,6 +227,7 @@ function valuation(p) {
       <div class="dot now" style="left:${pos(p.price)}%" title="Aktueller Kurs"></div>
       <span class="lbl" style="left:${Math.max(8, Math.min(92, pos(p.price)))}%">● Kurs</span>
     </div>
+    ${baggerRow(p)}
     ${morningstar(p)}
     <div class="method">
       Pessimistisch ${short(p.fair_low)} (<span class="${pctClass(p.potential_low)}">${fmtPct(p.potential_low)}</span>) ·
@@ -239,6 +255,7 @@ function card(p, kind) {
     <div class="chips">
       ${p.new_today ? '<span class="chip new">Neu heute</span>' : ""}
       <span class="chip label">${esc(p.label)}</span>
+      ${p.growth_chance ? `<span class="chip label">Wachstumschance: ${esc(p.growth_chance)}</span>` : ""}
       ${p.theme ? `<span class="chip">${esc(p.theme)}</span>` : p.sector ? `<span class="chip">${esc(p.sector)}</span>` : ""}
       ${iv}
     </div>
