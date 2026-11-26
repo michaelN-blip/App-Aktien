@@ -206,7 +206,7 @@ def valuation_buffett(s, hb=None):
     return None, None, None, None
 
 
-def _growth_case(s, growth_mult, margin_mult, exit_pe, decay=0.65):
+def _growth_case(s, growth_mult, margin_mult, exit_pe, decay=0.65, cap=1.0):
     """5-Jahres-Szenario: Umsatz wächst (abflachend mit Faktor `decay` pro Jahr), reife Marge,
     Bewertung per KGV, abgezinst mit 12 %."""
     rev, shares = s.get("revenue_ttm"), s.get("shares")
@@ -215,10 +215,10 @@ def _growth_case(s, growth_mult, margin_mult, exit_pe, decay=0.65):
     rg = s.get("revenue_growth")
     hist = cagr(s.get("revenue_hist", []))
     g0 = max([x for x in (rg, hist) if x is not None], default=0.10)
-    # Startwachstum höchstens 100 %, flacht jedes Jahr um ein Drittel ab (mind. 6 %)
-    g0 = max(0.0, min(g0 * growth_mult, 1.0))
+    # Startwachstum begrenzt (pessimistisch 20 %, Basis 80 %, optimistisch 100 %), flacht jährlich ab
+    g0 = max(0.0, min(g0 * growth_mult, cap))
     for year in range(5):
-        rev *= 1 + max(0.06, g0 * decay ** year)
+        rev *= 1 + max(0.06 if cap > 0.2 else 0.02, g0 * decay ** year)
     gm = s.get("gross_margin") or 0.3
     margin = max(0.03, min(gm * 0.35, 0.25)) * margin_mult
     pm = s.get("profit_margin")
@@ -238,13 +238,13 @@ DECAY_BY_CHANCE = {"Hoch": 0.72, "Mittel": 0.65, "Niedrig": 0.58}  # wie lange d
 MIN_REVENUE_FOR_MODEL = 50e6
 
 
-def bagger_multiple(s, growth_mult, margin_mult, exit_pe, floor, decay=0.7):
+def bagger_multiple(s, growth_mult, margin_mult, exit_pe, floor, decay=0.7, cap=1.0):
     """Vervielfachung in 10 Jahren: Börsenwert-Szenario in 10 Jahren je Aktie / heutiger Kurs (nicht abgezinst)."""
     rev, shares = s.get("revenue_ttm"), s.get("shares")
     if not rev or not shares or not s.get("price"):
         return None
     g0 = max([x for x in (s.get("revenue_growth"), cagr(s.get("revenue_hist", []))) if x is not None], default=0.10)
-    g0 = max(0.0, min(g0 * growth_mult, 1.0))
+    g0 = max(0.0, min(g0 * growth_mult, cap))
     for year in range(10):
         rev *= 1 + max(floor, g0 * decay ** year)
     gm = s.get("gross_margin") or 0.3
@@ -264,12 +264,13 @@ def valuation_innovation(s, chance="Mittel"):
         return None, None, None, (f"Nicht berechenbar: erst {big(rev)} Umsatz – der Wert hängt allein an künftigen "
                                   "Durchbrüchen (Produkt, Zulassung, Aufträge). Reine Wette auf die Innovation.")
     d = DECAY_BY_CHANCE.get(chance, 0.65)
-    low = _growth_case(s, 0.5, 0.7, 15, d - 0.05)
-    base = _growth_case(s, 1.0, 1.0, 25, d)
-    high = _growth_case(s, 1.4, 1.3, 40, d + 0.03)
+    low = _growth_case(s, 0.5, 0.5, 12, d - 0.10, cap=0.20)   # Wachstum stockt, Marge halb so hoch
+    base = _growth_case(s, 1.0, 1.0, 25, d, cap=0.80)
+    high = _growth_case(s, 1.4, 1.3, 40, d + 0.03, cap=1.0)
     method = (f"Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance {chance.lower()} → "
               f"Wachstum flacht {'langsam' if chance == 'Hoch' else 'schnell' if chance == 'Niedrig' else 'mittel'} ab; "
-              "reife Gewinnmarge, Exit-KGV 25 (optimistisch 40, pessimistisch 15), 12 % Mindestrendite")
+              "reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), "
+              "12 % Mindestrendite")
     if rev is not None and rev < 200e6:
         method += " – bei noch kleinem Umsatz sehr unsicher"
     return low, base, high, method
@@ -625,14 +626,14 @@ def score_innovation(s, theme=None):
     score = sum(x["points"] for x in c)
     growth_pts = sum(x["points"] for x in c if x["name"] in (
         "Wachstumstempo", "Wachstums-Beständigkeit", "Weg zur Profitabilität", "Finanzielle Reichweite", "Innovationskraft"))
-    chance = "Hoch" if growth_pts >= 36 else "Mittel" if growth_pts >= 22 else "Niedrig"
+    chance = "Hoch" if growth_pts >= 44 else "Mittel" if growth_pts >= 30 else "Niedrig"
     label = ("Hohes Bagger-Potenzial" if score >= 70 else "Spannend" if score >= 55
              else "Beobachten" if score >= 40 else "Noch zu früh/zu teuer")
-    d = DECAY_BY_CHANCE[chance] + 0.05
+    d = DECAY_BY_CHANCE[chance]
     modelable = (_revenue(s) or 0) >= MIN_REVENUE_FOR_MODEL
-    bagger = {"low": bagger_multiple(s, 0.5, 0.7, 15, 0.03, d - 0.05),
-              "base": bagger_multiple(s, 1.0, 1.0, 22, 0.05, d),
-              "high": bagger_multiple(s, 1.4, 1.3, 35, 0.08, d + 0.03)} if modelable else None
+    bagger = {"low": bagger_multiple(s, 0.5, 0.5, 12, 0.02, d - 0.10, cap=0.20),
+              "base": bagger_multiple(s, 1.0, 1.0, 22, 0.05, d, cap=0.80),
+              "high": bagger_multiple(s, 1.4, 1.3, 35, 0.08, d + 0.03, cap=1.0)} if modelable else None
     tp = s.get("target_price")
     extra = {
         **_valuation_fields(s, *valuation_innovation(s, chance)),

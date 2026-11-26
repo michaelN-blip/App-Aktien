@@ -3,7 +3,7 @@ name: Testlauf (temporär)
 on:
   push:
     branches: [claude/daily-stock-suggestions-app-e9nfen]
-    paths: [.github/workflows/testrun.yml]
+    paths: [.github/workflows/testrun.yml, scanner/scoring.py]
 
 jobs:
   test:
