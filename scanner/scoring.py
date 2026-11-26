@@ -206,18 +206,19 @@ def valuation_buffett(s, hb=None):
     return None, None, None, None
 
 
-def _growth_case(s, growth_mult, margin_mult, exit_pe):
-    """5-Jahres-Szenario: Umsatz wächst (abflachend), reife Marge, Bewertung per KGV, abgezinst mit 12 %."""
+def _growth_case(s, growth_mult, margin_mult, exit_pe, decay=0.65, cap=1.0):
+    """5-Jahres-Szenario: Umsatz wächst (abflachend mit Faktor `decay` pro Jahr), reife Marge,
+    Bewertung per KGV, abgezinst mit 12 %."""
     rev, shares = s.get("revenue_ttm"), s.get("shares")
     if not rev or not shares:
         return None
     rg = s.get("revenue_growth")
     hist = cagr(s.get("revenue_hist", []))
     g0 = max([x for x in (rg, hist) if x is not None], default=0.10)
-    # Startwachstum höchstens 100 %, flacht jedes Jahr um ein Drittel ab (mind. 6 %)
-    g0 = max(0.0, min(g0 * growth_mult, 1.0))
+    # Startwachstum begrenzt (pessimistisch 20 %, Basis 80 %, optimistisch 100 %), flacht jährlich ab
+    g0 = max(0.0, min(g0 * growth_mult, cap))
     for year in range(5):
-        rev *= 1 + max(0.06, g0 * 0.65 ** year)
+        rev *= 1 + max(0.06 if cap > 0.2 else 0.02, g0 * decay ** year)
     gm = s.get("gross_margin") or 0.3
     margin = max(0.03, min(gm * 0.35, 0.25)) * margin_mult
     pm = s.get("profit_margin")
@@ -233,14 +234,45 @@ def _growth_case(s, growth_mult, margin_mult, exit_pe):
 GROWTH_DISCOUNT = 0.12
 
 
-def valuation_innovation(s):
-    low = _growth_case(s, 0.5, 0.7, 15)
-    base = _growth_case(s, 1.0, 1.0, 25)
-    high = _growth_case(s, 1.3, 1.2, 35)
-    method = ("5-Jahres-Umsatzmodell: Wachstum max. 100 %, jährlich abflachend, reife Gewinnmarge, "
-              "Exit-KGV 25, 12 % Mindestrendite")
-    if _revenue(s) is not None and _revenue(s) < 100e6:
-        method += " – bei so wenig Umsatz kaum aussagekräftig (Wert hängt an künftigen Durchbrüchen)"
+DECAY_BY_CHANCE = {"Hoch": 0.72, "Mittel": 0.65, "Niedrig": 0.58}  # wie lange das Wachstum anhält
+MIN_REVENUE_FOR_MODEL = 50e6
+
+
+def bagger_multiple(s, growth_mult, margin_mult, exit_pe, floor, decay=0.7, cap=1.0):
+    """Vervielfachung in 10 Jahren: Börsenwert-Szenario in 10 Jahren je Aktie / heutiger Kurs (nicht abgezinst)."""
+    rev, shares = s.get("revenue_ttm"), s.get("shares")
+    if not rev or not shares or not s.get("price"):
+        return None
+    g0 = max([x for x in (s.get("revenue_growth"), cagr(s.get("revenue_hist", []))) if x is not None], default=0.10)
+    g0 = max(0.0, min(g0 * growth_mult, cap))
+    for year in range(10):
+        rev *= 1 + max(floor, g0 * decay ** year)
+    gm = s.get("gross_margin") or 0.3
+    margin = max(0.03, min(gm * 0.35, 0.25)) * margin_mult
+    pm = s.get("profit_margin")
+    if pm is not None and pm < 0:
+        margin *= 0.75
+    equity = rev * margin * exit_pe + (s.get("total_cash") or 0) - (s.get("total_debt") or 0)
+    future_shares = shares * (1.03 ** 10 if pm is not None and pm < 0 else 1.01 ** 10)
+    return max(equity, 0) / future_shares / s["price"]
+
+
+def valuation_innovation(s, chance="Mittel"):
+    """Wachstumsbasierter fairer Wert. Die Wachstumschance bestimmt, wie lange das Wachstum anhält."""
+    rev = _revenue(s)
+    if rev is not None and rev < MIN_REVENUE_FOR_MODEL:
+        return None, None, None, (f"Nicht berechenbar: erst {big(rev)} Umsatz – der Wert hängt allein an künftigen "
+                                  "Durchbrüchen (Produkt, Zulassung, Aufträge). Reine Wette auf die Innovation.")
+    d = DECAY_BY_CHANCE.get(chance, 0.65)
+    low = _growth_case(s, 0.5, 0.5, 12, d - 0.10, cap=0.20)   # Wachstum stockt, Marge halb so hoch
+    base = _growth_case(s, 1.0, 1.0, 25, d, cap=0.80)
+    high = _growth_case(s, 1.4, 1.3, 40, d + 0.03, cap=1.0)
+    method = (f"Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance {chance.lower()} → "
+              f"Wachstum flacht {'langsam' if chance == 'Hoch' else 'schnell' if chance == 'Niedrig' else 'mittel'} ab; "
+              "reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), "
+              "12 % Mindestrendite")
+    if rev is not None and rev < 200e6:
+        method += " – bei noch kleinem Umsatz sehr unsicher"
     return low, base, high, method
 
 
@@ -301,7 +333,7 @@ def _valuation_fields(s, low, base, high, method):
     price = s["price"]
     if base is None:
         return {"fair_value": None, "fair_low": None, "fair_high": None, "potential": None,
-                "potential_low": None, "potential_high": None, "valuation_method": None,
+                "potential_low": None, "potential_high": None, "valuation_method": method,
                 "risk": risk_assessment(s)}
     return {
         "fair_value": base, "fair_low": low, "fair_high": high, "valuation_method": method,
@@ -476,69 +508,113 @@ def score_buffett(s):
 # ------------------------------------------------------------- Innovation ---
 
 def score_innovation(s, theme=None):
+    """100-Bagger-Score nach Christopher Mayer ("100 Baggers"): Wachstum, Größe, Skalierbarkeit,
+    Gründer, Innovation, Weg zur Profitabilität, vernünftiger Startpreis – keine Cashflow-Kennzahlen."""
     c, reasons, risks = [], [], []
+    h = s.get("history") or {}
+    rev_hist, ni_hist = h.get("revenue") or {}, h.get("net_income") or {}
+    price = s["price"]
 
-    # 1. Umsatzwachstum
+    # 1. Wachstumstempo
     rg = s.get("revenue_growth")
-    hist_g = cagr(s.get("revenue_hist", []))
-    growth = max([x for x in (rg, hist_g) if x is not None], default=None)
-    p = tiers(growth, [(0.50, 25), (0.30, 18), (0.15, 10), (0.05, 4)])
-    c.append(crit("Umsatzwachstum", pct(growth), p, 25, "Ein Vervielfacher wächst > 30 % pro Jahr"))
+    hist_g = _series_cagr(rev_hist) if rev_hist else cagr(s.get("revenue_hist", []))
+    growth = rg if rg is not None else hist_g
+    p = tiers(growth, [(0.50, 20), (0.30, 15), (0.20, 10), (0.10, 4)])
+    c.append(crit("Wachstumstempo", pct(growth), p, 20, "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"))
     if growth and growth >= 0.30:
         reasons.append(f"Wächst den Umsatz um {pct(growth)} pro Jahr")
 
-    # 2. Bruttomarge = skalierbares Geschäftsmodell
+    # 2. Beständigkeit / Beschleunigung
+    up, n = _ups(rev_hist)
+    p = (7 if n and up == n else 4 if n and up >= n - 1 else 0)
+    accel = growth is not None and hist_g is not None and growth > hist_g + 0.02
+    if accel:
+        p += 3
+    shown = (f"{up}/{n} Jahre gestiegen" if n else "–") + (" · beschleunigt" if accel else "")
+    c.append(crit("Wachstums-Beständigkeit", shown, p, 10, "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"))
+    if accel:
+        reasons.append(f"Wachstum beschleunigt sich ({pct(growth)} zuletzt vs. {pct(hist_g)} im Schnitt)")
+    elif n and up < n - 1:
+        risks.append("Umsatz ist in mehreren Jahren nicht gewachsen")
+
+    # 3. Klein anfangen
+    mc = s.get("market_cap")
+    p = tiers(mc, [(2e9, 15), (10e9, 12), (30e9, 8), (100e9, 4)], higher_is_better=False) or (1 if mc else 0)
+    c.append(crit("Größe / Luft nach oben", big(mc), p, 15, "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"))
+    if mc and mc < 10e9:
+        reasons.append(f"Noch klein (Börsenwert {big(mc)}) – viel Raum für Vervielfachung")
+    elif mc and mc > 300e9:
+        risks.append(f"Schon sehr groß ({big(mc)}) – eine Vervielfachung ist schwer")
+
+    # 4. Skalierbarkeit
     gm = s.get("gross_margin")
-    p = tiers(gm, [(0.60, 15), (0.40, 9), (0.25, 4)])
-    c.append(crit("Bruttomarge", pct(gm), p, 15, "Hoch = skalierbar (Software-ähnlich)"))
+    p = tiers(gm, [(0.70, 10), (0.50, 7), (0.35, 4), (0.20, 1)])
+    c.append(crit("Skalierbarkeit (Bruttomarge)", pct(gm), p, 10, "Jeder zusätzliche Umsatz bringt viel Gewinn"))
     if gm and gm >= 0.60:
         reasons.append(f"Skalierbares Geschäftsmodell (Bruttomarge {pct(gm)})")
+    elif gm is not None and gm < 0.20:
+        risks.append(f"Niedrige Bruttomarge ({pct(gm)}) – Wachstum ist teuer erkauft")
 
-    # 3. Klein genug, um sich zu vervielfachen
-    mc = s.get("market_cap")
-    p = tiers(mc, [(5e9, 15), (20e9, 12), (75e9, 7), (300e9, 3)], higher_is_better=False)
-    c.append(crit("Größe / Luft nach oben", big(mc), p, 15, "100-Bagger starten klein"))
-    if mc and mc < 20e9:
-        reasons.append(f"Noch klein (Marktkap. {big(mc)}) – viel Raum zum Wachsen")
-
-    # 4. Gründer/Insider an Bord
+    # 5. Gründer / Insider
     ins = s.get("insider_pct")
-    p = tiers(ins, [(0.10, 10), (0.03, 5), (0.01, 2)])
-    c.append(crit("Insider-Anteil", pct(ins, 1), p, 10, "Gründergeführt = Skin in the Game"))
+    p = tiers(ins, [(0.15, 10), (0.05, 6), (0.01, 2)])
+    c.append(crit("Gründer/Insider-Anteil", pct(ins, 1), p, 10, "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"))
     if ins and ins >= 0.10:
         reasons.append(f"Insider halten {pct(ins)} – Management zieht mit den Aktionären an einem Strang")
 
-    # 5. Finanzielle Ausdauer
-    cash, debt = s.get("total_cash"), s.get("total_debt") or 0
-    p = 10 if cash and cash > debt else 4 if cash and cash > debt * 0.5 else 0
-    c.append(crit("Cash vs. Schulden", f"{big(cash)} / {big(debt)}", p, 10, "Genug Geld, um durchzuhalten"))
-    if p == 0:
-        risks.append("Mehr Schulden als Cash – evtl. Kapitalerhöhungen nötig (Verwässerung)")
+    # 6. Innovationskraft
+    rnd, rev_l = s.get("rnd_latest"), s.get("revenue_latest")
+    ri = rnd / rev_l if rnd and rev_l else None
+    p = tiers(ri, [(0.15, 6), (0.08, 4), (0.03, 2)]) + (4 if theme else 0)
+    c.append(crit("Innovationskraft", (f"F&E {pct(ri)}" if ri is not None else "F&E –") + (f" · {theme}" if theme else ""),
+                  p, 10, "Forschungsquote und Zukunftsthema"))
+    if theme:
+        reasons.append(f"Zukunftsthema: {theme}")
 
-    # 6. Investition in Innovation
-    rnd, rev = s.get("rnd_latest"), s.get("revenue_latest")
-    ri = rnd / rev if rnd and rev else None
-    p = tiers(ri, [(0.15, 10), (0.08, 5), (0.03, 2)])
-    c.append(crit("F&E-Quote", pct(ri), p, 10, "Anteil des Umsatzes für Forschung"))
+    # 7. Weg zur Profitabilität (operativer Hebel)
+    nm = {y: ni_hist[y] / rev_hist[y] for y in _years(ni_hist, rev_hist) if rev_hist[y] > 0}
+    nm_first, nm_last = (nm[min(nm)], nm[max(nm)]) if len(nm) >= 2 else (None, s.get("profit_margin"))
+    if nm_last is not None and nm_last >= 0.10:
+        p, shown = 10, f"profitabel ({pct(nm_last)} Nettomarge)"
+    elif nm_first is not None and nm_last - nm_first >= 0.10:
+        p, shown = 8, f"Marge {pct(nm_first)} → {pct(nm_last)}"
+    elif nm_first is not None and nm_last - nm_first >= 0.03:
+        p, shown = 5, f"Marge {pct(nm_first)} → {pct(nm_last)}"
+    elif nm_last is not None and nm_last > 0:
+        p, shown = 4, f"knapp profitabel ({pct(nm_last)})"
+    else:
+        p, shown = 0, (f"Marge {pct(nm_first)} → {pct(nm_last)}" if nm_first is not None else pct(nm_last))
+    c.append(crit("Weg zur Profitabilität", shown, p, 10, "Mit dem Wachstum sollten die Verluste schrumpfen"))
+    if p == 8:
+        reasons.append(f"Verluste schrumpfen schnell (Nettomarge {pct(nm_first)} → {pct(nm_last)})")
+    elif p == 0 and nm_last is not None and nm_last < 0:
+        risks.append(f"Noch nicht profitabel und keine klare Verbesserung (Nettomarge {pct(nm_last)})")
 
-    # 7. Analysten-Kursziel
-    tp, price = s.get("target_price"), s["price"]
-    up = tp / price - 1 if tp else None
-    p = tiers(up, [(0.30, 10), (0.10, 5)])
-    c.append(crit("Analysten-Kursziel", pct(up), p, 10, "Potenzial bis zum mittleren Kursziel"))
-
-    # 8. Momentum
-    ma = s.get("ma200")
-    p = 5 if ma and price > ma else 0
-    c.append(crit("Trend (über 200-Tage-Linie)", "ja" if p else "nein", p, 5, "Markt erkennt die Story"))
-
-    # Risiken
-    pm = s.get("profit_margin")
-    if pm is not None and pm < 0:
-        risks.append(f"Noch nicht profitabel (Nettomarge {pct(pm)})")
+    # 8. Startpreis im Verhältnis zum Wachstum ("Zwillingsmotor": Wachstum + steigende Bewertung)
     ps = s.get("ps")
+    gps = ps / (growth * 100) if ps and growth and growth > 0 else None
+    p = tiers(gps, [(0.15, 10), (0.30, 7), (0.60, 4), (1.0, 1)], higher_is_better=False) if gps is not None else 0
+    c.append(crit("Preis vs. Wachstum", f"KUV {num(ps)} bei {pct(growth)} Wachstum" if ps else "–", p, 10,
+                  "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"))
+    if gps is not None and gps <= 0.15:
+        reasons.append(f"Günstig im Verhältnis zum Wachstum (KUV {num(ps)})")
     if ps and ps > 30:
-        risks.append(f"Sehr hoch bewertet: {num(ps, 0)}-facher Umsatz")
+        risks.append(f"Sehr hoch bewertet: {num(ps, 0)}-facher Umsatz – viel Erfolg schon eingepreist")
+
+    # 9. Finanzielle Reichweite
+    cash, debt = s.get("total_cash") or 0, s.get("total_debt") or 0
+    ni_ttm = s.get("net_income_ttm")
+    if ni_ttm is not None and ni_ttm < 0:
+        years = (cash - debt) / -ni_ttm if -ni_ttm > 0 else None
+        p = 5 if years and years >= 3 else 3 if years and years >= 1.5 else 0
+        shown = f"Geld reicht ~{years:.1f} Jahre" if years and years > 0 else "mehr Schulden als Cash"
+        if p == 0:
+            risks.append("Geld reicht nicht lange – Kapitalerhöhung (Verwässerung) wahrscheinlich")
+    else:
+        p = 5 if cash >= debt else 3
+        shown = f"profitabel · Cash {big(cash)} / Schulden {big(debt)}"
+    c.append(crit("Finanzielle Reichweite", shown, p, 5, "Genug Geld, um bis zur Profitabilität durchzuhalten"))
+
     hi = s.get("fifty_two_high")
     if hi and price < hi * 0.5:
         risks.append("Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen")
@@ -548,13 +624,23 @@ def score_innovation(s, theme=None):
     risks.append("Spekulativ: Totalverlust möglich – nur kleine Positionen")
 
     score = sum(x["points"] for x in c)
-    label = ("Hohes Potenzial" if score >= 70 else "Spannend" if score >= 55
+    growth_pts = sum(x["points"] for x in c if x["name"] in (
+        "Wachstumstempo", "Wachstums-Beständigkeit", "Weg zur Profitabilität", "Finanzielle Reichweite", "Innovationskraft"))
+    chance = "Hoch" if growth_pts >= 44 else "Mittel" if growth_pts >= 30 else "Niedrig"
+    label = ("Hohes Bagger-Potenzial" if score >= 70 else "Spannend" if score >= 55
              else "Beobachten" if score >= 40 else "Noch zu früh/zu teuer")
+    d = DECAY_BY_CHANCE[chance]
+    modelable = (_revenue(s) or 0) >= MIN_REVENUE_FOR_MODEL
+    bagger = {"low": bagger_multiple(s, 0.5, 0.5, 12, 0.02, d - 0.10, cap=0.20),
+              "base": bagger_multiple(s, 1.0, 1.0, 22, 0.05, d, cap=0.80),
+              "high": bagger_multiple(s, 1.4, 1.3, 35, 0.08, d + 0.03, cap=1.0)} if modelable else None
+    tp = s.get("target_price")
     extra = {
-        **_valuation_fields(s, *valuation_innovation(s)),
-        "theme": theme, "upside": up,
+        **_valuation_fields(s, *valuation_innovation(s, chance)),
+        "theme": theme, "upside": tp / price - 1 if tp else None,
+        "growth_chance": chance, "growth_points": f"{growth_pts}/55", "bagger": bagger,
         "metrics": {"Umsatzwachstum": pct(growth), "Bruttomarge": pct(gm), "KUV": num(ps),
-                    "Marktkap.": big(mc), "Insider": pct(ins, 1), "Kursziel": num(tp, 2)},
+                    "Marktkap.": big(mc), "Insider": pct(ins, 1), "Kursziel Analysten": num(tp, 2)},
     }
     return _result(s, score, c, reasons, risks, label, extra)
 
