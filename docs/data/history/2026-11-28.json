@@ -1,0 +1,3712 @@
+{
+ "date": "2026-11-28",
+ "generated_at": "2026-11-28T06:08+00:00",
+ "innovation": {
+  "picks": [
+   {
+    "symbol": "ALAB",
+    "name": "Astera Labs, Inc.",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "country": "United States",
+    "currency": "USD",
+    "price": 206.84,
+    "market_cap": 36151926784,
+    "summary": "Astera Labs, Inc. designs, manufactures, and sells semiconductor-based connectivity solutions for cloud and AI infrastructure in Taiwan and the United States. It offers an intelligent connectivity platform, comprised of semiconductor-based, high-speed, mixed-signal connectivity products that integrate a matrix of microcontrollers and sensors, and COSMOS. The company provides COSMOS software suite,",
+    "score": 82,
+    "label": "Hohes Bagger-Potenzial",
+    "criteria": [
+     {
+      "name": "Wachstumstempo",
+      "value": "154 %",
+      "points": 20,
+      "max": 20,
+      "hint": "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Wachstums-Beständigkeit",
+      "value": "3/3 Jahre gestiegen · beschleunigt",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "36.2 Mrd.",
+      "points": 4,
+      "max": 15,
+      "hint": "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"
+     },
+     {
+      "name": "Skalierbarkeit (Bruttomarge)",
+      "value": "74 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Jeder zusätzliche Umsatz bringt viel Gewinn"
+     },
+     {
+      "name": "Gründer/Insider-Anteil",
+      "value": "10.1 %",
+      "points": 6,
+      "max": 10,
+      "hint": "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"
+     },
+     {
+      "name": "Innovationskraft",
+      "value": "F&E 36 % · KI-Konnektivität",
+      "points": 10,
+      "max": 10,
+      "hint": "Forschungsquote und Zukunftsthema"
+     },
+     {
+      "name": "Weg zur Profitabilität",
+      "value": "profitabel (26 % Nettomarge)",
+      "points": 10,
+      "max": 10,
+      "hint": "Mit dem Wachstum sollten die Verluste schrumpfen"
+     },
+     {
+      "name": "Preis vs. Wachstum",
+      "value": "KUV 23.2 bei 154 % Wachstum",
+      "points": 7,
+      "max": 10,
+      "hint": "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"
+     },
+     {
+      "name": "Finanzielle Reichweite",
+      "value": "profitabel · Cash 1.4 Mrd. / Schulden 45.0 Mio.",
+      "points": 5,
+      "max": 5,
+      "hint": "Genug Geld, um bis zur Profitabilität durchzuhalten"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 154 % pro Jahr",
+     "Wachstum beschleunigt sich (154 % zuletzt vs. 120 % im Schnitt)",
+     "Skalierbares Geschäftsmodell (Bruttomarge 74 %)",
+     "Insider halten 10 % – Management zieht mit den Aktionären an einem Strang",
+     "Zukunftsthema: KI-Konnektivität"
+    ],
+    "risks": [
+     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
+     "Sehr volatil (Beta 3.9)",
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 194.3621,
+    "fair_low": 15.4152,
+    "fair_high": 643.8034,
+    "valuation_method": "Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance hoch → Wachstum flacht langsam ab; reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), 12 % Mindestrendite",
+    "potential": -0.0603,
+    "potential_low": -0.9255,
+    "potential_high": 2.1126,
+    "risk": {
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 6,
+     "factors": [
+      "sehr volatil (Beta 3.9)",
+      "über 50 % unter dem Jahreshoch",
+      "sehr hohe Bewertung",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "KI-Konnektivität",
+    "upside": 0.6383,
+    "growth_chance": "Hoch",
+    "growth_points": "55/55",
+    "bagger": {
+     "low": 0.1345,
+     "base": 2.1234,
+     "high": 8.94
+    },
+    "metrics": {
+     "Umsatzwachstum": "154 %",
+     "Bruttomarge": "74 %",
+     "KUV": "23.2",
+     "Marktkap.": "36.2 Mrd.",
+     "Insider": "10.1 %",
+     "Kursziel Analysten": "338.87"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "PL",
+    "name": "Planet Labs PBC",
+    "sector": "Industrials",
+    "industry": "Aerospace & Defense",
+    "country": "United States",
+    "currency": "USD",
+    "price": 11.2,
+    "market_cap": 4075097600,
+    "summary": "Planet Labs PBC engages in the design, construction, and launch of constellations of satellites with the intent of providing high-cadence geospatial data delivered to customers through an online platform in the United States and internationally. The company offers SuperDove satellites to create an always-online scanner for the planet, with the goal of imaging the Earth every day at a ground sampli",
+    "score": 79,
+    "label": "Hohes Bagger-Potenzial",
+    "criteria": [
+     {
+      "name": "Wachstumstempo",
+      "value": "58 %",
+      "points": 20,
+      "max": 20,
+      "hint": "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Wachstums-Beständigkeit",
+      "value": "3/3 Jahre gestiegen · beschleunigt",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "4.1 Mrd.",
+      "points": 12,
+      "max": 15,
+      "hint": "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"
+     },
+     {
+      "name": "Skalierbarkeit (Bruttomarge)",
+      "value": "55 %",
+      "points": 7,
+      "max": 10,
+      "hint": "Jeder zusätzliche Umsatz bringt viel Gewinn"
+     },
+     {
+      "name": "Gründer/Insider-Anteil",
+      "value": "1.2 %",
+      "points": 2,
+      "max": 10,
+      "hint": "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"
+     },
+     {
+      "name": "Innovationskraft",
+      "value": "F&E 35 % · Erdbeobachtung",
+      "points": 10,
+      "max": 10,
+      "hint": "Forschungsquote und Zukunftsthema"
+     },
+     {
+      "name": "Weg zur Profitabilität",
+      "value": "Marge -87 % → -39 %",
+      "points": 8,
+      "max": 10,
+      "hint": "Mit dem Wachstum sollten die Verluste schrumpfen"
+     },
+     {
+      "name": "Preis vs. Wachstum",
+      "value": "KUV 10.8 bei 58 % Wachstum",
+      "points": 7,
+      "max": 10,
+      "hint": "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"
+     },
+     {
+      "name": "Finanzielle Reichweite",
+      "value": "Geld reicht ~2.6 Jahre",
+      "points": 3,
+      "max": 5,
+      "hint": "Genug Geld, um bis zur Profitabilität durchzuhalten"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 58 % pro Jahr",
+     "Wachstum beschleunigt sich (58 % zuletzt vs. 17 % im Schnitt)",
+     "Noch klein (Börsenwert 4.1 Mrd.) – viel Raum für Vervielfachung",
+     "Zukunftsthema: Erdbeobachtung",
+     "Verluste schrumpfen schnell (Nettomarge -87 % → -39 %)"
+    ],
+    "risks": [
+     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
+     "Sehr volatil (Beta 2.3)",
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 7.7176,
+    "fair_low": 1.134,
+    "fair_high": 26.8632,
+    "valuation_method": "Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance hoch → Wachstum flacht langsam ab; reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), 12 % Mindestrendite",
+    "potential": -0.3109,
+    "potential_low": -0.8987,
+    "potential_high": 1.3985,
+    "risk": {
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 8,
+     "factors": [
+      "sehr volatil (Beta 2.3)",
+      "über 50 % unter dem Jahreshoch",
+      "macht Verluste",
+      "mittelgroßes Unternehmen",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "Erdbeobachtung",
+    "upside": 1.6097,
+    "growth_chance": "Hoch",
+    "growth_points": "51/55",
+    "bagger": {
+     "low": 0.1714,
+     "base": 1.3416,
+     "high": 5.8842
+    },
+    "metrics": {
+     "Umsatzwachstum": "58 %",
+     "Bruttomarge": "55 %",
+     "KUV": "10.8",
+     "Marktkap.": "4.1 Mrd.",
+     "Insider": "1.2 %",
+     "Kursziel Analysten": "29.23"
+    },
+    "new_today": true
+   },
+   {
+    "symbol": "CRWV",
+    "name": "CoreWeave, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "country": "United States",
+    "currency": "USD",
+    "price": 44.15,
+    "market_cap": 24552949760,
+    "summary": "CoreWeave, Inc. operates as a cloud infrastructure technology company in the United States, Denmark, Middle East and Asia Pacific. The company offers CoreWeave Cloud platform that comprises proprietary software and cloud services that deliver the automation and efficiency needed to manage complex artificial intelligence (AI) infrastructure at scale. It also offers data and storage solutions, such ",
+    "score": 74,
+    "label": "Hohes Bagger-Potenzial",
+    "criteria": [
+     {
+      "name": "Wachstumstempo",
+      "value": "168 %",
+      "points": 20,
+      "max": 20,
+      "hint": "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Wachstums-Beständigkeit",
+      "value": "3/3 Jahre gestiegen",
+      "points": 7,
+      "max": 10,
+      "hint": "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "24.6 Mrd.",
+      "points": 8,
+      "max": 15,
+      "hint": "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"
+     },
+     {
+      "name": "Skalierbarkeit (Bruttomarge)",
+      "value": "67 %",
+      "points": 7,
+      "max": 10,
+      "hint": "Jeder zusätzliche Umsatz bringt viel Gewinn"
+     },
+     {
+      "name": "Gründer/Insider-Anteil",
+      "value": "18.4 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"
+     },
+     {
+      "name": "Innovationskraft",
+      "value": "F&E – · KI-Cloud",
+      "points": 4,
+      "max": 10,
+      "hint": "Forschungsquote und Zukunftsthema"
+     },
+     {
+      "name": "Weg zur Profitabilität",
+      "value": "Marge -182 % → -23 %",
+      "points": 8,
+      "max": 10,
+      "hint": "Mit dem Wachstum sollten die Verluste schrumpfen"
+     },
+     {
+      "name": "Preis vs. Wachstum",
+      "value": "KUV 2.5 bei 168 % Wachstum",
+      "points": 10,
+      "max": 10,
+      "hint": "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"
+     },
+     {
+      "name": "Finanzielle Reichweite",
+      "value": "mehr Schulden als Cash",
+      "points": 0,
+      "max": 5,
+      "hint": "Genug Geld, um bis zur Profitabilität durchzuhalten"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 168 % pro Jahr",
+     "Skalierbares Geschäftsmodell (Bruttomarge 67 %)",
+     "Insider halten 18 % – Management zieht mit den Aktionären an einem Strang",
+     "Zukunftsthema: KI-Cloud",
+     "Verluste schrumpfen schnell (Nettomarge -182 % → -23 %)",
+     "Günstig im Verhältnis zum Wachstum (KUV 2.5)"
+    ],
+    "risks": [
+     "Geld reicht nicht lange – Kapitalerhöhung (Verwässerung) wahrscheinlich",
+     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 133.3278,
+    "fair_low": 0.0,
+    "fair_high": 540.2224,
+    "valuation_method": "Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance mittel → Wachstum flacht mittel ab; reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), 12 % Mindestrendite",
+    "potential": 2.0199,
+    "potential_low": -1.0,
+    "potential_high": 11.2361,
+    "risk": {
+     "level": 4,
+     "name": "Sehr hoch",
+     "points": 7,
+     "factors": [
+      "über 50 % unter dem Jahreshoch",
+      "macht Verluste",
+      "hohe Verschuldung",
+      "mehr Schulden als Cash bei Verlusten",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "KI-Cloud",
+    "upside": 1.5922,
+    "growth_chance": "Mittel",
+    "growth_points": "39/55",
+    "bagger": {
+     "low": 0.0,
+     "base": 6.0265,
+     "high": 27.8113
+    },
+    "metrics": {
+     "Umsatzwachstum": "168 %",
+     "Bruttomarge": "67 %",
+     "KUV": "2.5",
+     "Marktkap.": "24.6 Mrd.",
+     "Insider": "18.4 %",
+     "Kursziel Analysten": "114.45"
+    },
+    "new_today": true
+   },
+   {
+    "symbol": "SE",
+    "name": "Sea Limited",
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "country": "Singapore",
+    "currency": "USD",
+    "price": 69.11,
+    "market_cap": 42328805376,
+    "summary": "Sea Limited, through its subsidiaries, operates as a technology company in Southeast Asia, Latin America, the rest of Asia, and internationally. The company operates through E-commerce, Digital Financial Services, and Digital Entertainment segments. It offers Garena, a digital entertainment platform for users to access mobile and PC online games, as well as promotes eSports operations and develops",
+    "score": 72,
+    "label": "Hohes Bagger-Potenzial",
+    "criteria": [
+     {
+      "name": "Wachstumstempo",
+      "value": "43 %",
+      "points": 15,
+      "max": 20,
+      "hint": "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Wachstums-Beständigkeit",
+      "value": "3/3 Jahre gestiegen · beschleunigt",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "42.3 Mrd.",
+      "points": 4,
+      "max": 15,
+      "hint": "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"
+     },
+     {
+      "name": "Skalierbarkeit (Bruttomarge)",
+      "value": "45 %",
+      "points": 4,
+      "max": 10,
+      "hint": "Jeder zusätzliche Umsatz bringt viel Gewinn"
+     },
+     {
+      "name": "Gründer/Insider-Anteil",
+      "value": "26.8 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"
+     },
+     {
+      "name": "Innovationskraft",
+      "value": "F&E 5 % · E-Commerce Südostasien",
+      "points": 6,
+      "max": 10,
+      "hint": "Forschungsquote und Zukunftsthema"
+     },
+     {
+      "name": "Weg zur Profitabilität",
+      "value": "Marge -10 % → 7 %",
+      "points": 8,
+      "max": 10,
+      "hint": "Mit dem Wachstum sollten die Verluste schrumpfen"
+     },
+     {
+      "name": "Preis vs. Wachstum",
+      "value": "KUV 1.4 bei 43 % Wachstum",
+      "points": 10,
+      "max": 10,
+      "hint": "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"
+     },
+     {
+      "name": "Finanzielle Reichweite",
+      "value": "profitabel · Cash 8.0 Mrd. / Schulden 3.4 Mrd.",
+      "points": 5,
+      "max": 5,
+      "hint": "Genug Geld, um bis zur Profitabilität durchzuhalten"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 43 % pro Jahr",
+     "Wachstum beschleunigt sich (43 % zuletzt vs. 23 % im Schnitt)",
+     "Insider halten 27 % – Management zieht mit den Aktionären an einem Strang",
+     "Zukunftsthema: E-Commerce Südostasien",
+     "Verluste schrumpfen schnell (Nettomarge -10 % → 7 %)",
+     "Günstig im Verhältnis zum Wachstum (KUV 1.4)"
+    ],
+    "risks": [
+     "Mehr als 50 % unter dem 52-Wochen-Hoch – hohe Schwankungen",
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 318.5738,
+    "fair_low": 43.6356,
+    "fair_high": 1032.4803,
+    "valuation_method": "Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance hoch → Wachstum flacht langsam ab; reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), 12 % Mindestrendite",
+    "potential": 3.6097,
+    "potential_low": -0.3686,
+    "potential_high": 13.9397,
+    "risk": {
+     "level": 3,
+     "name": "Hoch",
+     "points": 4,
+     "factors": [
+      "schwankungsfreudig (Beta 1.6)",
+      "über 50 % unter dem Jahreshoch",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "E-Commerce Südostasien",
+    "upside": 0.8811,
+    "growth_chance": "Hoch",
+    "growth_points": "44/55",
+    "bagger": {
+     "low": 1.1585,
+     "base": 9.0344,
+     "high": 35.0062
+    },
+    "metrics": {
+     "Umsatzwachstum": "43 %",
+     "Bruttomarge": "45 %",
+     "KUV": "1.4",
+     "Marktkap.": "42.3 Mrd.",
+     "Insider": "26.8 %",
+     "Kursziel Analysten": "130.00"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "PATH",
+    "name": "UiPath, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "country": "United States",
+    "currency": "USD",
+    "price": 12.65,
+    "market_cap": 6592615936,
+    "summary": "UiPath, Inc. provides an automation platform that offers a range of robotic process automation (RPA) solutions primarily in the United States, Romania, the United Kingdom, the Netherlands, and internationally. It offers the UiPath platform, an integrated enterprise software platform that enables AI agents, robots, people, and models to work together in coordinated workflows. The company's UiPath p",
+    "score": 71,
+    "label": "Hohes Bagger-Potenzial",
+    "criteria": [
+     {
+      "name": "Wachstumstempo",
+      "value": "13 %",
+      "points": 4,
+      "max": 20,
+      "hint": "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Wachstums-Beständigkeit",
+      "value": "3/3 Jahre gestiegen",
+      "points": 7,
+      "max": 10,
+      "hint": "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "6.6 Mrd.",
+      "points": 12,
+      "max": 15,
+      "hint": "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"
+     },
+     {
+      "name": "Skalierbarkeit (Bruttomarge)",
+      "value": "83 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Jeder zusätzliche Umsatz bringt viel Gewinn"
+     },
+     {
+      "name": "Gründer/Insider-Anteil",
+      "value": "10.2 %",
+      "points": 6,
+      "max": 10,
+      "hint": "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"
+     },
+     {
+      "name": "Innovationskraft",
+      "value": "F&E 24 % · Automatisierung",
+      "points": 10,
+      "max": 10,
+      "hint": "Forschungsquote und Zukunftsthema"
+     },
+     {
+      "name": "Weg zur Profitabilität",
+      "value": "profitabel (18 % Nettomarge)",
+      "points": 10,
+      "max": 10,
+      "hint": "Mit dem Wachstum sollten die Verluste schrumpfen"
+     },
+     {
+      "name": "Preis vs. Wachstum",
+      "value": "KUV 3.8 bei 13 % Wachstum",
+      "points": 7,
+      "max": 10,
+      "hint": "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"
+     },
+     {
+      "name": "Finanzielle Reichweite",
+      "value": "profitabel · Cash 1.3 Mrd. / Schulden 79.8 Mio.",
+      "points": 5,
+      "max": 5,
+      "hint": "Genug Geld, um bis zur Profitabilität durchzuhalten"
+     }
+    ],
+    "reasons": [
+     "Noch klein (Börsenwert 6.6 Mrd.) – viel Raum für Vervielfachung",
+     "Skalierbares Geschäftsmodell (Bruttomarge 83 %)",
+     "Insider halten 10 % – Management zieht mit den Aktionären an einem Strang",
+     "Zukunftsthema: Automatisierung"
+    ],
+    "risks": [
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 18.054,
+    "fair_low": 4.4327,
+    "fair_high": 40.9932,
+    "valuation_method": "Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance mittel → Wachstum flacht mittel ab; reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), 12 % Mindestrendite",
+    "potential": 0.4272,
+    "potential_low": -0.6496,
+    "potential_high": 2.2406,
+    "risk": {
+     "level": 2,
+     "name": "Mittel",
+     "points": 3,
+     "factors": [
+      "über 30 % unter dem Jahreshoch",
+      "mittelgroßes Unternehmen",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "Automatisierung",
+    "upside": 0.2178,
+    "growth_chance": "Mittel",
+    "growth_points": "36/55",
+    "bagger": {
+     "low": 0.6315,
+     "base": 2.6204,
+     "high": 7.1566
+    },
+    "metrics": {
+     "Umsatzwachstum": "13 %",
+     "Bruttomarge": "83 %",
+     "KUV": "3.8",
+     "Marktkap.": "6.6 Mrd.",
+     "Insider": "10.2 %",
+     "Kursziel Analysten": "15.40"
+    },
+    "new_today": true
+   },
+   {
+    "symbol": "PLTR",
+    "name": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "country": "United States",
+    "currency": "USD",
+    "price": 172.17,
+    "market_cap": 414843207680,
+    "summary": "Palantir Technologies Inc. builds and deploys software platforms for the intelligence community to assist in counterterrorism investigations and operations in the United States, the United Kingdom, and internationally. It provides Palantir Gotham integrates with other platforms for defense offerings which enables users to see, understand, and act in the modern battlespace; operations centers to th",
+    "score": 70,
+    "label": "Hohes Bagger-Potenzial",
+    "criteria": [
+     {
+      "name": "Wachstumstempo",
+      "value": "96 %",
+      "points": 20,
+      "max": 20,
+      "hint": "Umsatzwachstum – ein Vervielfacher wächst > 30 % pro Jahr"
+     },
+     {
+      "name": "Wachstums-Beständigkeit",
+      "value": "3/3 Jahre gestiegen · beschleunigt",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr mehr Umsatz, idealerweise schneller werdend"
+     },
+     {
+      "name": "Größe / Luft nach oben",
+      "value": "414.8 Mrd.",
+      "points": 1,
+      "max": 15,
+      "hint": "100-Bagger starten klein – ab 100 Mrd. wird 100x unrealistisch"
+     },
+     {
+      "name": "Skalierbarkeit (Bruttomarge)",
+      "value": "85 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Jeder zusätzliche Umsatz bringt viel Gewinn"
+     },
+     {
+      "name": "Gründer/Insider-Anteil",
+      "value": "3.5 %",
+      "points": 2,
+      "max": 10,
+      "hint": "Mayer: Eigentümer-Manager mit eigenem Geld im Spiel"
+     },
+     {
+      "name": "Innovationskraft",
+      "value": "F&E 12 % · Künstliche Intelligenz",
+      "points": 8,
+      "max": 10,
+      "hint": "Forschungsquote und Zukunftsthema"
+     },
+     {
+      "name": "Weg zur Profitabilität",
+      "value": "profitabel (36 % Nettomarge)",
+      "points": 10,
+      "max": 10,
+      "hint": "Mit dem Wachstum sollten die Verluste schrumpfen"
+     },
+     {
+      "name": "Preis vs. Wachstum",
+      "value": "KUV 56.9 bei 96 % Wachstum",
+      "points": 4,
+      "max": 10,
+      "hint": "Nicht zu teuer einsteigen: KUV ÷ Wachstum in % klein"
+     },
+     {
+      "name": "Finanzielle Reichweite",
+      "value": "profitabel · Cash 10.6 Mrd. / Schulden 225.3 Mio.",
+      "points": 5,
+      "max": 5,
+      "hint": "Genug Geld, um bis zur Profitabilität durchzuhalten"
+     }
+    ],
+    "reasons": [
+     "Wächst den Umsatz um 96 % pro Jahr",
+     "Wachstum beschleunigt sich (96 % zuletzt vs. 33 % im Schnitt)",
+     "Skalierbares Geschäftsmodell (Bruttomarge 85 %)",
+     "Zukunftsthema: Künstliche Intelligenz"
+    ],
+    "risks": [
+     "Schon sehr groß (414.8 Mrd.) – eine Vervielfachung ist schwer",
+     "Sehr hoch bewertet: 57-facher Umsatz – viel Erfolg schon eingepreist",
+     "Spekulativ: Totalverlust möglich – nur kleine Positionen"
+    ],
+    "fair_value": 66.945,
+    "fair_low": 6.1538,
+    "fair_high": 219.6277,
+    "valuation_method": "Wachstumsmodell: Umsatz 5 Jahre (Start max. 100 %), Wachstumschance hoch → Wachstum flacht langsam ab; reife Gewinnmarge, Exit-KGV 25 (optimistisch 40; pessimistisch 12 bei stockendem Wachstum und halber Marge), 12 % Mindestrendite",
+    "potential": -0.6112,
+    "potential_low": -0.9643,
+    "potential_high": 0.2756,
+    "risk": {
+     "level": 2,
+     "name": "Mittel",
+     "points": 3,
+     "factors": [
+      "schwankungsfreudig (Beta 1.6)",
+      "sehr hohe Bewertung",
+      "Wert schwer zu schätzen (große Spanne)"
+     ]
+    },
+    "theme": "Künstliche Intelligenz",
+    "upside": 0.289,
+    "growth_chance": "Hoch",
+    "growth_points": "53/55",
+    "bagger": {
+     "low": 0.0638,
+     "base": 0.8755,
+     "high": 3.6576
+    },
+    "metrics": {
+     "Umsatzwachstum": "96 %",
+     "Bruttomarge": "85 %",
+     "KUV": "56.9",
+     "Marktkap.": "414.8 Mrd.",
+     "Insider": "3.5 %",
+     "Kursziel Analysten": "221.93"
+    },
+    "new_today": true
+   }
+  ],
+  "ranking": [
+   {
+    "symbol": "CRDO",
+    "name": "Credo Technology Group Holding Ltd",
+    "score": 86,
+    "price": 115.57,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 171.9455,
+    "potential": 0.4878,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "RDDT",
+    "name": "Reddit, Inc.",
+    "score": 83,
+    "price": 93.83,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 207.4324,
+    "potential": 1.2107,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "ALAB",
+    "name": "Astera Labs, Inc.",
+    "score": 82,
+    "price": 206.84,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 194.3621,
+    "potential": -0.0603,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "PL",
+    "name": "Planet Labs PBC",
+    "score": 79,
+    "price": 11.2,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 7.7176,
+    "potential": -0.3109,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SERV",
+    "name": "Serve Robotics Inc.",
+    "score": 79,
+    "price": 2.45,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "JOBY",
+    "name": "Joby Aviation, Inc.",
+    "score": 75,
+    "price": 4.05,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 2.0475,
+    "potential": -0.4944,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "CRWV",
+    "name": "CoreWeave, Inc.",
+    "score": 74,
+    "price": 44.15,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 133.3278,
+    "potential": 2.0199,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "MDB",
+    "name": "MongoDB, Inc.",
+    "score": 72,
+    "price": 320.12,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 275.1423,
+    "potential": -0.1405,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SOFI",
+    "name": "SoFi Technologies, Inc.",
+    "score": 72,
+    "price": 13.37,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 31.8107,
+    "potential": 1.3793,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SE",
+    "name": "Sea Limited",
+    "score": 72,
+    "price": 69.11,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 318.5738,
+    "potential": 3.6097,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SOUN",
+    "name": "SoundHound AI, Inc.",
+    "score": 71,
+    "price": 2.78,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 2.8463,
+    "potential": 0.0239,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "PATH",
+    "name": "UiPath, Inc.",
+    "score": 71,
+    "price": 12.65,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 18.054,
+    "potential": 0.4272,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "HIMS",
+    "name": "Hims & Hers Health, Inc.",
+    "score": 71,
+    "price": 15.0,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 93.0882,
+    "potential": 5.2059,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "PLTR",
+    "name": "Palantir Technologies Inc.",
+    "score": 70,
+    "price": 172.17,
+    "currency": "USD",
+    "label": "Hohes Bagger-Potenzial",
+    "fair_value": 66.945,
+    "potential": -0.6112,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "ZS",
+    "name": "Zscaler, Inc.",
+    "score": 68,
+    "price": 239.49,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 95.3332,
+    "potential": -0.6019,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "EOSE",
+    "name": "Eos Energy Enterprises, Inc.",
+    "score": 68,
+    "price": 1.38,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 0.8905,
+    "potential": -0.3547,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "TEM",
+    "name": "Tempus AI, Inc.",
+    "score": 67,
+    "price": 55.91,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 54.847,
+    "potential": -0.019,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "APP",
+    "name": "AppLovin Corporation",
+    "score": 67,
+    "price": 399.21,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 300.7053,
+    "potential": -0.2467,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "NBIS",
+    "name": "Nebius Group N.V.",
+    "score": 67,
+    "price": 89.46,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 112.742,
+    "potential": 0.2603,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "IONQ",
+    "name": "IonQ, Inc.",
+    "score": 67,
+    "price": 24.97,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 7.2851,
+    "potential": -0.7082,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "RXRX",
+    "name": "Recursion Pharmaceuticals, Inc.",
+    "score": 67,
+    "price": 2.71,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 1.2031,
+    "potential": -0.5561,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "LSCC",
+    "name": "Lattice Semiconductor Corporation",
+    "score": 66,
+    "price": 103.62,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 115.1752,
+    "potential": 0.1115,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "TWST",
+    "name": "Twist Bioscience Corporation",
+    "score": 66,
+    "price": 109.88,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 24.0653,
+    "potential": -0.781,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "RKLB",
+    "name": "Rocket Lab Corporation",
+    "score": 65,
+    "price": 50.88,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 11.1064,
+    "potential": -0.7817,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "CRSP",
+    "name": "CRISPR Therapeutics AG",
+    "score": 65,
+    "price": 42.37,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "DUOL",
+    "name": "Duolingo, Inc.",
+    "score": 64,
+    "price": 155.34,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 226.6428,
+    "potential": 0.459,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "IOT",
+    "name": "Samsara Inc.",
+    "score": 64,
+    "price": 40.12,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 24.4618,
+    "potential": -0.3903,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "S",
+    "name": "SentinelOne, Inc.",
+    "score": 64,
+    "price": 25.29,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 15.6626,
+    "potential": -0.3807,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "DDOG",
+    "name": "Datadog, Inc.",
+    "score": 63,
+    "price": 165.75,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 105.0957,
+    "potential": -0.3659,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "AFRM",
+    "name": "Affirm Holdings, Inc.",
+    "score": 63,
+    "price": 61.875,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 61.9837,
+    "potential": 0.0018,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "MELI",
+    "name": "MercadoLibre, Inc.",
+    "score": 62,
+    "price": 1532.92,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 4449.8008,
+    "potential": 1.9028,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "QBTS",
+    "name": "D-Wave Quantum Inc.",
+    "score": 61,
+    "price": 7.58,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "TOST",
+    "name": "Toast, Inc.",
+    "score": 61,
+    "price": 34.67,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 34.0254,
+    "potential": -0.0186,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "NET",
+    "name": "Cloudflare, Inc.",
+    "score": 60,
+    "price": 296.79,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 45.9101,
+    "potential": -0.8453,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "ASTS",
+    "name": "AST SpaceMobile, Inc.",
+    "score": 59,
+    "price": 26.85,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 1.4062,
+    "potential": -0.9476,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SNOW",
+    "name": "Snowflake Inc.",
+    "score": 57,
+    "price": 276.29,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 69.5987,
+    "potential": -0.7481,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SHOP",
+    "name": "Shopify Inc.",
+    "score": 57,
+    "price": 141.78,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 58.2388,
+    "potential": -0.5892,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SYM",
+    "name": "Symbotic Inc.",
+    "score": 57,
+    "price": 38.7,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 17.8974,
+    "potential": -0.5375,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "ARM",
+    "name": "Arm Holdings plc",
+    "score": 56,
+    "price": 171.55,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 36.8389,
+    "potential": -0.7853,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "LUNR",
+    "name": "Intuitive Machines, Inc.",
+    "score": 55,
+    "price": 10.0,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 10.2199,
+    "potential": 0.022,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "ISRG",
+    "name": "Intuitive Surgical, Inc.",
+    "score": 55,
+    "price": 430.18,
+    "currency": "USD",
+    "label": "Spannend",
+    "fair_value": 185.4031,
+    "potential": -0.569,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "NU",
+    "name": "Nu Holdings Ltd.",
+    "score": 54,
+    "price": 12.91,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 9.4463,
+    "potential": -0.2683,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "CRWD",
+    "name": "CrowdStrike Holdings, Inc.",
+    "score": 50,
+    "price": 217.2,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 39.4341,
+    "potential": -0.8184,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "HOOD",
+    "name": "Robinhood Markets, Inc.",
+    "score": 50,
+    "price": 67.92,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 56.8525,
+    "potential": -0.1629,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "AMBA",
+    "name": "Ambarella, Inc.",
+    "score": 47,
+    "price": 35.24,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 25.7674,
+    "potential": -0.2688,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "BEAM",
+    "name": "Beam Therapeutics Inc.",
+    "score": 41,
+    "price": 24.04,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 4.3292,
+    "potential": -0.8199,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "NTLA",
+    "name": "Intellia Therapeutics, Inc.",
+    "score": 39,
+    "price": 10.32,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 1.6739,
+    "potential": -0.8378,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "AI",
+    "name": "C3.ai, Inc.",
+    "score": 36,
+    "price": 10.22,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 3.4384,
+    "potential": -0.6636,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "SMR",
+    "name": "NuScale Power Corporation",
+    "score": 36,
+    "price": 3.48,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "FLNC",
+    "name": "Fluence Energy, Inc.",
+    "score": 36,
+    "price": 5.19,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 4.9449,
+    "potential": -0.0472,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "RDW",
+    "name": "Redwire Corporation",
+    "score": 35,
+    "price": 6.43,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 3.0647,
+    "potential": -0.5234,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "NNE",
+    "name": "NANO Nuclear Energy Inc.",
+    "score": 35,
+    "price": 9.54,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "CPNG",
+    "name": "Coupang, Inc.",
+    "score": 34,
+    "price": 16.33,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 26.967,
+    "potential": 0.6514,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "RGTI",
+    "name": "Rigetti Computing, Inc.",
+    "score": 33,
+    "price": 8.53,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "OKLO",
+    "name": "Oklo Inc.",
+    "score": 31,
+    "price": 20.85,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "TSLA",
+    "name": "Tesla, Inc.",
+    "score": 30,
+    "price": 400.0,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": 35.9072,
+    "potential": -0.9102,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   },
+   {
+    "symbol": "ACHR",
+    "name": "Archer Aviation Inc.",
+    "score": 28,
+    "price": 3.22,
+    "currency": "USD",
+    "label": "Noch zu früh/zu teuer",
+    "fair_value": null,
+    "potential": null,
+    "risk": "Sehr hoch",
+    "risk_level": 4,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": null
+   }
+  ]
+ },
+ "buffett": {
+  "picks": [
+   {
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "country": "United States",
+    "currency": "USD",
+    "price": 274.96,
+    "market_cap": 3380358152192,
+    "summary": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets segments. The Google Services segment provides products and services, including ads, Android, Chrome, devices, Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, a",
+    "score": 100,
+    "label": "Starker Buffett-Kandidat",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "27 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 25 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "19.3 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "57 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "26 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 12.5 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "3/3 Jahre gestiegen · 20.3 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "0.22",
+      "points": 5,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "14.4",
+      "points": 10,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 46 % unter innerem Wert",
+      "points": 17,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 4.0 % · innerer Wert ≈ 402.71 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 27 % – Zeichen für einen Burggraben",
+     "Gesamtkapitalrendite im Schnitt 19 % – arbeitet mit wenig Kapital sehr profitabel",
+     "Gute Margen: brutto 57 %, netto 26 %",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (12.5 % p. a.)",
+     "Gewinn in jedem der letzten 3 Jahre gestiegen (20.3 % p. a.)",
+     "In allen 4 Jahren positiver Free Cashflow",
+     "Günstiges KGV von 14.4",
+     "Sicherheitsmarge von 32 %: Kurs liegt klar unter dem inneren Wert"
+    ],
+    "risks": [],
+    "fair_value": 402.7054,
+    "fair_low": 264.051,
+    "fair_high": 574.0247,
+    "valuation_method": "DCF auf Owner Earnings (133.7 Mrd./Jahr, letzte 12 Monate): 15 % Wachstum (Historie 13 %, Analysten 23 %) für 5 Jahre, dann abflachend auf 3 %, 8.5 % Mindestrendite (Risiko niedrig)",
+    "potential": 0.4646,
+    "potential_low": -0.0397,
+    "potential_high": 1.0877,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 1,
+     "factors": [
+      "über 30 % unter dem Jahreshoch"
+     ]
+    },
+    "intrinsic_value": 402.7054,
+    "margin_of_safety": 0.3172,
+    "owner_earnings": 133742130000.0,
+    "owner_earnings_yield": 0.0396,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": true
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": true
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": true
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": true
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": true
+     }
+    ],
+    "rules_met": "9/9",
+    "metrics": {
+     "KGV": "14.4",
+     "ROE Ø": "27 %",
+     "ROA Ø": "19 %",
+     "Bruttomarge": "57 %",
+     "Nettomarge": "26 %",
+     "Owner Earn. Rendite": "4.0 %"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "ZTS",
+    "name": "Zoetis Inc.",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - Specialty & Generic",
+    "country": "United States",
+    "currency": "USD",
+    "price": 82.45,
+    "market_cap": 33500766208,
+    "summary": "Zoetis Inc. engages in the discovery, development, manufacture, and commercialization of medicines, vaccines, diagnostic products and services, biodevices, genetic tests, and precision animal health solutions for the animal health industry in the United States and internationally. The company commercializes products primarily across companion animals comprising dogs, cats, and horses; and species,",
+    "score": 95,
+    "label": "Starker Buffett-Kandidat",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "59 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 47 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "16.9 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "71 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "28 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 5.4 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "3/3 Jahre gestiegen · 7.7 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "2.80",
+      "points": 0,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "14.0",
+      "points": 10,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 47 % unter innerem Wert",
+      "points": 17,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 8.0 % · innerer Wert ≈ 120.87 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 59 % – Zeichen für einen Burggraben",
+     "Gesamtkapitalrendite im Schnitt 17 % – arbeitet mit wenig Kapital sehr profitabel",
+     "Gute Margen: brutto 71 %, netto 28 %",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (5.4 % p. a.)",
+     "Gewinn in jedem der letzten 3 Jahre gestiegen (7.7 % p. a.)",
+     "In allen 4 Jahren positiver Free Cashflow",
+     "Günstiges KGV von 14.0",
+     "Sicherheitsmarge von 32 %: Kurs liegt klar unter dem inneren Wert",
+     "Owner-Earnings-Rendite von 8.0 % – wie eine Anleihe mit wachsendem Kupon",
+     "Zahlt 2.6 % Dividende"
+    ],
+    "risks": [
+     "Hohe Verschuldung bzw. negatives Eigenkapital"
+    ],
+    "fair_value": 120.8742,
+    "fair_low": 105.6833,
+    "fair_high": 145.1061,
+    "valuation_method": "DCF auf Owner Earnings (2.7 Mrd./Jahr, letzte 12 Monate): 4 % Wachstum (Historie 5 %, Analysten 1 %) für 5 Jahre, dann abflachend auf 3 %, 9.0 % Mindestrendite (Risiko mittel)",
+    "potential": 0.466,
+    "potential_low": 0.2818,
+    "potential_high": 0.7599,
+    "risk": {
+     "level": 2,
+     "name": "Mittel",
+     "points": 2,
+     "factors": [
+      "über 30 % unter dem Jahreshoch",
+      "hohe Verschuldung"
+     ]
+    },
+    "intrinsic_value": 120.8742,
+    "margin_of_safety": 0.3179,
+    "owner_earnings": 2694560000.0,
+    "owner_earnings_yield": 0.0804,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": true
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": true
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": true
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": true
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": true
+     }
+    ],
+    "rules_met": "9/9",
+    "metrics": {
+     "KGV": "14.0",
+     "ROE Ø": "59 %",
+     "ROA Ø": "17 %",
+     "Bruttomarge": "71 %",
+     "Nettomarge": "28 %",
+     "Owner Earn. Rendite": "8.0 %"
+    },
+    "new_today": true
+   },
+   {
+    "symbol": "NVO",
+    "name": "Novo Nordisk A/S",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - General",
+    "country": "Denmark",
+    "currency": "USD",
+    "price": 41.07,
+    "market_cap": 180964474880,
+    "summary": "Novo Nordisk A/S, together with its subsidiaries, engages in the research and development, manufacture, and distribution of pharmaceutical products. It operates through two segments, Obesity and Diabetes Care, and Rare Disease. The Obesity and Diabetes care segment provides products for diabetes, obesity, cardiovascular, and other emerging therapy areas. The Rare Disease segment offers products in",
+    "score": 94,
+    "label": "Starker Buffett-Kandidat",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "68 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 50 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "22.7 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "84 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "34 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 20.4 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "2/3 Jahre gestiegen · 17.8 % p. a.",
+      "points": 6,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "0.62",
+      "points": 3,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "10.4",
+      "points": 10,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 161 % unter innerem Wert",
+      "points": 17,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 9.2 % · innerer Wert ≈ 107.25 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 68 % – Zeichen für einen Burggraben",
+     "Gesamtkapitalrendite im Schnitt 23 % – arbeitet mit wenig Kapital sehr profitabel",
+     "Gute Margen: brutto 84 %, netto 34 %",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (20.4 % p. a.)",
+     "In allen 4 Jahren positiver Free Cashflow",
+     "Günstiges KGV von 10.4",
+     "Sicherheitsmarge von 62 %: Kurs liegt klar unter dem inneren Wert",
+     "Owner-Earnings-Rendite von 9.2 % – wie eine Anleihe mit wachsendem Kupon",
+     "Zahlt 4.4 % Dividende"
+    ],
+    "risks": [],
+    "fair_value": 107.2532,
+    "fair_low": 76.5671,
+    "fair_high": 145.84,
+    "valuation_method": "DCF auf Owner Earnings (16.6 Mrd./Jahr, letzte 12 Monate): 12 % Wachstum (Historie 18 %, Analysten 5 %) für 5 Jahre, dann abflachend auf 3 %, 9.0 % Mindestrendite (Risiko mittel)",
+    "potential": 1.6115,
+    "potential_low": 0.8643,
+    "potential_high": 2.551,
+    "risk": {
+     "level": 2,
+     "name": "Mittel",
+     "points": 2,
+     "factors": [
+      "über 30 % unter dem Jahreshoch",
+      "Analysten erwarten Gewinnrückgang (-11 %)"
+     ]
+    },
+    "intrinsic_value": 107.2532,
+    "margin_of_safety": 0.6171,
+    "owner_earnings": 16560630385.8161,
+    "owner_earnings_yield": 0.0915,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": true
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": true
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": true
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": true
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": true
+     }
+    ],
+    "rules_met": "9/9",
+    "metrics": {
+     "KGV": "10.4",
+     "ROE Ø": "68 %",
+     "ROA Ø": "23 %",
+     "Bruttomarge": "84 %",
+     "Nettomarge": "34 %",
+     "Owner Earn. Rendite": "9.2 %"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "META",
+    "name": "Meta Platforms, Inc.",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "country": "United States",
+    "currency": "USD",
+    "price": 628.96,
+    "market_cap": 1607773454336,
+    "summary": "Meta Platforms, Inc. engages in the development of products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality (VR) headsets, and AI glasses in the United States, Canada, Europe, Asia-Pacific, and internationally. It operates through two segments, Family of Apps (FoA) and Reality Labs (RL). The FoA segment offers Facebook, wh",
+    "score": 90,
+    "label": "Starker Buffett-Kandidat",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "27 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 19 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "17.2 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "81 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "29 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 19.9 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "2/3 Jahre gestiegen · 37.3 % p. a.",
+      "points": 6,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "0.42",
+      "points": 5,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "20.8",
+      "points": 4,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 76 % unter innerem Wert",
+      "points": 17,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 4.8 % · innerer Wert ≈ 1106.40 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 27 % – Zeichen für einen Burggraben",
+     "Gesamtkapitalrendite im Schnitt 17 % – arbeitet mit wenig Kapital sehr profitabel",
+     "Gute Margen: brutto 81 %, netto 29 %",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (19.9 % p. a.)",
+     "In allen 4 Jahren positiver Free Cashflow",
+     "Sicherheitsmarge von 43 %: Kurs liegt klar unter dem inneren Wert"
+    ],
+    "risks": [],
+    "fair_value": 1106.4025,
+    "fair_low": 725.4599,
+    "fair_high": 1577.0891,
+    "valuation_method": "DCF auf Owner Earnings (76.4 Mrd./Jahr, letzte 12 Monate): 15 % Wachstum (Historie 20 %, Analysten 16 %) für 5 Jahre, dann abflachend auf 3 %, 8.5 % Mindestrendite (Risiko niedrig)",
+    "potential": 0.7591,
+    "potential_low": 0.1534,
+    "potential_high": 1.5075,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
+    "intrinsic_value": 1106.4025,
+    "margin_of_safety": 0.4315,
+    "owner_earnings": 76401610000.0,
+    "owner_earnings_yield": 0.0475,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": true
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": true
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": true
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": true
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": true
+     }
+    ],
+    "rules_met": "9/9",
+    "metrics": {
+     "KGV": "20.8",
+     "ROE Ø": "27 %",
+     "ROA Ø": "17 %",
+     "Bruttomarge": "81 %",
+     "Nettomarge": "29 %",
+     "Owner Earn. Rendite": "4.8 %"
+    },
+    "new_today": true
+   },
+   {
+    "symbol": "ACN",
+    "name": "Accenture plc",
+    "sector": "Technology",
+    "industry": "Information Technology Services",
+    "country": "Ireland",
+    "currency": "USD",
+    "price": 241.84,
+    "market_cap": 142863941632,
+    "summary": "Accenture plc provides consulting and managed services in the Americas, Europe, the Middle East, Africa, and the Asia Pacific. It offers artificial intelligence and data; cloud consulting; cybersecurity consulting; digital engineering and manufacturing; ecosystem partners; emerging technology; finance and risk management consulting; infrastructure and capital projects; digital learning; supply cha",
+    "score": 88,
+    "label": "Starker Buffett-Kandidat",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "26 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 26 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "12.6 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "32 %",
+      "points": 4,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "11 %",
+      "points": 3,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 5.0 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "3/3 Jahre gestiegen · 6.8 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "0.40",
+      "points": 5,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "17.8",
+      "points": 7,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 49 % unter innerem Wert",
+      "points": 17,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 6.7 % · innerer Wert ≈ 360.71 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 26 % – Zeichen für einen Burggraben",
+     "Gesamtkapitalrendite im Schnitt 13 % – arbeitet mit wenig Kapital sehr profitabel",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (5.0 % p. a.)",
+     "Gewinn in jedem der letzten 3 Jahre gestiegen (6.8 % p. a.)",
+     "In allen 4 Jahren positiver Free Cashflow",
+     "Sicherheitsmarge von 33 %: Kurs liegt klar unter dem inneren Wert",
+     "Owner-Earnings-Rendite von 6.7 % – wie eine Anleihe mit wachsendem Kupon",
+     "Zahlt 2.8 % Dividende"
+    ],
+    "risks": [],
+    "fair_value": 360.7107,
+    "fair_low": 303.9964,
+    "fair_high": 447.1515,
+    "valuation_method": "DCF auf Owner Earnings (9.6 Mrd./Jahr, letzte 12 Monate): 6 % Wachstum (Historie 5 %, Analysten 8 %) für 5 Jahre, dann abflachend auf 3 %, 8.5 % Mindestrendite (Risiko niedrig)",
+    "potential": 0.4915,
+    "potential_low": 0.257,
+    "potential_high": 0.849,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 0,
+     "factors": []
+    },
+    "intrinsic_value": 360.7107,
+    "margin_of_safety": 0.3295,
+    "owner_earnings": 9635782943.7914,
+    "owner_earnings_yield": 0.0674,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": true
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": false
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": false
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": true
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": true
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": true
+     }
+    ],
+    "rules_met": "7/9",
+    "metrics": {
+     "KGV": "17.8",
+     "ROE Ø": "26 %",
+     "ROA Ø": "13 %",
+     "Bruttomarge": "32 %",
+     "Nettomarge": "11 %",
+     "Owner Earn. Rendite": "6.7 %"
+    },
+    "new_today": false
+   },
+   {
+    "symbol": "ROL",
+    "name": "Rollins, Inc.",
+    "sector": "Consumer Cyclical",
+    "industry": "Personal Services",
+    "country": "United States",
+    "currency": "USD",
+    "price": 38.37,
+    "market_cap": 18342596608,
+    "summary": "Rollins, Inc., through its subsidiaries, provides pest and wildlife control services and protection to residential and commercial customers in the United States and internationally. The company offers pest control services to residential properties protecting from common pests, including rodents, insects, and wildlife. It also provides workplace pest control solutions for customers across various ",
+    "score": 74,
+    "label": "Top-Firma, aber zu teuer",
+    "criteria": [
+     {
+      "name": "Eigenkapitalrendite Ø",
+      "value": "35 %",
+      "points": 12,
+      "max": 12,
+      "hint": "Mindestens 15 % (schwächstes Jahr 29 %)"
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø (ROA)",
+      "value": "16.9 %",
+      "points": 10,
+      "max": 10,
+      "hint": "Mindestens 10 % – Gewinn im Verhältnis zum ganzen Vermögen"
+     },
+     {
+      "name": "Bruttomarge Ø",
+      "value": "52 %",
+      "points": 8,
+      "max": 8,
+      "hint": "Mindestens 40 % – Preissetzungsmacht"
+     },
+     {
+      "name": "Nettomarge Ø",
+      "value": "14 %",
+      "points": 3,
+      "max": 8,
+      "hint": "Mindestens 15 % bleiben als Gewinn übrig"
+     },
+     {
+      "name": "Stetiges Umsatzwachstum",
+      "value": "3/3 Jahre gestiegen · 11.7 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Umsatz steigt Jahr für Jahr"
+     },
+     {
+      "name": "Gewinnwachstum",
+      "value": "3/3 Jahre gestiegen · 12.6 % p. a.",
+      "points": 10,
+      "max": 10,
+      "hint": "Jedes Jahr Gewinn, Tendenz steigend"
+     },
+     {
+      "name": "Cashflow stets positiv",
+      "value": "4/4 Jahre positiv",
+      "points": 10,
+      "max": 10,
+      "hint": "Free Cashflow / Owner Earnings in jedem Jahr positiv"
+     },
+     {
+      "name": "Verschuldung (Debt/Equity)",
+      "value": "0.81",
+      "points": 3,
+      "max": 5,
+      "hint": "Ideal < 0,5"
+     },
+     {
+      "name": "KGV",
+      "value": "35.2",
+      "points": 0,
+      "max": 10,
+      "hint": "Ideal ≤ 15, höchstens 25"
+     },
+     {
+      "name": "Sicherheitsmarge (Owner Earnings)",
+      "value": "Kurs 7 % unter innerem Wert",
+      "points": 8,
+      "max": 17,
+      "hint": "Owner-Earnings-Rendite 3.4 % · innerer Wert ≈ 41.03 USD"
+     }
+    ],
+    "reasons": [
+     "Eigenkapitalrendite im Schnitt 35 % – Zeichen für einen Burggraben",
+     "Gesamtkapitalrendite im Schnitt 17 % – arbeitet mit wenig Kapital sehr profitabel",
+     "Umsatz in jedem der letzten 3 Jahre gestiegen (11.7 % p. a.)",
+     "Gewinn in jedem der letzten 3 Jahre gestiegen (12.6 % p. a.)",
+     "In allen 4 Jahren positiver Free Cashflow",
+     "Zahlt 2.1 % Dividende"
+    ],
+    "risks": [
+     "KGV von 35.2 ist für Buffett zu hoch"
+    ],
+    "fair_value": 41.032,
+    "fair_low": 29.0978,
+    "fair_high": 56.0481,
+    "valuation_method": "DCF auf Owner Earnings (622.7 Mio./Jahr, letzte 12 Monate): 12 % Wachstum (Historie 12 %, Analysten 13 %) für 5 Jahre, dann abflachend auf 3 %, 8.5 % Mindestrendite (Risiko niedrig)",
+    "potential": 0.0694,
+    "potential_low": -0.2417,
+    "potential_high": 0.4607,
+    "risk": {
+     "level": 1,
+     "name": "Niedrig",
+     "points": 1,
+     "factors": [
+      "über 30 % unter dem Jahreshoch"
+     ]
+    },
+    "intrinsic_value": 41.032,
+    "margin_of_safety": 0.0649,
+    "owner_earnings": 622665909.9648,
+    "owner_earnings_yield": 0.0339,
+    "rules": [
+     {
+      "name": "Eigenkapitalrendite Ø ≥ 15 %",
+      "ok": true
+     },
+     {
+      "name": "Gesamtkapitalrendite Ø ≥ 10 %",
+      "ok": true
+     },
+     {
+      "name": "Bruttomarge ≥ 40 %",
+      "ok": true
+     },
+     {
+      "name": "Nettomarge Ø ≥ 15 %",
+      "ok": false
+     },
+     {
+      "name": "Umsatz stetig wachsend",
+      "ok": true
+     },
+     {
+      "name": "Gewinn wachsend",
+      "ok": true
+     },
+     {
+      "name": "Cashflow jedes Jahr positiv",
+      "ok": true
+     },
+     {
+      "name": "KGV ≤ 25",
+      "ok": false
+     },
+     {
+      "name": "Kurs unter innerem Wert",
+      "ok": true
+     }
+    ],
+    "rules_met": "7/9",
+    "metrics": {
+     "KGV": "35.2",
+     "ROE Ø": "35 %",
+     "ROA Ø": "17 %",
+     "Bruttomarge": "52 %",
+     "Nettomarge": "14 %",
+     "Owner Earn. Rendite": "3.4 %"
+    },
+    "new_today": false
+   }
+  ],
+  "ranking": [
+   {
+    "symbol": "GOOGL",
+    "name": "Alphabet Inc.",
+    "score": 100,
+    "price": 274.96,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 402.7054,
+    "potential": 0.4646,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "ZTS",
+    "name": "Zoetis Inc.",
+    "score": 95,
+    "price": 82.45,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 120.8742,
+    "potential": 0.466,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "NVO",
+    "name": "Novo Nordisk A/S",
+    "score": 94,
+    "price": 41.07,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 107.2532,
+    "potential": 1.6115,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "META",
+    "name": "Meta Platforms, Inc.",
+    "score": 90,
+    "price": 628.96,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 1106.4025,
+    "potential": 0.7591,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "ACN",
+    "name": "Accenture plc",
+    "score": 88,
+    "price": 241.84,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 360.7107,
+    "potential": 0.4915,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "MSFT",
+    "name": "Microsoft Corporation",
+    "score": 87,
+    "price": 492.85,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 692.7831,
+    "potential": 0.4057,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "8/9"
+   },
+   {
+    "symbol": "QCOM",
+    "name": "QUALCOMM Incorporated",
+    "score": 85,
+    "price": 179.27,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 227.725,
+    "potential": 0.2703,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "TSM",
+    "name": "Taiwan Semiconductor Manufacturing Company Limited",
+    "score": 85,
+    "price": 353.34,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 536.6031,
+    "potential": 0.5187,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "MCO",
+    "name": "Moody's Corporation",
+    "score": 82,
+    "price": 487.94,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 591.0402,
+    "potential": 0.2113,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "8/9"
+   },
+   {
+    "symbol": "RELX",
+    "name": "RELX PLC",
+    "score": 80,
+    "price": 40.72,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 42.7491,
+    "potential": 0.0498,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "9/9"
+   },
+   {
+    "symbol": "V",
+    "name": "Visa Inc.",
+    "score": 79,
+    "price": 429.56,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 473.1426,
+    "potential": 0.1015,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "8/9"
+   },
+   {
+    "symbol": "AXP",
+    "name": "American Express Company",
+    "score": 78,
+    "price": 316.4,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 571.9121,
+    "potential": 0.8076,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "TRV",
+    "name": "The Travelers Companies, Inc.",
+    "score": 78,
+    "price": 407.29,
+    "currency": "USD",
+    "label": "Starker Buffett-Kandidat",
+    "fair_value": 608.48,
+    "potential": 0.494,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/7"
+   },
+   {
+    "symbol": "MA",
+    "name": "Mastercard Incorporated",
+    "score": 76,
+    "price": 666.96,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 732.9315,
+    "potential": 0.0989,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "8/9"
+   },
+   {
+    "symbol": "ROL",
+    "name": "Rollins, Inc.",
+    "score": 74,
+    "price": 38.37,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 41.032,
+    "potential": 0.0694,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "ASML",
+    "name": "ASML Holding N.V.",
+    "score": 72,
+    "price": 1325.82,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 1291.707,
+    "potential": -0.0257,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "CB",
+    "name": "Chubb Limited",
+    "score": 71,
+    "price": 381.02,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 456.48,
+    "potential": 0.198,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/7"
+   },
+   {
+    "symbol": "KO",
+    "name": "The Coca-Cola Company",
+    "score": 70,
+    "price": 97.4,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 67.6191,
+    "potential": -0.3058,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "ICE",
+    "name": "Intercontinental Exchange, Inc.",
+    "score": 70,
+    "price": 178.49,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 299.004,
+    "potential": 0.6752,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "PG",
+    "name": "The Procter & Gamble Company",
+    "score": 70,
+    "price": 172.86,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 139.9938,
+    "potential": -0.1901,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "JNJ",
+    "name": "Johnson & Johnson",
+    "score": 70,
+    "price": 275.51,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 264.4047,
+    "potential": -0.0403,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "DVA",
+    "name": "DaVita Inc.",
+    "score": 69,
+    "price": 164.49,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 434.3943,
+    "potential": 1.6409,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "SPGI",
+    "name": "S&P Global Inc.",
+    "score": 69,
+    "price": 461.24,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 668.2293,
+    "potential": 0.4488,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "PEP",
+    "name": "PepsiCo, Inc.",
+    "score": 69,
+    "price": 144.6,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 161.12,
+    "potential": 0.1142,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "CTAS",
+    "name": "Cintas Corporation",
+    "score": 69,
+    "price": 228.58,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 168.3266,
+    "potential": -0.2636,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "LRCX",
+    "name": "Lam Research Corporation",
+    "score": 68,
+    "price": 192.69,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 173.5257,
+    "potential": -0.0995,
+    "risk": "Hoch",
+    "risk_level": 3,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "score": 67,
+    "price": 358.54,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 273.5577,
+    "potential": -0.237,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "AON",
+    "name": "Aon plc",
+    "score": 67,
+    "price": 348.43,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 239.4496,
+    "potential": -0.3128,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/7"
+   },
+   {
+    "symbol": "FAST",
+    "name": "Fastenal Company",
+    "score": 67,
+    "price": 53.41,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 30.8811,
+    "potential": -0.4218,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "ADP",
+    "name": "Automatic Data Processing, Inc.",
+    "score": 66,
+    "price": 319.43,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 317.3157,
+    "potential": -0.0066,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "MCD",
+    "name": "McDonald's Corporation",
+    "score": 64,
+    "price": 282.62,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 282.6925,
+    "potential": 0.0003,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "8/9"
+   },
+   {
+    "symbol": "OXY",
+    "name": "Occidental Petroleum Corporation",
+    "score": 63,
+    "price": 54.17,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 73.0832,
+    "potential": 0.3491,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "YUM",
+    "name": "Yum! Brands, Inc.",
+    "score": 63,
+    "price": 166.97,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 143.3871,
+    "potential": -0.1412,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "HSY",
+    "name": "The Hershey Company",
+    "score": 63,
+    "price": 182.77,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 115.8973,
+    "potential": -0.3659,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "KLAC",
+    "name": "KLA Corporation",
+    "score": 62,
+    "price": 140.86,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 115.127,
+    "potential": -0.1827,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "MO",
+    "name": "Altria Group, Inc.",
+    "score": 62,
+    "price": 76.89,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 99.8803,
+    "potential": 0.299,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "MRK",
+    "name": "Merck & Co., Inc.",
+    "score": 62,
+    "price": 141.32,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 24.8851,
+    "potential": -0.8239,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "PM",
+    "name": "Philip Morris International Inc.",
+    "score": 61,
+    "price": 187.8,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 211.025,
+    "potential": 0.1237,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "MSCI",
+    "name": "MSCI Inc.",
+    "score": 60,
+    "price": 637.41,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 708.9893,
+    "potential": 0.1123,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "ROST",
+    "name": "Ross Stores, Inc.",
+    "score": 60,
+    "price": 224.21,
+    "currency": "USD",
+    "label": "Interessant",
+    "fair_value": 199.1019,
+    "potential": -0.112,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "UL",
+    "name": "Unilever PLC",
+    "score": 60,
+    "price": 66.42,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 42.341,
+    "potential": -0.3625,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "VRSK",
+    "name": "Verisk Analytics, Inc.",
+    "score": 60,
+    "price": 203.76,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 144.6924,
+    "potential": -0.2899,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "CSCO",
+    "name": "Cisco Systems, Inc.",
+    "score": 59,
+    "price": 97.04,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 74.5292,
+    "potential": -0.232,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "SAP",
+    "name": "SAP SE",
+    "score": 59,
+    "price": 213.65,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 220.2348,
+    "potential": 0.0308,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "CL",
+    "name": "Colgate-Palmolive Company",
+    "score": 59,
+    "price": 99.76,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 63.3778,
+    "potential": -0.3647,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "TJX",
+    "name": "The TJX Companies, Inc.",
+    "score": 58,
+    "price": 143.77,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 123.8529,
+    "potential": -0.1385,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "ITW",
+    "name": "Illinois Tool Works Inc.",
+    "score": 58,
+    "price": 284.14,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 215.5919,
+    "potential": -0.2412,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "7/9"
+   },
+   {
+    "symbol": "GWW",
+    "name": "W.W. Grainger, Inc.",
+    "score": 58,
+    "price": 1431.87,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 1047.8731,
+    "potential": -0.2682,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "COST",
+    "name": "Costco Wholesale Corporation",
+    "score": 57,
+    "price": 1097.81,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 551.1191,
+    "potential": -0.498,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "DPZ",
+    "name": "Domino's Pizza, Inc.",
+    "score": 57,
+    "price": 358.3,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 403.3905,
+    "potential": 0.1258,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "NVR",
+    "name": "NVR, Inc.",
+    "score": 56,
+    "price": 6034.41,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 5875.5137,
+    "potential": -0.0263,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "ORLY",
+    "name": "O'Reilly Automotive, Inc.",
+    "score": 55,
+    "price": 96.28,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 81.866,
+    "potential": -0.1497,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "AZO",
+    "name": "AutoZone, Inc.",
+    "score": 54,
+    "price": 3399.21,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 3096.393,
+    "potential": -0.0891,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "UNP",
+    "name": "Union Pacific Corporation",
+    "score": 54,
+    "price": 297.89,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 240.0745,
+    "potential": -0.1941,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "WM",
+    "name": "Waste Management, Inc.",
+    "score": 54,
+    "price": 246.49,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 228.7527,
+    "potential": -0.072,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "TXN",
+    "name": "Texas Instruments Incorporated",
+    "score": 53,
+    "price": 281.85,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 146.9594,
+    "potential": -0.4786,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "RSG",
+    "name": "Republic Services, Inc.",
+    "score": 53,
+    "price": 253.26,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 187.892,
+    "potential": -0.2581,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "VRSN",
+    "name": "VeriSign, Inc.",
+    "score": 52,
+    "price": 320.2,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 241.0777,
+    "potential": -0.2471,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "6/9"
+   },
+   {
+    "symbol": "NKE",
+    "name": "NIKE, Inc.",
+    "score": 52,
+    "price": 37.32,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 29.4993,
+    "potential": -0.2096,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "UNH",
+    "name": "UnitedHealth Group Incorporated",
+    "score": 52,
+    "price": 351.41,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 357.8496,
+    "potential": 0.0183,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "KMB",
+    "name": "Kimberly-Clark Corporation",
+    "score": 49,
+    "price": 109.11,
+    "currency": "USD",
+    "label": "Top-Firma, aber zu teuer",
+    "fair_value": 67.5238,
+    "potential": -0.3811,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "5/9"
+   },
+   {
+    "symbol": "POOL",
+    "name": "Pool Corporation",
+    "score": 46,
+    "price": 218.2,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 183.3206,
+    "potential": -0.1599,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "BAC",
+    "name": "Bank of America Corporation",
+    "score": 45,
+    "price": 49.07,
+    "currency": "USD",
+    "label": "Beobachten",
+    "fair_value": 48.1292,
+    "potential": -0.0192,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/7"
+   },
+   {
+    "symbol": "CVX",
+    "name": "Chevron Corporation",
+    "score": 44,
+    "price": 212.45,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 217.1544,
+    "potential": 0.0221,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "HD",
+    "name": "The Home Depot, Inc.",
+    "score": 44,
+    "price": 362.15,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 273.3242,
+    "potential": -0.2453,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "DEO",
+    "name": "Diageo plc",
+    "score": 44,
+    "price": 101.7,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 101.6544,
+    "potential": -0.0004,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "CSX",
+    "name": "CSX Corporation",
+    "score": 43,
+    "price": 51.38,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 37.696,
+    "potential": -0.2663,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "ABBV",
+    "name": "AbbVie Inc.",
+    "score": 42,
+    "price": 291.88,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 240.6531,
+    "potential": -0.1755,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "LOW",
+    "name": "Lowe's Companies, Inc.",
+    "score": 40,
+    "price": 236.46,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 208.8677,
+    "potential": -0.1167,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "4/9"
+   },
+   {
+    "symbol": "CME",
+    "name": "CME Group Inc.",
+    "score": 34,
+    "price": 313.1,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 195.2,
+    "potential": -0.3766,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "SBUX",
+    "name": "Starbucks Corporation",
+    "score": 33,
+    "price": 108.8,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 48.9216,
+    "potential": -0.5504,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "DHR",
+    "name": "Danaher Corporation",
+    "score": 33,
+    "price": 228.89,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 159.7288,
+    "potential": -0.3022,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "3/9"
+   },
+   {
+    "symbol": "BRK-B",
+    "name": "Berkshire Hathaway Inc.",
+    "score": 29,
+    "price": 580.79,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 285.84,
+    "potential": -0.5078,
+    "risk": "Niedrig",
+    "risk_level": 1,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "1/7"
+   },
+   {
+    "symbol": "KR",
+    "name": "The Kroger Co.",
+    "score": 25,
+    "price": 69.36,
+    "currency": "USD",
+    "label": "Eher nicht",
+    "fair_value": 34.9075,
+    "potential": -0.4967,
+    "risk": "Mittel",
+    "risk_level": 2,
+    "ms_fair_value": null,
+    "ms_stars": null,
+    "rules_met": "2/9"
+   }
+  ]
+ }
+}
